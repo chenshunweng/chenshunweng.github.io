@@ -4,95 +4,67 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chenshun Weng – Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <div class="topbar">
-      <h1>Chenshun Weng</h1>
-      <p>Systems Engineer | Robotik | Simulation</p>
-    </div>
-    <nav>
-      <a href="#about">Über mich</a>
-      <a href="#projects">Projekte</a>
-      <a href="#skills">Fähigkeiten</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
-  </header>
-
-  <div class="lang-switcher">
-    <button onclick="changeLang('de')">🇩🇪</button>
-    <button onclick="changeLang('en')">🇬🇧</button>
-    <button onclick="changeLang('zh')">🇨🇳</button>
-  </div>
-
-  <main>
-    <section id="about" style="text-align: center;">
-      <h2>Über mich</h2>
-      <p>Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch meine Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz. Mein Schwerpunkt liegt auf der Entwicklung intelligenter Testsysteme, Layoutoptimierung in der Fertigung sowie sicherheitskritischer Steuerungen.</p>
-      <a class="download-button" href="Lebenslauf_Chenshun_Weng.pdf" download>📄 Lebenslauf herunterladen (PDF)</a>
-    </section>
-
-    <section id="projects">
-      <h2>Projekte</h2>
-      <div class="grid">
-        <div class="project">
-          <h3>Automatisiertes Testsystem bei BSH</h3>
-          <img src="bsh_project.png" alt="BSH Roboter-Testsystem">
-          <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung. Anwendung von Vision-Systemen und Pfadoptimierung.</p>
-        </div>
-
-        <div class="project">
-          <h3>Virtuelle Fabrik bei Volkswagen</h3>
-          <img src="vw_factory.png" alt="Volkswagen Layout Simulation">
-          <p>Layoutoptimierung und Simulation der Fertigung mit Tecnomatix Plant Simulation. Durch die Umgestaltung konnte eine Kapazitätssteigerung von +20 % erreicht werden.</p>
-        </div>
-
-        <div class="project">
-          <h3>Safe Door Open System (BMW i3)</h3>
-          <img src="bmw_safe_door.png" alt="BMW Türöffnungssimulation">
-          <p>MBSE-gesteuertes Sicherheitssystem zur Vermeidung von Türunfällen. Simulation und Steuerungsentwicklung, Risikoverringerung um 60 %.</p>
-        </div>
-
-        <div class="project">
-          <h3>VEI Projektvideo</h3>
-          <iframe width="100%" height="220" src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
-          <p>Demonstration eines visuellen Erkennungssystems mit Hardware-in-the-Loop Testaufbau am IIT Lehrstuhl.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>Fähigkeiten</h2>
-      <div class="skills">
-        <span>MBSE</span>
-        <span>SysML</span>
-        <span>Python</span>
-        <span>Tecnomatix</span>
-        <span>Fusion 360</span>
-        <span>Robotik</span>
-        <span>3DEXPERIENCE</span>
-        <span>Plant Simulation</span>
-        <span>LaTeX</span>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Kontakt</h2>
-      <p>Email: chenshunweng.1999@gmail.com</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/chenshunweng" target="_blank">linkedin.com/in/chenshunweng</a></p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Chenshun Weng – Portfolio
-  </footer>
-
-  <script>
-    function changeLang(lang) {
-      alert("Multilingual support is pending full implementation. Aktuell ist nur Deutsch aktiv.");
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
     }
-  </script>
-</body>
-</html>
+    header {
+      background-color: #1f2937;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .lang-switch button {
+      margin-left: 5px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    nav {
+      background-color: #374151;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .about {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .download-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #1f2937;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
