@@ -11,103 +11,79 @@
     <h1>Chenshun Weng</h1>
     <p>Systems Engineer | Robotik | Simulation</p>
     <nav>
-      <a href="#about">Über mich</a>
-      <a href="#projects">Projekte</a>
-      <a href="#skills">Fähigkeiten</a>
-      <a href="#contact">Kontakt</a>
+      <a href="#2025">2025</a>
+      <a href="#2024">2024</a>
+      <a href="#2023">2023</a>
+      <a href="#2021">2021</a>
     </nav>
-    <div class="lang-switch">
-      <button onclick="switchLang('de')">🇩🇪</button>
-      <button onclick="switchLang('en')">🇬🇧</button>
-      <button onclick="switchLang('zh')">🇨🇳</button>
-    </div>
   </header>
 
-  <section id="about">
-    <h2>Über mich</h2>
-    <p>
-      Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch meine Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz. Mein Schwerpunkt liegt auf der Entwicklung intelligenter Testsysteme, Layoutoptimierung in der Fertigung sowie sicherheitskritischer Steuerungen.
-    </p>
-    <a class="button" href="Lebenslauf_Chenshun_Weng.pdf" target="_blank">📄 Lebenslauf herunterladen (PDF)</a>
-  </section>
+  <main>
+    <section id="ueber-mich">
+      <h2>Über mich</h2>
+      <p>Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Mein Schwerpunkt liegt auf der Entwicklung intelligenter Testsysteme, Layoutoptimierung in der Fertigung sowie sicherheitskritischer Steuerungen.</p>
+      <a class="button" href="Lebenslauf_Chenshun_Weng.pdf" download>
+        📄 Lebenslauf herunterladen (PDF)
+      </a>
+    </section>
 
-  <section id="projects">
-    <h2>Projekte</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-date">2021.10 – 2022.06</div>
-        <div class="timeline-content">
-          <h3>Anton Häring KG – Praktikum & Projekt</h3>
-          <p>Industriepraktikum und Entwicklung eines modularen Roboterprogramms zur kollisionsfreien Mehrstationenbedienung.</p>
-        </div>
+    <!-- Jahr 2025 -->
+    <section id="2025">
+      <h2>2025</h2>
+      <div class="timeline-entry">
+        <h3>Automatisiertes Testsystem (BSH)</h3>
+        <p><strong>Zeit:</strong> Okt. 2024 – Jetzt</p>
+        <p>Vollautomatisiertes Robotik-Testsystem für Waschmaschinen mit >80 % Testabdeckung. Integration von Vision-System, Pfadplanung und CE-konformer Struktur.</p>
+        <img src="bsh_project.png" alt="BSH Testsystem" />
       </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2022.04 – 2025.06</div>
-        <div class="timeline-content">
-          <h3>Studium – TU Berlin</h3>
-          <p>Masterstudium in Automatisierung und Informationstechnik.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2022.10 – Jetzt</div>
-        <div class="timeline-content">
-          <h3>BSH – Automatisiertes Testsystem</h3>
-          <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</p>
-          <img src="bsh_project.png" alt="BSH Projekt" />
-          <video controls src="video_bsh.mp4" width="100%"></video>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2023.04 – 2023.07</div>
-        <div class="timeline-content">
-          <h3>Volkswagen – Virtuelle Fabrik</h3>
-          <p>Layoutoptimierung der Fertigung mit Tecnomatix Plant Simulation. Durch Umgestaltung konnte eine Kapazitätssteigerung von über 20 % erreicht werden.</p>
-          <video controls src="video_vw.mp4" width="100%"></video>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2023.10 – 2024.03</div>
-        <div class="timeline-content">
-          <h3>BMW / VEI – Safe Door Open System</h3>
-          <p>MBSE-basiertes Sicherheitssystem zur Unfallvermeidung beim Öffnen von Autotüren. Systemmodellierung, Prototyping und Video-Demonstration.</p>
-          <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video"></iframe>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2023.10 – 2024.03</div>
-        <div class="timeline-content">
-          <h3>PMF Projekt – UR10e Roboterschlauchsystem</h3>
-          <p>Entwicklung eines flexiblen Anschlussmoduls für die Endeffektor-Vakuumsteuerung. Verbesserte Lebensdauer & reduzierte Torsion.</p>
-          <video controls src="video_pmf.mp4" width="100%"></video>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-date">Bachelorarbeit</div>
-        <div class="timeline-content">
-          <h3>Automatisiertes Bestückungssystem</h3>
-          <p>Programmierkonzept für industrielle Roboter zur automatischen Beladung und Entladung von Werkzeugmaschinen, realisiert bei Anton Häring KG.</p>
-          <audio controls src="audio_bachelor.mp3"></audio>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills">
-    <h2>Fähigkeiten</h2>
-    <ul class="skills">
-      <li>MBSE</li><li>SysML</li><li>Python</li><li>Tecnomatix</li>
-      <li>Fusion 360</li><li>3DEXPERIENCE</li><li>Plant Simulation</li><li>LaTeX</li>
-    </ul>
-  </section>
+    <!-- Jahr 2024 -->
+    <section id="2024">
+      <h2>2024</h2>
+      <div class="timeline-entry">
+        <h3>PMF Projekt – UR10e Roboterschlauchsystem</h3>
+        <p><strong>Zeit:</strong> Okt. 2023 – Mär. 2024</p>
+        <p>Flexibles Anschlussmodul für Vakuum-Endeffektor. Verbesserte Torsionsbeständigkeit & Langlebigkeit in Dauerlastszenarien.</p>
+        <video controls width="320">
+          <source src="media/pmf_demo.mp4" type="video/mp4" />
+        </video>
+      </div>
 
-  <section id="contact">
-    <h2>Kontakt</h2>
-    <p>Email: chenshunweng.1999@gmail.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/chenshunweng">linkedin.com/in/chenshunweng</a></p>
-  </section>
+      <div class="timeline-entry">
+        <h3>BMW / VEI – Safe Door Open System</h3>
+        <p><strong>Zeit:</strong> Okt. 2023 – Mär. 2024</p>
+        <p>MBSE-Modell für Türöffnungssicherheit. Vermeidung von Unfällen durch Systemmodellierung, Prototypen & YouTube-Demo.</p>
+        <a href="https://www.youtube.com/watch?v=XXXXXXX" target="_blank">▶ Projektvideo ansehen</a>
+      </div>
+    </section>
+
+    <!-- Jahr 2023 -->
+    <section id="2023">
+      <h2>2023</h2>
+      <div class="timeline-entry">
+        <h3>Virtuelle Fabrik bei Volkswagen (ITDF)</h3>
+        <p><strong>Zeit:</strong> Apr. 2023 – Jul. 2023</p>
+        <p>Simulation & Layoutoptimierung der Produktion mit Tecnomatix. Verbesserung der Effizienz um >20 % durch Umstrukturierung.</p>
+      </div>
+    </section>
+
+    <!-- Jahr 2021 -->
+    <section id="2021">
+      <h2>2021</h2>
+      <div class="timeline-entry">
+        <h3>Bachelorarbeit – Automatisiertes Bestückungssystem</h3>
+        <p><strong>Zeit:</strong> Apr. 2021 – Jul. 2021</p>
+        <p>Industrierobotiksystem zur automatischen Beladung/Entladung von Werkzeugmaschinen bei Anton Häring KG.</p>
+        <audio controls>
+          <source src="media/bachelor_audio.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Chenshun Weng – Portfolio</p>
+    <p>© 2025 Chenshun Weng – Portfolio</p>
   </footer>
 </body>
 </html>
