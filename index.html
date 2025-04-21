@@ -1,75 +1,71 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chenshun Weng Portfolio</title>
-  <meta name="description" content="Chenshun Weng – Systems Engineer Portfolio"/>
-  <meta property="og:title" content="Chenshun Weng Portfolio"/>
-  <meta property="og:description" content="Automation, Robotics, MBSE Projekte"/>
-  <meta property="og:image" content="assets/og-image.png"/>
-  <link rel="stylesheet" href="style.css"/>
-  <!-- 分析脚本（可选）-->
-  <script async defer data-domain="yourdomain.com" src="https://plausible.io/js/plausible.js"></script>
-  <!-- i18next -->
-  <script src="https://unpkg.com/i18next@21.6.3/i18next.min.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-i18n="header.name">Chenshun Weng</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1 data-i18n="header.name">Chenshun Weng</h1>
-    <p data-i18n="header.tagline">Systems Engineer | Robotik | Simulation</p>
-    <div class="lang-switch">
-      <button data-lang="de">DE</button>
-      <button data-lang="en">EN</button>
-      <button data-lang="zh">中文</button>
+    <div class="container header-inner">
+      <h1 data-i18n="header.name">Chenshun Weng</h1>
+      <p data-i18n="header.tagline">Systems Engineer | Robotik | Simulation</p>
+      <div class="lang-switch">
+        <button data-lang="de">DE</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="zh">中文</button>
+      </div>
+      <button class="theme-toggle" title="Toggle theme">🌓</button>
     </div>
-    <button id="theme-toggle" aria-label="Toggle theme">🌓</button>
   </header>
 
   <main class="container">
-    <!-- Über mich -->
-    <section class="about">
-      <h2 class="section-title" data-i18n="about.title">Über mich</h2>
+    <!-- 关于我 -->
+    <section id="about">
+      <h2 data-i18n="about.title">Über mich</h2>
       <p data-i18n="about.text">
-        Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und MBSE ...
+        <!-- 自动填充 -->
       </p>
       <div class="center">
-        <a href="assets/Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv">📄 Lebenslauf herunterladen (PDF)</a>
+        <a href="Lebenslauf_Chenshun_Weng.pdf" target="_blank" class="btn" data-i18n="about.cv">
+          📄 Lebenslauf herunterladen (PDF)
+        </a>
       </div>
     </section>
 
-    <!-- Projekte -->
-    <section class="projects">
-      <h2 class="section-title" data-i18n="projects.title">Projekte</h2>
+    <!-- 项目 Timeline -->
+    <section id="projects">
+      <h2 data-i18n="projects.title">Projekte</h2>
 
       <!-- 2025 -->
-      <div class="project-year">
+      <div class="year-group">
         <div class="year-label">2025</div>
-        <div class="projects-row">
-          <div class="card" tabindex="0" role="button" data-modal="modal-bsh">
-            <img src="assets/bsh_cover.jpg" loading="lazy" alt="" />
+        <div class="cards">
+          <div class="card" data-id="bsh">
+            <img src="bsh.png" alt="" />
             <h3 data-i18n="projects.bsh.title">BSH Testsystem</h3>
-            <p data-i18n="projects.bsh.desc">Waschmaschinen‑Testautomation &gt;80 % Abdeckung</p>
+            <p data-i18n="projects.bsh.desc">Waschmaschinen‑Testautomation >80 % Abdeckung</p>
           </div>
         </div>
       </div>
 
       <!-- 2024 -->
-      <div class="project-year">
+      <div class="year-group">
         <div class="year-label">2024</div>
-        <div class="projects-row">
-          <div class="card" tabindex="0" role="button" data-modal="modal-vw">
-            <img src="assets/vw_cover.jpg" loading="lazy" alt="" />
+        <div class="cards">
+          <div class="card" data-id="vw">
+            <img src="vw.png" alt="" />
             <h3 data-i18n="projects.vw.title">VW Virtuelle Fabrik</h3>
             <p data-i18n="projects.vw.desc">Plant Simulation & Layout‑Optimierung (+20 %)</p>
           </div>
-          <div class="card" tabindex="0" role="button" data-modal="modal-bmw">
-            <img src="assets/bmw_cover.jpg" loading="lazy" alt="" />
+          <div class="card" data-id="bmw">
+            <img src="bmw.png" alt="" />
             <h3 data-i18n="projects.bmw.title">BMW SDOS</h3>
             <p data-i18n="projects.bmw.desc">MBSE‑Sicherheitssystem gegen Türunfälle</p>
           </div>
-          <div class="card" tabindex="0" role="button" data-modal="modal-pmf">
-            <img src="assets/pmf_cover.jpg" loading="lazy" alt="" />
+          <div class="card" data-id="pmf">
+            <img src="pmf.png" alt="" />
             <h3 data-i18n="projects.pmf.title">PMF UR10e Modul</h3>
             <p data-i18n="projects.pmf.desc">Kameraloses Bin‑Picking, –60 % Störeinflüsse</p>
           </div>
@@ -77,11 +73,11 @@
       </div>
 
       <!-- 2023 -->
-      <div class="project-year">
+      <div class="year-group">
         <div class="year-label">2023</div>
-        <div class="projects-row">
-          <div class="card" tabindex="0" role="button" data-modal="modal-itdf">
-            <img src="assets/itdf_cover.jpg" loading="lazy" alt="" />
+        <div class="cards">
+          <div class="card" data-id="itdf">
+            <img src="itdf.png" alt="" />
             <h3 data-i18n="projects.itdf.title">ITDF – Virtuelle Fabrik</h3>
             <p data-i18n="projects.itdf.desc">Digital Factory & Effizienzsteigerung</p>
           </div>
@@ -89,99 +85,39 @@
       </div>
 
       <!-- 2022 -->
-      <div class="project-year">
+      <div class="year-group">
         <div class="year-label">2022</div>
-        <div class="projects-row">
-          <div class="card" tabindex="0" role="button" data-modal="modal-bach">
-            <img src="assets/bach_cover.jpg" loading="lazy" alt="" />
+        <div class="cards">
+          <div class="card" data-id="bach">
+            <img src="bach.png" alt="" />
             <h3 data-i18n="projects.bach.title">Bachelorarbeit</h3>
-            <p data-i18n="projects.bach.desc">Robotik‑Programmkonzept für CNC-Beladung</p>
+            <p data-i18n="projects.bach.desc">Roboterprogrammierung für CNC‑Beladung</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- 技能 -->
+    <section id="skills">
+      <h2 data-i18n="skills.title">Fähigkeiten</h2>
+      <ul class="skills-list">
+        <li>MBSE</li><li>SysML</li><li>Python</li><li>Tecnomatix</li>
+        <li>Fusion 360</li><li>3DEXPERIENCE</li><li>Plant Simulation</li><li>LaTeX</li>
+      </ul>
+    </section>
   </main>
 
-  <!-- Modals -->
-  <div id="modal-bsh" class="modal" aria-hidden="true">
-    <div class="modal-dialog" role="dialog" aria-modal="true" tabindex="-1">
-      <button class="modal-close" aria-label="Close">✕</button>
-      <h3 data-i18n="projects.bsh.title">BSH Testsystem</h3>
-      <p data-i18n="projects.bsh.long">
-        Entwicklung eines vollautomatisierten Robotik‑Systems zur Prüfung von
-        Waschmaschinen … (hier Details einfügen)
-      </p>
-      <img src="assets/bsh_detail.jpg" loading="lazy" alt="BSH Detail"/>
+  <!-- 弹窗 Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">×</button>
+      <h3 id="md-title"></h3>
+      <p id="md-long"></p>
+      <div id="md-media"></div>
     </div>
   </div>
 
-  <div id="modal-vw" class="modal" aria-hidden="true">
-    <div class="modal-dialog" tabindex="-1">
-      <button class="modal-close" aria-label="Close">✕</button>
-      <h3 data-i18n="projects.vw.title">VW Virtuelle Fabrik</h3>
-      <p data-i18n="projects.vw.long">
-        Layoutoptimierung und Simulation der Motorenproduktion bei VW …
-      </p>
-      <iframe loading="lazy" width="100%" height="315"
-        src="https://www.youtube.com/embed/dDNO7qBxwFA"
-        frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <div id="modal-bmw" class="modal" aria-hidden="true">
-    <div class="modal-dialog" tabindex="-1">
-      <button class="modal-close" aria-label="Close">✕</button>
-      <h3 data-i18n="projects.bmw.title">BMW SDOS</h3>
-      <p data-i18n="projects.bmw.long">
-        Safe Door Opening System für BMW i3 basierend auf MBSE …
-      </p>
-      <iframe loading="lazy" width="100%" height="315"
-        src="https://www.youtube.com/embed/ZxAWm3Lsz8Y"
-        frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <div id="modal-pmf" class="modal" aria-hidden="true">
-    <div class="modal-dialog" tabindex="-1">
-      <button class="modal-close" aria-label="Close">✕</button>
-      <h3 data-i18n="projects.pmf.title">PMF UR10e Modul</h3>
-      <p data-i18n="projects.pmf.long">
-        Entwicklung eines kameralosen Bin‑Picking‑Anschlusses …
-      </p>
-      <video loading="lazy" controls>
-        <source src="assets/pmf_video.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
-  <div id="modal-itdf" class="modal" aria-hidden="true">
-    <div class="modal-dialog" tabindex="-1">
-      <button class="modal-close" aria-label="Close">✕</button>
-      <h3 data-i18n="projects.itdf.title">ITDF – Virtuelle Fabrik</h3>
-      <p data-i18n="projects.itdf.long">
-        Transformation und Simulation von Automatisierungsstationen …
-      </p>
-      <img src="assets/itdf_detail.jpg" loading="lazy" alt="ITDF Detail"/>
-    </div>
-  </div>
-
-  <div id="modal-bach" class="modal" aria-hidden="true">
-    <div class="modal-dialog" tabindex="-1">
-      <button class="modal-close" aria-label="Close">✕</button>
-      <h3 data-i18n="projects.bach.title">Bachelorarbeit</h3>
-      <p data-i18n="projects.bach.long">
-        Programmkonzept für vollautomatisierte Bestückung von Werkzeugmaschinen …
-      </p>
-      <video loading="lazy" controls>
-        <source src="assets/bach_video.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 <span data-i18n="header.name">Chenshun Weng</span> – Portfolio
-  </footer>
-
+  <script src="https://unpkg.com/i18next@23.6.0/i18next.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
