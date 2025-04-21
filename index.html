@@ -49,6 +49,21 @@
       border-radius: 5px;
       font-size: 0.9em;
     }
+    .project img, .project video {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .download-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #1f2937;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
     footer {
       background-color: #1f2937;
       color: white;
@@ -74,15 +89,26 @@
     <section id="about">
       <h2>Über mich</h2>
       <p>Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Mit Praxiserfahrung bei BSH, BMW und Volkswagen bringe ich systemisches Denken und technische Umsetzungskompetenz zusammen.</p>
+      <a class="download-button" href="Lebenslauf_Chenshun.pdf" download>📥 Lebenslauf herunterladen (PDF)</a>
     </section>
 
     <section id="projects">
       <h2>Projekte</h2>
-      <ul>
-        <li><strong>Automatisiertes Testsystem bei BSH:</strong> Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</li>
-        <li><strong>Virtuelle Fabrik bei Volkswagen:</strong> Layoutoptimierung und Simulation der Fertigung mit Tecnomatix Plant Simulation (+20 % Kapazität).</li>
-        <li><strong>Safe Door Open System (BMW i3):</strong> MBSE-gesteuertes Sicherheitssystem zur Vermeidung von Türunfällen, Risiko -60 %.</li>
-      </ul>
+      <div class="project">
+        <p><strong>Automatisiertes Testsystem bei BSH:</strong> Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</p>
+        <img src="bsh_project.jpg" alt="BSH Roboter-Testsystem">
+      </div>
+      <div class="project">
+        <p><strong>Virtuelle Fabrik bei Volkswagen:</strong> Layoutoptimierung und Simulation der Fertigung mit Tecnomatix Plant Simulation (+20 % Kapazität).</p>
+        <video controls>
+          <source src="vw_simulation_demo.mp4" type="video/mp4">
+          Ihr Browser unterstützt keine Videowiedergabe.
+        </video>
+      </div>
+      <div class="project">
+        <p><strong>Safe Door Open System (BMW i3):</strong> MBSE-gesteuertes Sicherheitssystem zur Vermeidung von Türunfällen, Risiko -60 %.</p>
+        <img src="bmw_safe_door.jpg" alt="BMW Türöffnungssystem">
+      </div>
     </section>
 
     <section id="skills">
