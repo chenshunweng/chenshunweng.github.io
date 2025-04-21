@@ -16,6 +16,7 @@
       color: white;
       padding: 40px 20px;
       text-align: center;
+      position: relative;
     }
     .lang-switch {
       position: absolute;
@@ -74,7 +75,7 @@
       padding: 20px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
-    .project img, .project iframe {
+    .project img, .project iframe, .project video {
       width: 100%;
       border-radius: 8px;
       margin-top: 10px;
@@ -135,17 +136,26 @@
         <div class="project">
           <strong>Safe Door Open System (BMW / VEI)</strong>
           <p>MBSE-basiertes Sicherheitssystem zur Unfallvermeidung beim Öffnen von Autotüren. Systemmodellierung, Prototyping und Integration mit Video-Demonstration.</p>
-          <iframe src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
+          <video controls>
+            <source src="vei_project.mp4" type="video/mp4" />
+            Dein Browser unterstützt dieses Video nicht.
+          </video>
         </div>
         <div class="project">
           <strong>PMF Projekt – UR10e Roboterschlauchsystem</strong>
           <p>Entwicklung eines flexiblen Anschlussmoduls für die Endeffektor-Vakuumsteuerung. Verbesserte Lebensdauer & reduzierte Torsion. Anwendung in Dauerbelastungsszenarien.</p>
-          <iframe src="https://www.youtube.com/embed/YOUR_PMF_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+          <video controls>
+            <source src="pmf_video.mp4" type="video/mp4" />
+            Dein Browser unterstützt dieses Video nicht.
+          </video>
         </div>
         <div class="project">
           <strong>Bachelorarbeit – Automatisiertes Bestückungssystem</strong>
           <p>Programmkonzept für industrielle Roboter zur automatischen Beladung und Entladung von Werkzeugmaschinen, realisiert bei Anton Häring KG.</p>
-          <iframe src="https://www.youtube.com/embed/YOUR_BACHELOR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+          <video controls>
+            <source src="bachelor_video.mp4" type="video/mp4" />
+            Dein Browser unterstützt dieses Video nicht.
+          </video>
         </div>
       </div>
     </section>
