@@ -1,9 +1,13 @@
 :root[data-theme='light'] {
   --bg: #f4f4f4;
-  --text: #333;
+  --text: #1a1a1a;
   --primary: #1f2937;
   --card-bg: #ffffff;
   --card-shadow: rgba(0, 0, 0, 0.1);
+  --tag-bg: #e2e8f0;
+  --tag-text: #1a1a1a;
+  --btn-bg: #1f2937;
+  --btn-text: #ffffff;
 }
 
 :root[data-theme='dark'] {
@@ -11,7 +15,11 @@
   --text: #f0f0f0;
   --primary: #ffffff;
   --card-bg: #1e1e1e;
-  --card-shadow: rgba(255, 255, 255, 0.1);
+  --card-shadow: rgba(255, 255, 255, 0.05);
+  --tag-bg: #2d2d2d;
+  --tag-text: #ffffff;
+  --btn-bg: #ffffff;
+  --btn-text: #121212;
 }
 
 * {
@@ -28,7 +36,7 @@ body {
 
 header {
   background-color: var(--primary);
-  color: white;
+  color: var(--btn-text);
   padding: 40px 20px;
   text-align: center;
   position: relative;
@@ -57,15 +65,15 @@ header p {
   padding: 6px 10px;
   border: none;
   border-radius: 5px;
-  background: white;
-  color: var(--primary);
+  background: var(--btn-bg);
+  color: var(--btn-text);
   font-weight: bold;
   cursor: pointer;
 }
 
 .lang-switch button:hover,
 .theme-toggle:hover {
-  background-color: #e2e8f0;
+  opacity: 0.9;
 }
 
 .container {
@@ -86,12 +94,13 @@ header p {
 }
 
 .cv-download a {
-  background-color: var(--primary);
-  color: white;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
 }
 
 .project-year {
@@ -114,30 +123,24 @@ header p {
 
 .card {
   background-color: var(--card-bg);
-  box-shadow: 0 4px 10px var(--card-shadow);
+  box-shadow: 0 4px 12px var(--card-shadow);
   border-radius: 16px;
   padding: 20px;
-  width: 320px;
-  height: 430px;
+  width: 300px;
   text-align: center;
-  cursor: pointer;
   transition: transform 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 .card:hover {
   transform: translateY(-5px);
 }
 
-.card img,
-.card video {
+.card video,
+.card img {
   width: 100%;
   height: 180px;
-  object-fit: cover;
   border-radius: 12px;
+  object-fit: cover;
   margin-bottom: 15px;
 }
 
@@ -165,15 +168,17 @@ header p {
 }
 
 .skills-list span {
-  background-color: #d1d5db;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
 footer {
   background-color: var(--primary);
-  color: white;
+  color: var(--btn-text);
   text-align: center;
   padding: 20px;
   margin-top: 40px;
@@ -223,6 +228,5 @@ footer {
 @media screen and (max-width: 768px) {
   .card {
     width: 90%;
-    height: auto;
   }
 }
