@@ -1,4 +1,4 @@
-翻译资源内嵌 —— 把 de/en/zh 三份 JSON 内容都粘在这里
+
 const resources = {
   de: {
     translation: {
