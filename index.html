@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chenshun Weng Portfolio</title>
+  <title>Chenshun Weng Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <!-- i18next 核心库 -->
+  <!-- i18next -->
   <script src="https://unpkg.com/i18next@23.6.0/i18next.min.js"></script>
+  <!-- defer 保证在 DOM 完全解析后再执行 -->
+  <script src="app.js" defer></script>
 </head>
 <body>
   <header>
@@ -21,9 +23,7 @@
       <button class="theme-toggle">🌙</button>
     </div>
   </header>
-
   <main class="container">
-    <!-- 关于我 -->
     <section class="about">
       <h2 data-i18n="about.title">about.title</h2>
       <p data-i18n="about.text">about.text</p>
@@ -31,8 +31,6 @@
         <a href="Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv">about.cv</a>
       </div>
     </section>
-
-    <!-- 项目 -->
     <section class="projects">
       <h2 data-i18n="projects.title">projects.title</h2>
 
@@ -40,7 +38,7 @@
       <div class="project-year">
         <div class="year-label">2025</div>
         <div class="projects-row">
-          <div class="card" data-i18n-key="projects.bsh">
+          <div class="card">
             <img src="bsh_project.png" alt="" />
             <h3 data-i18n="projects.bsh.title">projects.bsh.title</h3>
             <p data-i18n="projects.bsh.desc">projects.bsh.desc</p>
@@ -52,18 +50,18 @@
       <div class="project-year">
         <div class="year-label">2024</div>
         <div class="projects-row">
-          <div class="card" data-i18n-key="projects.vw">
+          <div class="card">
             <img src="placeholder.png" alt="" />
             <h3 data-i18n="projects.vw.title">projects.vw.title</h3>
             <p data-i18n="projects.vw.desc">projects.vw.desc</p>
           </div>
-          <div class="card" data-i18n-key="projects.bmw">
+          <div class="card">
             <img src="placeholder.png" alt="" />
             <h3 data-i18n="projects.bmw.title">projects.bmw.title</h3>
             <p data-i18n="projects.bmw.desc">projects.bmw.desc</p>
             <iframe src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
           </div>
-          <div class="card" data-i18n-key="projects.pmf">
+          <div class="card">
             <img src="placeholder.png" alt="" />
             <h3 data-i18n="projects.pmf.title">projects.pmf.title</h3>
             <p data-i18n="projects.pmf.desc">projects.pmf.desc</p>
@@ -78,7 +76,7 @@
       <div class="project-year">
         <div class="year-label">2023</div>
         <div class="projects-row">
-          <div class="card" data-i18n-key="projects.itdf">
+          <div class="card">
             <img src="placeholder.png" alt="" />
             <h3 data-i18n="projects.itdf.title">projects.itdf.title</h3>
             <p data-i18n="projects.itdf.desc">projects.itdf.desc</p>
@@ -90,7 +88,7 @@
       <div class="project-year">
         <div class="year-label">2022</div>
         <div class="projects-row">
-          <div class="card" data-i18n-key="projects.bachelor">
+          <div class="card">
             <img src="placeholder.png" alt="" />
             <h3 data-i18n="projects.bachelor.title">projects.bachelor.title</h3>
             <p data-i18n="projects.bachelor.desc">projects.bachelor.desc</p>
@@ -102,20 +100,16 @@
       </div>
     </section>
 
-    <!-- 技能 -->
     <section class="skills">
       <h2 data-i18n="skills.title">skills.title</h2>
       <div class="skills-list">
         <span>MBSE</span><span>SysML</span><span>Python</span><span>Tecnomatix</span>
-        <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
+        <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
       </div>
     </section>
   </main>
-
   <footer>
-    <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio">footer.portfolio</span></p>
+    <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio">footer.portfolio</span></p>
   </footer>
-
-  <script src="app.js"></script>
 </body>
 </html>
