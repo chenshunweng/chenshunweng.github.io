@@ -5,20 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chenshun Weng – Portfolio</title>
   <style>
+    :root {
+      --main-bg: #f5f5f5;
+      --card-bg: white;
+      --dark: #1f2937;
+      --primary: #374151;
+      --text: #333;
+    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background-color: var(--main-bg);
+      color: var(--text);
     }
     header {
-      background-color: #1f2937;
+      background-color: var(--dark);
       color: white;
       padding: 40px;
       text-align: center;
     }
     nav {
-      background-color: #374151;
+      background-color: var(--primary);
       padding: 10px;
       text-align: center;
     }
@@ -27,6 +34,11 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+    }
+    .language-toggle {
+      position: absolute;
+      right: 20px;
+      top: 20px;
     }
     .container {
       max-width: 960px;
@@ -49,6 +61,13 @@
       border-radius: 5px;
       font-size: 0.9em;
     }
+    .project {
+      background-color: var(--card-bg);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
     .project img, .project iframe {
       max-width: 100%;
       border-radius: 8px;
@@ -58,22 +77,34 @@
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: #1f2937;
+      background-color: var(--dark);
       color: white;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
     }
     footer {
-      background-color: #1f2937;
+      background-color: var(--dark);
       color: white;
       text-align: center;
       padding: 20px;
     }
   </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+      });
+    }
+  </script>
 </head>
 <body>
   <header>
+    <div class="language-toggle">
+      <button onclick="switchLang('de')">🇩🇪</button>
+      <button onclick="switchLang('en')">🇬🇧</button>
+      <button onclick="switchLang('zh')">🇨🇳</button>
+    </div>
     <h1>Chenshun Weng</h1>
     <p>Systems Engineer | Robotik | Simulation</p>
   </header>
@@ -88,24 +119,30 @@
   <div class="container">
     <section id="about">
       <h2>Über mich</h2>
-      <p>Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Mit Praxiserfahrung bei BSH, BMW und Volkswagen bringe ich systemisches Denken und technische Umsetzungskompetenz zusammen.</p>
+      <p data-lang="de" style="display:block">Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch Erfahrungen bei BSH, BMW und Volkswagen kombiniere ich Systemdenken mit praktischer Umsetzungskompetenz.</p>
+      <p data-lang="en" style="display:none">I'm an engineer specialized in automation, robotics, and model-based systems engineering (MBSE). With hands-on experience at BSH, BMW, and Volkswagen, I combine systems thinking with technical execution.</p>
+      <p data-lang="zh" style="display:none">我是一名专注于自动化、机器人和基于模型的系统工程（MBSE）的工程师，曾在BSH、宝马和大众积累了丰富经验，具备系统思维与技术实现能力。</p>
       <a class="download-button" href="Lebenslauf_Chenshun_Weng.pdf" download>📥 Lebenslauf herunterladen (PDF)</a>
     </section>
 
     <section id="projects">
       <h2>Projekte</h2>
+
       <div class="project">
         <p><strong>Automatisiertes Testsystem bei BSH:</strong> Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</p>
         <img src="bsh_project.png" alt="BSH Roboter-Testsystem">
       </div>
+
       <div class="project">
         <p><strong>Virtuelle Fabrik bei Volkswagen:</strong> Layoutoptimierung und Simulation der Fertigung mit Tecnomatix Plant Simulation (+20 % Kapazität).</p>
         <img src="vw_factory.jpg" alt="Volkswagen Virtuelle Fabrik">
       </div>
+
       <div class="project">
         <p><strong>Safe Door Open System (BMW i3):</strong> MBSE-gesteuertes Sicherheitssystem zur Vermeidung von Türunfällen, Risiko -60 %.</p>
         <img src="bmw_safe_door.jpg" alt="BMW Türöffnungssystem">
       </div>
+
       <div class="project">
         <p><strong>VEI Projektvideo:</strong> Visuelles Erkennungssystem und Robotik-Testaufbau (YouTube)</p>
         <iframe width="100%" height="315" src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
