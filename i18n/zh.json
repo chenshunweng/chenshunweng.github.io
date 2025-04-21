@@ -1,14 +1,44 @@
 {
-  "about.title": "关于我",
-  "about.text": "我是一名专注于自动化、机器人技术与基于模型的系统工程（MBSE）的工程师，曾在 BSH、BMW 和大众工作，具有丰富的系统开发和实施经验。",
-  "hero.download": "下载简历（PDF）",
-  "projects.title": "项目",
-  "projects.bsh.title": "BSH 洗衣机测试系统",
-  "projects.bsh.desc": "基于机器人与视觉系统的全自动测试平台，覆盖率超过 80%。采用深度学习图像识别，使用 3D 打印优化抓手结构。硕士论文课题。",
-  "projects.vw.title": "大众虚拟工厂",
-  "projects.vw.desc": "使用 Tecnomatix Plant Simulation 进行工厂仿真与优化，产能提升 20%，流程缩短 30%。",
-  "vei.title": "VEI 项目",
-  "vei.desc": "使用视觉与机器人控制的安全系统演示平台",
-  "skills.title": "技能",
-  "contact.title": "联系方式"
+  "header": {
+    "name": "翁陈顺",
+    "tagline": "系统工程师 | 机器人 | 仿真"
+  },
+  "about": {
+    "title": "关于我",
+    "text": "专注于自动化、机器人和模型驱动系统工程（MBSE）的可靠工程师。在博西、宝马和大众等公司积累了系统化思维与落地实践经验。",
+    "cv": "📄 下载简历 (PDF)"
+  },
+  "projects": {
+    "title": "项目",
+    "bsh": {
+      "title": "BSH 测试系统",
+      "desc": "洗衣机测试自动化，覆盖率超过80%",
+      "long": "在BSH实习期间：开发了全自动机器人测试系统，用于洗衣机的自动检测与程序选择..."
+    },
+    "vw": {
+      "title": "大众 虚拟工厂",
+      "desc": "Plant Simulation & 布局优化(+20%)",
+      "long": "使用Tecnomatix Plant Simulation对大众电机生产线进行模拟与优化..."
+    },
+    "bmw": {
+      "title": "宝马 安全开门系统",
+      "desc": "MBSE安全系统，预防开门碰撞",
+      "long": "基于MBSE与Cameo SysML，为宝马i3开发Safe Door Opening System..."
+    },
+    "pmf": {
+      "title": "PMF UR10e 模块",
+      "desc": "无摄像头Bin-Picking，干扰减少60%",
+      "long": "CamLessPick项目：设计Drehdurchführung概念，最大程度降低Bin-Picking中的干扰..."
+    },
+    "itdf": {
+      "title": "ITDF 虚拟工厂",
+      "desc": "数字化工厂 & 提效",
+      "long": "对多条自动化站进行数字化转换，使用Plant Simulation/Process Simulate进行仿真验证..."
+    },
+    "bach": {
+      "title": "本科毕业论文",
+      "desc": "CNC上下料机器人程序概念",
+      "long": "为Anton Häring KG设计全自动机床上下料机器人程序概念框架..."
+    }
+  }
 }
