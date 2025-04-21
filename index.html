@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chenshun Weng Portfolio</title>
+  <title>Chenshun Weng Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <!-- i18next -->
   <script src="https://unpkg.com/i18next@23.6.0/i18next.min.js"></script>
-  <!-- defer 确保 DOM 解析完后再执行 -->
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -25,7 +23,6 @@
   </header>
 
   <main class="container">
-    <!-- 关于我 -->
     <section class="about">
       <h2 data-i18n="about.title">about.title</h2>
       <p data-i18n="about.text">about.text</p>
@@ -34,62 +31,57 @@
       </div>
     </section>
 
-    <!-- 项目 -->
     <section class="projects">
       <h2 data-i18n="projects.title">projects.title</h2>
 
-      <!-- 2025 -->
       <div class="project-year">
         <div class="year-label">2025</div>
         <div class="projects-row">
           <div class="card" data-key="bsh">
-            <img src="bsh_project.png" alt="">
+            <img src="bsh_project.png" alt="BSH Projekt">
             <h3 data-i18n="projects.bsh.title">projects.bsh.title</h3>
             <p data-i18n="projects.bsh.desc">projects.bsh.desc</p>
           </div>
         </div>
       </div>
 
-      <!-- 2024 -->
       <div class="project-year">
         <div class="year-label">2024</div>
         <div class="projects-row">
           <div class="card" data-key="vw">
-            <img src="placeholder.png" alt="">
+            <img src="placeholder.png" alt="VW Projekt">
             <h3 data-i18n="projects.vw.title">projects.vw.title</h3>
             <p data-i18n="projects.vw.desc">projects.vw.desc</p>
           </div>
           <div class="card" data-key="bmw">
-            <img src="placeholder.png" alt="">
+            <img src="placeholder.png" alt="BMW VEI Projekt">
             <h3 data-i18n="projects.bmw.title">projects.bmw.title</h3>
             <p data-i18n="projects.bmw.desc">projects.bmw.desc</p>
           </div>
           <div class="card" data-key="pmf">
-            <img src="placeholder.png" alt="">
+            <img src="placeholder.png" alt="PMF Projekt">
             <h3 data-i18n="projects.pmf.title">projects.pmf.title</h3>
             <p data-i18n="projects.pmf.desc">projects.pmf.desc</p>
           </div>
         </div>
       </div>
 
-      <!-- 2023 -->
       <div class="project-year">
         <div class="year-label">2023</div>
         <div class="projects-row">
           <div class="card" data-key="itdf">
-            <img src="placeholder.png" alt="">
+            <img src="placeholder.png" alt="ITDF Projekt">
             <h3 data-i18n="projects.itdf.title">projects.itdf.title</h3>
             <p data-i18n="projects.itdf.desc">projects.itdf.desc</p>
           </div>
         </div>
       </div>
 
-      <!-- 2022 -->
       <div class="project-year">
         <div class="year-label">2022</div>
         <div class="projects-row">
           <div class="card" data-key="bachelor">
-            <img src="placeholder.png" alt="">
+            <img src="placeholder.png" alt="Bachelorarbeit">
             <h3 data-i18n="projects.bachelor.title">projects.bachelor.title</h3>
             <p data-i18n="projects.bachelor.desc">projects.bachelor.desc</p>
           </div>
@@ -97,7 +89,6 @@
       </div>
     </section>
 
-    <!-- 技能 -->
     <section class="skills">
       <h2 data-i18n="skills.title">skills.title</h2>
       <div class="skills-list">
@@ -111,7 +102,6 @@
     <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio">footer.portfolio</span></p>
   </footer>
 
-  <!-- 模态框 -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <button class="modal-close">&times;</button>
