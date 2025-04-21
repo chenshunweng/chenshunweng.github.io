@@ -2,75 +2,73 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chenshun Weng – Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
+  <header>
     <h1>Chenshun Weng</h1>
     <p>Systems Engineer | Robotik | Simulation</p>
-    <div class="lang-switch">
-      <button onclick="setLang('de')">🇩🇪</button>
-      <button onclick="setLang('en')">🇬🇧</button>
-      <button onclick="setLang('zh')">🇨🇳</button>
-    </div>
   </header>
 
-  <main class="grid">
-    <section>
-      <h2 data-i18n="about.title">Über mich</h2>
-      <p data-i18n="about.text">Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung...</p>
-      <a href="assets/lebenslauf.pdf" download class="button">📄 <span data-i18n="hero.download">Lebenslauf herunterladen (PDF)</span></a>
+  <nav>
+    <a href="#about">Über mich</a>
+    <a href="#projects">Projekte</a>
+    <a href="#skills">Fähigkeiten</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
+  <main class="container">
+
+    <!-- Über mich -->
+    <section class="box" id="about">
+      <h2>Über mich</h2>
+      <p>Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE).
+         Mit Praxiserfahrung bei BSH, BMW und Volkswagen bringe ich systemisches Denken und technische Umsetzungskompetenz zusammen.</p>
+      <a class="download-button" href="Lebenslauf_Chenshun_Weng.pdf" download>📥 Lebenslauf herunterladen</a>
     </section>
 
-    <section>
-      <h2 data-i18n="projects.title">Projekte</h2>
-      <div class="project">
-        <h3 data-i18n="projects.bsh.title">Waschmaschinen-Testsystem bei BSH</h3>
-        <img src="assets/bsh_project.png" alt="BSH Projekt" />
-        <p data-i18n="projects.bsh.desc">Vollautomatisches Roboter-Testsystem mit über 80% Abdeckung...</p>
+    <!-- Projekt 1 -->
+    <section class="box" id="projects">
+      <h2>Automatisiertes Testsystem (BSH)</h2>
+      <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</p>
+      <img src="bsh_project.png" alt="BSH Projekt" class="project-img" />
+    </section>
+
+    <!-- Projekt 2 mit Video -->
+    <section class="box">
+      <h2>VEI Projektvideo</h2>
+      <p>Visuelles Erkennungssystem und Robotik-Testaufbau (YouTube)</p>
+      <iframe width="100%" height="215" src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <!-- Fähigkeiten -->
+    <section class="box" id="skills">
+      <h2>Fähigkeiten</h2>
+      <div class="skills">
+        <span>MBSE</span>
+        <span>SysML</span>
+        <span>Python</span>
+        <span>Tecnomatix</span>
+        <span>Fusion 360</span>
+        <span>3DEXPERIENCE</span>
+        <span>Plant Simulation</span>
+        <span>LaTeX</span>
       </div>
-      <div class="project">
-        <h3 data-i18n="projects.vw.title">Virtuelle Fabrik bei VW</h3>
-        <img src="assets/vw_project.jpg" alt="VW Projekt" />
-        <p data-i18n="projects.vw.desc">Simulation & Layoutoptimierung (+20% Kapazität) in Tecnomatix...</p>
-      </div>
     </section>
 
-    <section>
-      <h2 data-i18n="vei.title">VEI Projekt</h2>
-      <p data-i18n="vei.desc">Hardware-in-the-loop Sicherheitsdemo mit visueller Erkennung und Steuerung</p>
-      <iframe width="100%" height="200" src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
-    </section>
-
-    <section>
-      <h2 data-i18n="skills.title">Fähigkeiten</h2>
-      <ul class="tags">
-        <li>MBSE</li><li>SysML</li><li>Python</li><li>Robotik</li><li>Fusion 360</li><li>3DEXPERIENCE</li><li>Tecnomatix</li><li>Plant Simulation</li><li>LaTeX</li>
-      </ul>
-      <h2 data-i18n="contact.title">Kontakt</h2>
+    <!-- Kontakt -->
+    <section class="box" id="contact">
+      <h2>Kontakt</h2>
       <p>Email: chenshunweng.1999@gmail.com</p>
       <p>LinkedIn: <a href="https://linkedin.com/in/chenshunweng" target="_blank">linkedin.com/in/chenshunweng</a></p>
     </section>
+
   </main>
 
   <footer>
     &copy; 2025 Chenshun Weng – Portfolio
   </footer>
-
-  <script>
-    const translations = {
-      de: await (await fetch('i18n/de.json')).json(),
-      en: await (await fetch('i18n/en.json')).json(),
-      zh: await (await fetch('i18n/zh.json')).json()
-    };
-    const setLang = (lang) => {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        el.textContent = translations[lang][el.dataset.i18n] || el.textContent;
-      });
-    };
-    setLang('de');
-  </script>
 </body>
 </html>
