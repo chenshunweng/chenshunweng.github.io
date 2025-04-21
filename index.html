@@ -8,95 +8,86 @@
 </head>
 <body>
   <header>
-    <h1>Chenshun Weng</h1>
-    <p>Systems Engineer | Robotik | Simulation</p>
-    <nav>
-      <a href="#about">Über mich</a>
-      <a href="#projects">Projekte</a>
-      <a href="#skills">Fähigkeiten</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
-    <div class="lang-switch">
-      <button>🇩🇪</button>
-      <button>🇬🇧</button>
-      <button>🇨🇳</button>
+    <div class="header-left">
+      <h1>Chenshun Weng</h1>
+      <p>Systems Engineer | Robotik | Simulation</p>
+    </div>
+    <div class="header-right">
+      <button class="lang">DE</button>
+      <button class="lang">EN</button>
+      <button class="lang">CN</button>
     </div>
   </header>
 
+  <nav>
+    <a href="#about">Über mich</a>
+    <a href="#projects">Projekte</a>
+    <a href="#skills">Fähigkeiten</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
   <main>
-    <section id="about">
+    <!-- Über mich -->
+    <section id="about" class="section">
       <h2>Über mich</h2>
-      <p>
-        Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch meine Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz. Mein Schwerpunkt liegt auf der Entwicklung intelligenter Testsysteme, Layoutoptimierung in der Fertigung sowie sicherheitskritischer Steuerungen.
-      </p>
-      <a class="download-button" href="Lebenslauf_Chenshun_Weng.pdf" download>📥 Lebenslauf herunterladen (PDF)</a>
+      <p>Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Mein Schwerpunkt liegt auf der Entwicklung intelligenter Testsysteme, Layoutoptimierung in der Fertigung sowie sicherheitskritischer Steuerungen.</p>
+      <a href="Lebenslauf_Chenshun_Weng.pdf" class="button">Lebenslauf herunterladen (PDF)</a>
     </section>
 
-    <section id="projects">
-      <h2>Projekte</h2>
-      <div class="timeline-nav">
-        <button>2025</button>
-        <button>2024</button>
-        <button>2023</button>
-        <button>2022</button>
-        <button>2021</button>
-      </div>
-      <div class="timeline">
-        <div class="project-card">
-          <h3>Automatisiertes Testsystem bei BSH</h3>
+    <!-- Zeitlinie -->
+    <section id="projects" class="timeline">
+      <div class="year">2025</div>
+        <div class="entry">
+          <h3>BSH – Automatisiertes Testsystem</h3>
+          <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen. Teil meiner Masterarbeit.</p>
           <img src="bsh_project.png" alt="BSH Project" />
-          <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</p>
         </div>
 
-        <div class="project-card">
-          <h3>Virtuelle Fabrik bei Volkswagen</h3>
-          <p>Layoutoptimierung und Simulation der Fertigung mit Tecnomatix Plant Simulation. Durch die Umgestaltung konnte eine Kapazitätssteigerung von über 20 % erreicht werden.</p>
-          <video src="vw_video.mp4" controls></video>
-        </div>
-
-        <div class="project-card">
-          <h3>Safe Door Open System (BMW i3 / VEI)</h3>
-          <p>MBSE-gesteuertes Sicherheitssystem zur Vermeidung von Türunfällen. Simulation und Steuerungsentwicklung.</p>
-          <iframe width="100%" height="220" src="https://www.youtube.com/embed/YOUTUBE_ID" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-        <div class="project-card">
+      <div class="year">2024</div>
+        <div class="entry">
           <h3>PMF Projekt – UR10e Roboterschlauchsystem</h3>
-          <p>Entwicklung eines flexiblen Anschlussmoduls für die Endeffektor-Vakuumsteuerung. Verbesserte Lebensdauer & reduzierte Torsion.</p>
-          <video src="pmf_video.mp4" controls></video>
+          <p>Flexible Endeffektor-Verbindung zur Vakuumsteuerung. Verbesserte Lebensdauer & reduzierte Torsion.</p>
+          <video controls src="pmf_video.mp4" width="320"></video>
         </div>
 
-        <div class="project-card">
+        <div class="entry">
+          <h3>BMW / VEI – Safe Door Open System</h3>
+          <p>MBSE Sicherheitslösung zur Vermeidung von Unfällen mit Fahrzeugtüren. Präsentation mit YouTube-Video.</p>
+          <iframe width="320" height="180" src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+        </div>
+
+      <div class="year">2023</div>
+        <div class="entry">
+          <h3>Volkswagen – Virtuelle Fabrik</h3>
+          <p>Layoutoptimierung mit Tecnomatix Plant Simulation. 20% Kapazitätssteigerung erreicht.</p>
+        </div>
+
+      <div class="year">2022</div>
+        <div class="entry">
           <h3>Bachelorarbeit – Automatisiertes Bestückungssystem</h3>
-          <p>Programmierkonzept für industrielle Roboter zur automatischen Beladung und Entladung von Werkzeugmaschinen, realisiert bei Anton Häring KG.</p>
-          <video src="bachelorarbeit_video.mp4" controls></video>
+          <p>Entwicklung eines Beladungssystems für Werkzeugmaschinen bei Anton Häring KG.</p>
+          <video controls src="bachelorarbeit_video.mp4" width="320"></video>
         </div>
-      </div>
     </section>
 
-    <section id="skills">
+    <!-- Fähigkeiten -->
+    <section id="skills" class="section">
       <h2>Fähigkeiten</h2>
-      <div class="skills">
-        <span>MBSE</span>
-        <span>SysML</span>
-        <span>Python</span>
-        <span>Tecnomatix</span>
-        <span>Fusion 360</span>
-        <span>3DEXPERIENCE</span>
-        <span>Plant Simulation</span>
-        <span>LaTeX</span>
+      <div class="skill-tags">
+        <span>MBSE</span><span>SysML</span><span>Python</span><span>Tecnomatix</span><span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
       </div>
     </section>
 
-    <section id="contact">
+    <!-- Kontakt -->
+    <section id="contact" class="section">
       <h2>Kontakt</h2>
       <p>Email: chenshunweng.1999@gmail.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/chenshunweng" target="_blank">linkedin.com/in/chenshunweng</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/chenshunweng">linkedin.com/in/chenshunweng</a></p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Chenshun Weng – Portfolio</p>
+    &copy; 2025 Chenshun Weng – Portfolio
   </footer>
 </body>
 </html>
