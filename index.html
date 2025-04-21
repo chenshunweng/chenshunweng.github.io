@@ -2,7 +2,7 @@
 <html lang="de" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chenshun Weng Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/i18next@23.6.0/i18next.min.js"></script>
@@ -25,7 +25,7 @@
   <main class="container">
     <section class="about">
       <h2 data-i18n="about.title">Über mich</h2>
-      <p data-i18n="about.text">Ich bin ein Ingenieur ...</p>
+      <p data-i18n="about.text">...</p>
       <div class="cv-download">
         <a href="Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv">📄 Lebenslauf herunterladen (PDF)</a>
       </div>
@@ -34,60 +34,67 @@
     <section class="projects">
       <h2 data-i18n="projects.title">Projekte</h2>
 
-      <!-- 2025 -->
       <div class="project-year">
         <div class="year-label">2025</div>
         <div class="projects-row">
           <div class="card" data-key="bsh">
-            <img src="assets/images/bsh_project.png" alt="BSH Projekt" />
+            <img src="bsh_project.png" alt="BSH Projekt" />
             <h3 data-i18n="projects.bsh.title"></h3>
             <p data-i18n="projects.bsh.desc"></p>
+            <video controls>
+              <source src="bsh_video.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
 
-      <!-- 2024 -->
       <div class="project-year">
         <div class="year-label">2024</div>
         <div class="projects-row">
           <div class="card" data-key="vw">
-            <img src="assets/images/3C504BE3-8290-4A2D-948F-111D43051025.png" alt="VW ITDF Projekt" />
+            <img src="3C504BE3-8290-4A2D-948F-111D43051025.png" alt="ITDF Projekt" />
             <h3 data-i18n="projects.vw.title"></h3>
             <p data-i18n="projects.vw.desc"></p>
+            <iframe src="https://www.youtube.com/embed/-PeLRJ_0H5c" allowfullscreen></iframe>
           </div>
           <div class="card" data-key="bmw">
-            <img src="assets/images/769F136C-2758-478B-9AA6-593980A133B9.png" alt="BMW VEI Projekt" />
+            <img src="769F136C-2758-478B-9AA6-593980A133B9.png" alt="VEI Projekt" />
             <h3 data-i18n="projects.bmw.title"></h3>
             <p data-i18n="projects.bmw.desc"></p>
+            <iframe src="https://www.youtube.com/embed/dDNO7qBxwFA" allowfullscreen></iframe>
           </div>
           <div class="card" data-key="pmf">
-            <img src="assets/images/PMF_cover.jpg" alt="PMF Projekt" />
+            <img src="PMF_cover.jpg" alt="PMF Projekt" />
             <h3 data-i18n="projects.pmf.title"></h3>
             <p data-i18n="projects.pmf.desc"></p>
+            <video controls>
+              <source src="PMF_video.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
 
-      <!-- 2023 -->
       <div class="project-year">
         <div class="year-label">2023</div>
         <div class="projects-row">
           <div class="card" data-key="itdf">
-            <img src="assets/images/3C504BE3-8290-4A2D-948F-111D43051025.png" alt="ITDF Projekt" />
+            <img src="3C504BE3-8290-4A2D-948F-111D43051025.png" alt="ITDF Projekt" />
             <h3 data-i18n="projects.itdf.title"></h3>
             <p data-i18n="projects.itdf.desc"></p>
           </div>
         </div>
       </div>
 
-      <!-- 2022 -->
       <div class="project-year">
         <div class="year-label">2022</div>
         <div class="projects-row">
           <div class="card" data-key="bachelor">
-            <img src="assets/images/bachelorarbeit_cover.jpg" alt="Bachelorarbeit" />
+            <img src="bachelorarbeit_cover.jpg" alt="Bachelorarbeit" />
             <h3 data-i18n="projects.bachelor.title"></h3>
             <p data-i18n="projects.bachelor.desc"></p>
+            <video controls>
+              <source src="bachelorarbeit_video.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
