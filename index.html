@@ -2,7 +2,7 @@
 <html lang="de" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chenshun Weng Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/i18next@23.6.0/i18next.min.js"></script>
@@ -10,8 +10,8 @@
 </head>
 <body>
   <header>
-    <h1 data-i18n="header.name">Chenshun Weng</h1>
-    <p data-i18n="header.tagline">Systems Engineer | Robotik | Simulation</p>
+    <h1 data-i18n="header.name">header.name</h1>
+    <p data-i18n="header.tagline">header.tagline</p>
     <div class="controls">
       <div class="lang-switch">
         <button data-lang="de">DE</button>
@@ -24,81 +24,83 @@
 
   <main class="container">
     <section class="about">
-      <h2 data-i18n="about.title">Über mich</h2>
-      <p data-i18n="about.text">Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und MBSE...</p>
+      <h2 data-i18n="about.title">about.title</h2>
+      <p data-i18n="about.text">about.text</p>
       <div class="cv-download">
-        <a href="Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv">📄 Lebenslauf herunterladen</a>
+        <a href="Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv">about.cv</a>
       </div>
     </section>
 
     <section class="projects">
-      <h2 data-i18n="projects.title">Projekte</h2>
+      <h2 data-i18n="projects.title">projects.title</h2>
 
-      <!-- 2025 -->
       <div class="project-year">
         <div class="year-label">2025</div>
         <div class="projects-row">
           <div class="card" data-key="bsh">
-            <video src="assets/videos/PMF_video.mp4" poster="assets/images/bsh_project.png" controls></video>
-            <h3 data-i18n="projects.bsh.title">BSH Waschmaschine</h3>
-            <p data-i18n="projects.bsh.desc">Roboter + Vision + Greifer = 80% Testabdeckung</p>
+            <img src="assets/images/bsh_project.png" alt="BSH Projekt">
+            <h3 data-i18n="projects.bsh.title">projects.bsh.title</h3>
+            <p data-i18n="projects.bsh.desc">projects.bsh.desc</p>
           </div>
         </div>
       </div>
 
-      <!-- 2024 -->
       <div class="project-year">
         <div class="year-label">2024</div>
         <div class="projects-row">
           <div class="card" data-key="bmw">
             <iframe src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
-            <h3 data-i18n="projects.bmw.title">VEI Safe Door</h3>
-            <p data-i18n="projects.bmw.desc">MBSE Systemmodellierung</p>
+            <h3 data-i18n="projects.bmw.title">projects.bmw.title</h3>
+            <p data-i18n="projects.bmw.desc">projects.bmw.desc</p>
           </div>
           <div class="card" data-key="pmf">
-            <video src="assets/videos/PMF_video.mp4" poster="assets/images/PMF_cover.jpg" controls></video>
-            <h3 data-i18n="projects.pmf.title">PMF UR10e</h3>
-            <p data-i18n="projects.pmf.desc">Drehbare Endeffektor-Entwicklung</p>
+            <video controls>
+              <source src="assets/videos/PMF_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h3 data-i18n="projects.pmf.title">projects.pmf.title</h3>
+            <p data-i18n="projects.pmf.desc">projects.pmf.desc</p>
           </div>
         </div>
       </div>
 
-      <!-- 2023 -->
       <div class="project-year">
         <div class="year-label">2023</div>
         <div class="projects-row">
           <div class="card" data-key="itdf">
             <iframe src="https://www.youtube.com/embed/-PeLRJ_0H5c" frameborder="0" allowfullscreen></iframe>
-            <h3 data-i18n="projects.itdf.title">VW ITDF</h3>
-            <p data-i18n="projects.itdf.desc">Virtuelle Fabrikplanung mit ROI</p>
+            <h3 data-i18n="projects.itdf.title">projects.itdf.title</h3>
+            <p data-i18n="projects.itdf.desc">projects.itdf.desc</p>
           </div>
         </div>
       </div>
 
-      <!-- 2022 -->
       <div class="project-year">
         <div class="year-label">2022</div>
         <div class="projects-row">
           <div class="card" data-key="bachelor">
-            <video src="assets/videos/bachelorarbeit_video.mp4" poster="assets/images/bachelorarbeit_cover.jpg" controls></video>
-            <h3 data-i18n="projects.bachelor.title">Bachelorarbeit</h3>
-            <p data-i18n="projects.bachelor.desc">Yaskawa GP7 + 5x4 Palettierung</p>
+            <video controls>
+              <source src="assets/videos/bachelorarbeit_video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h3 data-i18n="projects.bachelor.title">projects.bachelor.title</h3>
+            <p data-i18n="projects.bachelor.desc">projects.bachelor.desc</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="skills">
-      <h2 data-i18n="skills.title">Fähigkeiten</h2>
+      <h2 data-i18n="skills.title">skills.title</h2>
       <div class="skills-list">
         <span>MBSE</span><span>SysML</span><span>Python</span><span>Tecnomatix</span>
-        <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
+        <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio">Portfolio</span></p>
+    <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio">footer.portfolio</span></p>
   </footer>
 
   <div id="modal" class="modal">
