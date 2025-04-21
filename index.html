@@ -2,10 +2,11 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chenshun Weng Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chenshun Weng – Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* —— 基础布局 & 卡片 —— */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -17,31 +18,41 @@
       padding: 20px;
       color: white;
       text-align: center;
+      position: relative;
     }
     .lang-switch {
       position: absolute;
-      top: 10px;
+      top: 20px;
       right: 20px;
     }
     .lang-switch button {
-      margin: 0 3px;
+      background: #374151;
+      border: none;
+      color: white;
+      margin: 0 4px;
+      padding: 5px 8px;
+      cursor: pointer;
+      border-radius: 4px;
     }
     .container {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 20px;
     }
     .section-title {
       text-align: center;
       margin-top: 40px;
+      font-size: 2rem;
     }
+    /* 年份区块 */
     .project-year {
       margin-top: 40px;
     }
     .year-label {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: bold;
       margin-bottom: 10px;
+      text-align: center;
     }
     .projects-row {
       display: flex;
@@ -54,126 +65,303 @@
       padding: 15px;
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      width: 280px;
+      width: 260px;
       text-align: center;
+      cursor: pointer;
+      transition: transform .2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
     }
     .card img, .card iframe, .card video {
       width: 100%;
-      border-radius: 10px;
-      max-height: 160px;
+      border-radius: 8px;
+      max-height: 150px;
       object-fit: cover;
     }
     .card h3 {
       font-size: 1.1rem;
-      margin-bottom: 0.5em;
+      margin: .5em 0;
     }
     .card p {
       font-size: 0.9rem;
       margin-bottom: 1em;
+      min-height: 3em;
+    }
+    /* 弹窗样式 */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+    .modal {
+      background: white;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 90%;
+      max-height: 80%;
+      overflow-y: auto;
+      padding: 20px;
+      position: relative;
+    }
+    .modal h3 {
+      margin-top: 0;
+    }
+    .modal .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .modal iframe, .modal img, .modal video {
+      width: 100%;
+      border-radius: 6px;
+      margin: 1em 0;
+    }
+    /* 下载按钮 */
+    .download-btn {
+      background:#1f2937;
+      color:white;
+      padding:10px 20px;
+      border-radius:5px;
+      text-decoration:none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    /* 技能 */
+    .skills {
+      text-align: center;
+      margin: 50px 0;
+    }
+    .skills span {
+      display: inline-block;
+      background: #e5e7eb;
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin: 4px;
+      font-size: .9rem;
     }
     footer {
       background-color: #1f2937;
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 50px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Chenshun Weng</h1>
     <p>Systems Engineer | Robotik | Simulation</p>
     <div class="lang-switch">
-      <button>DE</button>
-      <button>EN</button>
-      <button>中文</button>
+      <button>DE</button><button>EN</button><button>中文</button>
     </div>
   </header>
+
   <div class="container">
+    <!-- 关于 -->
     <section class="about">
       <h2 class="section-title">Über mich</h2>
       <p style="text-align:center">
-        Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch meine Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz.
+        Ich bin Ingenieur mit Focus auf Automatisierung, Robotik und MBSE. Erfahrungen bei BSH, BMW & Volkswagen ermöglichen mir systemisches Denken und praktische Umsetzung.  
       </p>
-      <div style="text-align:center;margin: 20px 0;">
-        <a href="Lebenslauf_Chenshun_Weng.pdf" download style="background:#1f2937;color:white;padding:10px 20px;border-radius:5px;text-decoration:none;">📄 Lebenslauf herunterladen (PDF)</a>
+      <div style="text-align:center">
+        <a href="Lebenslauf_Chenshun_Weng.pdf" download class="download-btn">📄 Lebenslauf herunterladen</a>
       </div>
     </section>
 
+    <!-- 项目 -->
     <section class="projects">
       <h2 class="section-title">Projekte</h2>
 
+      <!-- 2025 -->
       <div class="project-year">
         <div class="year-label">2025</div>
         <div class="projects-row">
-          <div class="card">
-            <h3>Automatisiertes Testsystem bei BSH</h3>
-            <p>Roboter-gesteuertes Prüfsystem für Waschmaschinen, >80% Abdeckung.</p>
+          <div class="card" data-target="modal-bsh">
+            <h3>BSH – Automatisiertes Testsystem</h3>
+            <p>Prüfroboter für Waschmaschinen mit über 80 % Testabdeckung.</p>
             <img src="bsh_project.png" alt="BSH Projekt" />
           </div>
         </div>
       </div>
 
+      <!-- 2024 -->
       <div class="project-year">
         <div class="year-label">2024</div>
         <div class="projects-row">
-          <div class="card">
-            <h3>Virtuelle Fabrik bei Volkswagen</h3>
-            <p>Layoutoptimierung mit Tecnomatix Plant Simulation. 20% Kapazitätssteigerung.</p>
-            <img src="placeholder.png" alt="VW Projekt Platzhalter" />
+          <div class="card" data-target="modal-vw">
+            <h3>VW – Virtuelle Fabrikplanung</h3>
+            <p>Simulation & Layout-Optimierung mit Tecnomatix – +20 % Kapazität.</p>
+            <img src="placeholder.png" alt="VW Projekt" />
           </div>
-          <div class="card">
-            <h3>Safe Door Open System (BMW / VEI)</h3>
+          <div class="card" data-target="modal-bmw">
+            <h3>BMW i3 – Safe Door Open System</h3>
             <p>MBSE-Sicherheitssystem zur Vermeidung von Türunfällen.</p>
-            <iframe src="https://www.youtube.com/embed/ZxAWm3Lsz8Y" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
           </div>
-          <div class="card">
-            <h3>PMF Projekt – UR10e Endeffektor</h3>
-            <p>Flexibles Modul zur Vakuumsteuerung, Anwendung im Dauerbetrieb.</p>
+          <div class="card" data-target="modal-pmf">
+            <h3>UR10e Endeffektor (PMF)</h3>
+            <p>Modul zur Vakuumsteuerung, 60 % Reduktion störender Momente.</p>
             <video controls>
-              <source src="pmf_video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
+              <source src="pmf_video.mp4" type="video/mp4"/>
             </video>
           </div>
         </div>
       </div>
 
+      <!-- 2023 -->
       <div class="project-year">
         <div class="year-label">2023</div>
         <div class="projects-row">
-          <div class="card">
-            <h3>ITDF Projekt – Volkswagen</h3>
-            <p>Virtuelle Fabrikplanung & Simulation, 20% Effizienzsteigerung.</p>
-            <img src="placeholder.png" alt="ITDF Platzhalter" />
+          <div class="card" data-target="modal-itdf">
+            <h3>ITDF – Virtuelle Fabrik (VW)</h3>
+            <p>End-to-End Simulation & Prozessdesign – +20 % Effizienz.</p>
+            <img src="placeholder.png" alt="ITDF Projekt" />
           </div>
         </div>
       </div>
 
+      <!-- 2022 -->
       <div class="project-year">
         <div class="year-label">2022</div>
         <div class="projects-row">
-          <div class="card">
-            <h3>Bachelorarbeit – Automatisiertes Bestückungssystem</h3>
-            <p>Roboterprogrammierung für Werkzeugmaschinen bei Anton Häring KG.</p>
+          <div class="card" data-target="modal-bachelor">
+            <h3>Bachelorarbeit – Bestückungssystem</h3>
+            <p>Programmierung von Industrierobotern bei Anton Häring KG.</p>
             <video controls>
-              <source src="bachelorarbeit_video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
+              <source src="bachelorarbeit_video.mp4" type="video/mp4"/>
             </video>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- 技能 -->
     <section class="skills">
       <h2 class="section-title">Fähigkeiten</h2>
-      <div style="text-align:center;margin-top:10px;">
-        <span>MBSE</span> • <span>SysML</span> • <span>Python</span> • <span>Tecnomatix</span> • <span>Fusion 360</span> • <span>3DEXPERIENCE</span> • <span>Plant Simulation</span> • <span>LaTeX</span>
-      </div>
+      <span>MBSE</span><span>SysML</span><span>Python</span><span>Tecnomatix</span>
+      <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
     </section>
   </div>
-  <footer>
-    &copy; 2025 Chenshun Weng – Portfolio
-  </footer>
+
+  <footer>&copy; 2025 Chenshun Weng – Portfolio</footer>
+
+  <!-- —— 各项目详情弹窗 —— -->
+  <div id="modal-bsh" class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn">&times;</button>
+      <h3>BSH – Automatisiertes Testsystem</h3>
+      <ul>
+        <li>Entwicklung eines KI‐gestützten Vision-Systems zur Wäscheerkennung.</li>
+        <li>Automatisierter Testablauf: Auswahl und Durchführung von Prüfsequenzen.</li>
+        <li>CAD-Optimierung & 3D-Druck neuer Greiferkomponenten (+50 % Stabilität).</li>
+        <li>Systemtest & Validierung unter realen Bedingungen.</li>
+        <li>Kontinuierliche Datenanalyse zur Performance­steigerung.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="modal-vw" class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn">&times;</button>
+      <h3>VW – Virtuelle Fabrikplanung</h3>
+      <p>Simulation und Optimierung der Motorenproduktion von Volkswagen:</p>
+      <ul>
+        <li>Layout- und Materialflussoptimierung mit Plant Simulation.</li>
+        <li>Engpassanalyse & Durchlaufzeit­reduzierung um 30 %.</li>
+        <li>Digitaler Zwilling zur vorausschauenden Wartungsplanung.</li>
+        <li>Ergebnis: +20 % Produktionskapazität.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="modal-bmw" class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn">&times;</button>
+      <h3>BMW i3 – Safe Door Open System</h3>
+      <p>Modellbasiertes Sicherheitssystem (MBSE) für Türöffnung:</p>
+      <ul>
+        <li>Anforderungsdefinition & Systemmodell mit Cameo SysML.</li>
+        <li>Prototyping in CATIA & 3DExperience.</li>
+        <li>Sensorfusion & Signalverarbeitung in Echtzeit.</li>
+        <li>Reduktion Kollisionsrisiko um 60 %, Fehlbedienungen um 30 %.</li>
+      </ul>
+      <iframe src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div id="modal-pmf" class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn">&times;</button>
+      <h3>UR10e Endeffektor (PMF)</h3>
+      <p>Projekt CamLessPick – kameraloses Bin-Picking:</p>
+      <ul>
+        <li>Entwicklung einer drehenden Hohlwelle vs. Dual‐Schlauchkonzept.</li>
+        <li>Reduktion störender Kräfte um 60 % durch Rotary Joint Design.</li>
+        <li>Validierung der Greif- und Störkraftmessungen am UR10e.</li>
+        <li>3D-Druck‐Prototyping & FEM‐Analysen.</li>
+      </ul>
+      <video controls>
+        <source src="pmf_video.mp4" type="video/mp4"/>
+      </video>
+    </div>
+  </div>
+
+  <div id="modal-itdf" class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn">&times;</button>
+      <h3>ITDF – Virtuelle Fabrik (VW)</h3>
+      <p>Upgrade der Motorenproduktion:</p>
+      <ul>
+        <li>Modellierung mit Tecnomatix Plant & Process Simulate.</li>
+        <li>Lean‐Methoden für Wertstromoptimierung (PDCA, Kaizen).</li>
+        <li>Erhöhung der Durchsatzrate um 20 %, Reduktion der Rüstzeiten um 25 %.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="modal-bachelor" class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn">&times;</button>
+      <h3>Bachelorarbeit – Automatisiertes Bestückungssystem</h3>
+      <p>Anton Häring KG – Konzeptstudie für Roboter‐Bestückung:</p>
+      <ul>
+        <li>Entwicklung eines modularen Programm‐Frameworks für Industrieroboter.</li>
+        <li>Zykluszeit­optimierung um 30 %, Ressourceneinsparung.</li>
+        <li>Kollisionsvermeidungs‐Programme für sichere Automationsprozesse.</li>
+        <li>Anbindung an CNC‐Maschinen und HMI‐Integration.</li>
+      </ul>
+      <video controls>
+        <source src="bachelorarbeit_video.mp4" type="video/mp4"/>
+      </video>
+    </div>
+  </div>
+
+  <script>
+    // 打开/关闭 Modal
+    document.querySelectorAll('.card').forEach(card => {
+      card.onclick = () => {
+        const modal = document.getElementById(card.dataset.target);
+        modal.style.display = 'flex';
+      };
+    });
+    document.querySelectorAll('.modal-overlay, .close-btn').forEach(el => {
+      el.onclick = e => {
+        if (e.target.classList.contains('modal-overlay') || e.target.classList.contains('close-btn')) {
+          e.currentTarget.style.display = 'none';
+        }
+      };
+    });
+  </script>
 </body>
 </html>
