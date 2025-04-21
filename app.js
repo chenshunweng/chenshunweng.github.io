@@ -1,85 +1,92 @@
-// 初始化 i18next
+// i18next 初始化
 i18next.init({
   lng: 'de',
   debug: true,
   resources: {
-    de: { translation: await (await fetch('./i18n/de.json')).json() },
-    en: { translation: await (await fetch('./i18n/en.json')).json() },
-    zh: { translation: await (await fetch('./i18n/zh.json')).json() }
+    de: { translation: {} },
+    en: { translation: {} },
+    zh: { translation: {} }
   }
-}, function (err, t) {
-  updateContent();
-});
+}, function(err, t) {
+  // 文本渲染函数
+  function renderContent() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      el.textContent = i18next.t(key);
+    });
+  }
 
-// 多语言切换
-document.querySelectorAll('.lang-switch button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    i18next.changeLanguage(btn.dataset.lang, updateContent);
+  // 初始化渲染
+  renderContent();
+
+  // 多语言切换事件
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      i18next.changeLanguage(lang, () => {
+        fetch(`i18n/${lang}.json`)
+          .then(res => res.json())
+          .then(data => {
+            i18next.addResourceBundle(lang, 'translation', data, true, true);
+            renderContent();
+          });
+      });
+    });
   });
-});
 
-// 主题切换
-document.querySelector('.theme-toggle').addEventListener('click', () => {
-  const root = document.documentElement;
-  const isLight = root.getAttribute('data-theme') === 'light';
-  root.setAttribute('data-theme', isLight ? 'dark' : 'light');
-  document.querySelector('.theme-toggle').textContent = isLight ? '☀️' : '🌙';
-});
+  // 模态框逻辑
+  const modal = document.getElementById('modal');
+  const modalBody = document.getElementById('modal-body');
+  const closeBtn = modal.querySelector('.modal-close');
 
-// 内容更新
-function updateContent() {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    el.textContent = i18next.t(el.getAttribute('data-i18n'));
-  });
-
-  // 动态更新所有卡片（project-year 下 .card）
   document.querySelectorAll('.card').forEach(card => {
-    const key = card.dataset.key;
-    const data = i18next.t(`projects.${key}`, { returnObjects: true });
+    card.addEventListener('click', () => {
+      const key = card.dataset.key;
+      const proj = i18next.t(`projects.${key}`, { returnObjects: true });
 
-    card.querySelector('h3').textContent = data.title;
-    card.querySelector('p').textContent = data.desc;
-  });
-}
-
-// 模态框逻辑
-const modal = document.getElementById('modal');
-const modalBody = document.getElementById('modal-body');
-const closeBtn = document.querySelector('.modal-close');
-
-closeBtn.addEventListener('click', () => modal.style.display = 'none');
-modal.addEventListener('click', e => {
-  if (e.target === modal) modal.style.display = 'none';
-});
-
-// 卡片点击显示详情 + 视频
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('click', () => {
-    const key = card.dataset.key;
-    const data = i18next.t(`projects.${key}`, { returnObjects: true });
-
-    // 视频逻辑（本地 / YouTube 区分）
-    let videoHTML = '';
-    if (data.video) {
-      if (data.video.includes('youtube.com')) {
-        const videoID = new URL(data.video).searchParams.get('v');
-        videoHTML = `
-          <iframe width="100%" height="315" src="https://www.youtube.com/embed/${videoID}"
-            frameborder="0" allowfullscreen></iframe>`;
-      } else {
-        videoHTML = `
-          <video controls style="width:100%;border-radius:12px;margin-top:1em;">
-            <source src="${data.video}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>`;
+      let videoContent = '';
+      if (card.dataset.video) {
+        videoContent = `<video src="${card.dataset.video}" controls></video>`;
+      } else if (card.dataset.youtube) {
+        videoContent = `<iframe src="${card.dataset.youtube}" frameborder="0" allowfullscreen></iframe>`;
       }
-    }
 
-    modalBody.innerHTML = `
-      <h2>${data.title}</h2>
-      <p style="margin-bottom: 1em;">${data.details || ''}</p>
-      ${videoHTML}
-    `;
-    modal.style.display = 'flex';
+      modalBody.innerHTML = `
+        <h2>${proj.title || ''}</h2>
+        <p>${proj.details || ''}</p>
+        ${videoContent}
+      `;
+      modal.style.display = 'flex';
+    });
   });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalBody.innerHTML = '';
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modalBody.innerHTML = '';
+    }
+  });
+
+  // 主题切换按钮
+  const themeBtn = document.querySelector('.theme-toggle');
+  themeBtn.addEventListener('click', () => {
+    const root = document.documentElement;
+    const isLight = root.getAttribute('data-theme') === 'light';
+    root.setAttribute('data-theme', isLight ? 'dark' : 'light');
+    themeBtn.textContent = isLight ? '☀️' : '🌙';
+  });
+
+  // 默认加载当前语言文件
+  const currentLang = i18next.language || 'de';
+  fetch(`i18n/${currentLang}.json`)
+    .then(res => res.json())
+    .then(data => {
+      i18next.addResourceBundle(currentLang, 'translation', data, true, true);
+      renderContent();
+    });
 });
