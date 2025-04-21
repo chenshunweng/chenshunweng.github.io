@@ -4,134 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chenshun Weng – Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9fa;
-      color: #333;
-    }
-    header {
-      background-color: #1f2937;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    nav {
-      background-color: #374151;
-      text-align: center;
-      padding: 10px;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    section {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    h2 {
-      margin-top: 0;
-      color: #1f2937;
-    }
-    .skills span {
-      display: inline-block;
-      background: #e5e7eb;
-      padding: 6px 12px;
-      margin: 5px;
-      border-radius: 5px;
-      font-size: 0.85rem;
-    }
-    .download-button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 8px 16px;
-      background-color: #1f2937;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      background-color: #1f2937;
-      color: white;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    iframe {
-      width: 100%;
-      border-radius: 8px;
-      height: 220px;
-    }
-    .lang-switch {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-    }
-    .lang-switch button {
-      margin-left: 8px;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <div class="lang-switch">
-      <button onclick="location.href='?lang=de'">🇩🇪</button>
-      <button onclick="location.href='?lang=en'">🇬🇧</button>
-      <button onclick="location.href='?lang=zh'">🇨🇳</button>
+    <div class="topbar">
+      <h1>Chenshun Weng</h1>
+      <p>Systems Engineer | Robotik | Simulation</p>
     </div>
-    <h1>Chenshun Weng</h1>
-    <p>Systems Engineer | Robotik | Simulation</p>
+    <nav>
+      <a href="#about">Über mich</a>
+      <a href="#projects">Projekte</a>
+      <a href="#skills">Fähigkeiten</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#about">Über mich</a>
-    <a href="#projects">Projekte</a>
-    <a href="#skills">Fähigkeiten</a>
-    <a href="#contact">Kontakt</a>
-  </nav>
+  <div class="lang-switcher">
+    <button onclick="changeLang('de')">🇩🇪</button>
+    <button onclick="changeLang('en')">🇬🇧</button>
+    <button onclick="changeLang('zh')">🇨🇳</button>
+  </div>
 
-  <div class="container">
+  <main>
     <section id="about">
       <h2>Über mich</h2>
-      <p>Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Mit praktischer Erfahrung bei BSH, BMW und Volkswagen bringe ich systemisches Denken und technische Umsetzungskompetenz zusammen.</p>
-      <a class="download-button" href="Lebenslauf_Chenshun_Weng.pdf" download>📥 Lebenslauf (PDF)</a>
+      <p>Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch meine Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz. Mein Schwerpunkt liegt auf der Entwicklung intelligenter Testsysteme, Layoutoptimierung in der Fertigung sowie sicherheitskritischer Steuerungen.</p>
+      <a class="download-button" href="Lebenslauf_Chenshun_Weng.pdf" download>📄 Lebenslauf herunterladen (PDF)</a>
     </section>
 
     <section id="projects">
-      <h2>Projekt: BSH Testsystem</h2>
-      <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</p>
-      <img src="bsh_project.png" alt="BSH Projekt" width="100%">
-    </section>
+      <h2>Projekte</h2>
+      <div class="grid">
+        <div class="project">
+          <h3>Automatisiertes Testsystem bei BSH</h3>
+          <img src="bsh_project.png" alt="BSH Roboter-Testsystem">
+          <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung. Anwendung von Vision-Systemen und Pfadoptimierung.</p>
+        </div>
 
-    <section>
-      <h2>Projekt: Virtuelle Fabrik VW</h2>
-      <p>Layoutoptimierung und Simulation der Fertigung mit Tecnomatix Plant Simulation (+20 % Kapazität).</p>
-      <img src="vw_project.jpg" alt="VW Simulation" width="100%">
-    </section>
+        <div class="project">
+          <h3>Virtuelle Fabrik bei Volkswagen</h3>
+          <img src="vw_factory.png" alt="Volkswagen Layout Simulation">
+          <p>Layoutoptimierung und Simulation der Fertigung mit Tecnomatix Plant Simulation. Durch die Umgestaltung konnte eine Kapazitätssteigerung von +20 % erreicht werden.</p>
+        </div>
 
-    <section>
-      <h2>VEI Projektvideo</h2>
-      <p>Visuelles Erkennungssystem und Robotik-Testaufbau (YouTube Video)</p>
-      <iframe src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
-    </section>
+        <div class="project">
+          <h3>Safe Door Open System (BMW i3)</h3>
+          <img src="bmw_safe_door.png" alt="BMW Türöffnungssimulation">
+          <p>MBSE-gesteuertes Sicherheitssystem zur Vermeidung von Türunfällen. Simulation und Steuerungsentwicklung, Risikoverringerung um 60 %.</p>
+        </div>
 
-    <section>
-      <h2>Projekt: BMW i3 Safety</h2>
-      <p>MBSE-gesteuertes Türöffnungssystem zur Unfallvermeidung, Risikoreduktion um 60 %.</p>
+        <div class="project">
+          <h3>VEI Projektvideo</h3>
+          <iframe width="100%" height="220" src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
+          <p>Demonstration eines visuellen Erkennungssystems mit Hardware-in-the-Loop Testaufbau am IIT Lehrstuhl.</p>
+        </div>
+      </div>
     </section>
 
     <section id="skills">
@@ -152,12 +81,18 @@
     <section id="contact">
       <h2>Kontakt</h2>
       <p>Email: chenshunweng.1999@gmail.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/chenshunweng" target="_blank">linkedin.com/in/chenshunweng</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/chenshunweng" target="_blank">linkedin.com/in/chenshunweng</a></p>
     </section>
-  </div>
+  </main>
 
   <footer>
     &copy; 2025 Chenshun Weng – Portfolio
   </footer>
+
+  <script>
+    function changeLang(lang) {
+      alert("Multilingual support is pending full implementation. Aktuell ist nur Deutsch aktiv.");
+    }
+  </script>
 </body>
 </html>
