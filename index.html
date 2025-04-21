@@ -68,3 +68,103 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
+    .project {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .project img, .project iframe {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .skills span {
+      display: inline-block;
+      background-color: #e5e7eb;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 0.9em;
+    }
+    footer {
+      background-color: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="lang-switch">
+      <button onclick="alert('Multilingual support coming soon.')">🇩🇪</button>
+      <button onclick="alert('Multilingual support coming soon.')">🇬🇧</button>
+      <button onclick="alert('Multilingual support coming soon.')">🇨🇳</button>
+    </div>
+    <h1>Chenshun Weng</h1>
+    <p>Systems Engineer | Robotik | Simulation</p>
+  </header>
+
+  <nav>
+    <a href="#about">Über mich</a>
+    <a href="#projects">Projekte</a>
+    <a href="#skills">Fähigkeiten</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
+  <div class="container">
+    <section id="about" class="about">
+      <h2 class="section-title">Über mich</h2>
+      <p>Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch meine Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz. Mein Schwerpunkt liegt auf der Entwicklung intelligenter Testsysteme, Layoutoptimierung in der Fertigung sowie sicherheitskritischer Steuerungen.</p>
+      <a class="download-button" href="Lebenslauf_Chenshun_Weng.pdf" download>📥 Lebenslauf herunterladen (PDF)</a>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projekte</h2>
+      <div class="projects">
+        <div class="project">
+          <strong>Automatisiertes Testsystem bei BSH</strong>
+          <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</p>
+          <img src="bsh_project.png" alt="BSH Projektbild">
+        </div>
+        <div class="project">
+          <strong>Virtuelle Fabrik bei Volkswagen</strong>
+          <p>Layoutoptimierung und Simulation der Fertigung mit Tecnomatix Plant Simulation. Durch die Umgestaltung konnte eine Kapazitätssteigerung von über 20 % erreicht werden.</p>
+        </div>
+        <div class="project">
+          <strong>Safe Door Open System (BMW i3)</strong>
+          <p>MBSE-gesteuertes Sicherheitssystem zur Vermeidung von Türunfällen. Simulation und Steuerungsentwicklung.</p>
+          <iframe width="100%" height="215" src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Fähigkeiten</h2>
+      <div class="skills" style="text-align: center">
+        <span>MBSE</span>
+        <span>SysML</span>
+        <span>Python</span>
+        <span>Tecnomatix</span>
+        <span>Fusion 360</span>
+        <span>3DEXPERIENCE</span>
+        <span>Plant Simulation</span>
+        <span>LaTeX</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Kontakt</h2>
+      <p style="text-align: center">Email: chenshunweng.1999@gmail.com</p>
+      <p style="text-align: center">
+        LinkedIn: <a href="https://linkedin.com/in/chenshunweng" target="_blank">linkedin.com/in/chenshunweng</a>
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Chenshun Weng – Portfolio
+  </footer>
+</body>
+</html>
