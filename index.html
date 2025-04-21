@@ -30,11 +30,24 @@
       background:transparent; border:1px solid #fff;
       color:#fff; border-radius:4px; cursor:pointer;
     }
+    .lang-switch button:hover {
+      background: rgba(255,255,255,0.2);
+    }
     .container {
       max-width:1200px; margin:0 auto; padding:20px 16px;
     }
     h2.section-title {
       font-size:1.8rem; text-align:center; margin:40px 0 20px;
+    }
+    .about p {
+      max-width:800px; margin:0 auto; line-height:1.6;
+      text-align:center;
+    }
+    .about a {
+      display:inline-block; margin-top:20px;
+      background:var(--primary); color:#fff;
+      padding:12px 24px; border-radius:6px;
+      text-decoration:none; font-size:1rem;
     }
     .project-year {
       margin-top:40px;
@@ -58,9 +71,15 @@
       transform:translateY(-4px);
       box-shadow:0 4px 12px rgba(0,0,0,0.15);
     }
-    .card img, .card video {
+    .card img {
       width:100%; border-radius:8px; object-fit:cover;
       margin-bottom:12px; max-height:200px;
+    }
+    .card h3 {
+      font-size:1.2rem; margin-bottom:8px;
+    }
+    .card p {
+      font-size:0.95rem; line-height:1.4; margin:0;
     }
     footer {
       text-align:center; background:var(--primary);
@@ -81,10 +100,18 @@
     .modal-dialog h3 { margin-top:0; }
     .modal-close {
       position:absolute; top:12px; right:12px;
-      background:transparent; border:none; font-size:1.2rem;
+      background:transparent; border:none; font-size:1.4rem;
       cursor:pointer;
     }
-    /* Responsive */
+    .modal-dialog img, .modal-dialog iframe, .modal-dialog video {
+      width:100%; border-radius:6px; margin:12px 0;
+    }
+    .modal-dialog iframe {
+      aspect-ratio:16/9;
+    }
+    .modal-dialog video {
+      aspect-ratio:16/9;
+    }
     @media (max-width:640px) {
       .card { width:100%; }
     }
@@ -95,11 +122,27 @@
     <h1>Chenshun Weng</h1>
     <p>Systems Engineer | Robotik | Simulation</p>
     <div class="lang-switch">
-      <button data-lang="de">DE</button><button data-lang="en">EN</button><button data-lang="zh">中文</button>
+      <button data-lang="de">DE</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中文</button>
     </div>
   </header>
 
   <div class="container">
+    <!-- Über mich -->
+    <section class="about">
+      <h2 class="section-title">Über mich</h2>
+      <p>
+        Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und MBSE. Aktuell Master-Student an der TU Berlin (Produktionstechnik) und
+        verantwortlich für Entwicklungs‑ & R&D‑Projekte bei BSH Hausgeräte, BMW und Volkswagen. Ich kombiniere systemisches Denken mit praktischer
+        3D‑CAD‑ und Simulations‑Erfahrung.
+      </p>
+      <div style="text-align:center;">
+        <a href="Lebenslauf_Chenshun_Weng.pdf" download>📄 Lebenslauf herunterladen (PDF)</a>
+      </div>
+    </section>
+
+    <!-- Projekte -->
     <h2 class="section-title">Projekte</h2>
 
     <!-- 2025 -->
@@ -107,9 +150,9 @@
       <div class="year-label">2025</div>
       <div class="projects-row">
         <div class="card" data-modal="modal-bsh">
-          <h3>Automatisiertes Testsystem bei BSH</h3>
-          <p>Roboter-gesteuertes Prüfsystem für Waschmaschinen, &gt;80 % Abdeckung.</p>
-          <img src="bsh_project.png" alt="BSH Projekt">
+          <img src="bsh_cover.jpg" alt="BSH Testsystem">
+          <h3>BSH Testsystem</h3>
+          <p>Waschmaschinen‑Testautomation &gt;80 % Abdeckung</p>
         </div>
       </div>
     </div>
@@ -119,19 +162,19 @@
       <div class="year-label">2024</div>
       <div class="projects-row">
         <div class="card" data-modal="modal-vw">
-          <h3>Virtuelle Fabrik bei Volkswagen</h3>
-          <p>Layoutoptimierung mit Tecnomatix Plant Simulation (+20 % Kapazität).</p>
-          <img src="vw_placeholder.png" alt="VW Projekt">
+          <img src="vw_cover.jpg" alt="VW Virtuelle Fabrik">
+          <h3>VW Virtuelle Fabrik</h3>
+          <p>Plant Simulation & Layout‑Optimierung (+20 %)</p>
         </div>
         <div class="card" data-modal="modal-bmw">
-          <h3>Safe Door Open System (BMW / VEI)</h3>
-          <p>MBSE-Sicherheitssystem zur Vermeidung von Türunfällen.</p>
-          <img src="bmw_placeholder.png" alt="BMW SDOS">
+          <img src="bmw_cover.jpg" alt="BMW SDOS">
+          <h3>BMW SDOS</h3>
+          <p>MBSE‑Sicherheitssystem gegen Türunfälle</p>
         </div>
         <div class="card" data-modal="modal-pmf">
-          <h3>PMF – UR10e Endeffektor</h3>
-          <p>Modul zur Vakuumsteuerung, &minus;60 % Störeinflüsse.</p>
-          <img src="pmf_placeholder.png" alt="PMF Projekt">
+          <img src="pmf_cover.jpg" alt="PMF UR10e Modul">
+          <h3>PMF UR10e Modul</h3>
+          <p>Kameraloses Bin‑Picking, –60 % Störeinflüsse</p>
         </div>
       </div>
     </div>
@@ -141,9 +184,9 @@
       <div class="year-label">2023</div>
       <div class="projects-row">
         <div class="card" data-modal="modal-itdf">
-          <h3>ITDF – Virtuelle Fabrik (VW)</h3>
-          <p>Prozesssimulation & Digitalisierung, +20 % Effizienz.</p>
-          <img src="itdf_placeholder.png" alt="ITDF Projekt">
+          <img src="itdf_cover.jpg" alt="ITDF Projekt">
+          <h3>ITDF – Virtuelle Fabrik</h3>
+          <p>Digital Factory & Effizienzsteigerung</p>
         </div>
       </div>
     </div>
@@ -153,139 +196,122 @@
       <div class="year-label">2022</div>
       <div class="projects-row">
         <div class="card" data-modal="modal-bach">
-          <h3>Bachelorarbeit – Bestückungsroboter</h3>
-          <p>Industrieroboter-Konzept für CNC-Beladung.</p>
-          <img src="bach_placeholder.png" alt="Bachelorarbeit">
+          <img src="bach_cover.jpg" alt="Bachelorarbeit">
+          <h3>Bachelorarbeit</h3>
+          <p>Robotik‑Programmkonzept für CNC-Beladung</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Modals -->
+  <!-- BSH Modal -->
   <div id="modal-bsh" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-bsh-title">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Schließen">&times;</button>
-      <h3 id="modal-bsh-title">Automatisiertes Testsystem bei BSH</h3>
-      <p><strong>Zeitraum:</strong> Okt 2024 – heute</p>
-      <p><strong>Details:</strong><br/>
-        • Entwicklung eines visuellen KI-Testsystems für Waschmaschinen mit über 80 % 
-        Automatisierungsgrad.<br/>
-        • Deep‑Learning‑Erkennung zur Fehlerklassifikation und Prozessoptimierung.<br/>
-        • CAD‑Optimierung und 3D‑Druck von Greiferkomponenten (±50 % Stabilitätsgewinn).<br/>
-        • Umfangreiche Belastungs‑ und Stresstests zur Validierung.<br/>
-        • Masterarbeit: „Testautomatisierung mit kollaborativem Roboter & KI‑Visionsystem“.
+      <h3 id="modal-bsh-title">BSH Testsystem</h3>
+      <p><strong>Okt 2024 – heute</strong></p>
+      <p>
+        • Entwicklung eines Deep‑Learning‑Testsystems für Waschmaschinen<br>
+        • &gt;80 % automatisierte Testfall‑Abdeckung<br>
+        • CAD‑Optimierung & 3D‑Druck von Greiferkomponenten (+50 % Stabilität)<br>
+        • Masterarbeit: KI‑basiertes Robotik‑Visionsystem
       </p>
     </div>
   </div>
 
+  <!-- VW Modal -->
   <div id="modal-vw" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-vw-title">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Schließen">&times;</button>
-      <h3 id="modal-vw-title">Virtuelle Fabrik bei Volkswagen</h3>
-      <p><strong>Zeitraum:</strong> Apr 2023 – Jul 2023</p>
-      <p><strong>Details:</strong><br/>
-        • Modellierung und Simulation des Motoren‑Layouts mit Plant Simulation.<br/>
-        • Engpass‑Analyse & Materialfluss‑Optimierung (Wertstromanalyse, PDCA).<br/>
-        • Ergebnis: +20 % Produktionskapazität, &minus;30 % Durchlaufzeit.
+      <h3 id="modal-vw-title">VW Virtuelle Fabrik</h3>
+      <p><strong>Apr 2023 – Jul 2023</strong></p>
+      <p>
+        • Plant Simulation zur Engpassanalyse<br>
+        • Layoutoptimierung, Wertstromanalyse, PDCA<br>
+        • Ergebnis: +20 % Kapazität, –30 % Durchlaufzeit
       </p>
     </div>
   </div>
 
+  <!-- BMW Modal -->
   <div id="modal-bmw" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-bmw-title">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Schließen">&times;</button>
-      <h3 id="modal-bmw-title">Safe Door Open System (BMW i3)</h3>
-      <p><strong>Zeitraum:</strong> Okt 2023 – Mär 2024</p>
-      <p><strong>Details:</strong><br/>
-        • MBSE‑Modellierung in Cameo SysML & 3DEXPERIENCE.<br/>
-        • ASIL‑sichere Architektur nach ISO 26262.<br/>
-        • Reduktion des Kollisionsrisikos um 60 %, Fehlbedienungen –30 %.<br/>
-        • <a href="#" class="video-trigger" data-src="https://www.youtube.com/embed/dDNO7qBxwFA">Video ansehen</a>.
+      <h3 id="modal-bmw-title">BMW SDOS</h3>
+      <p><strong>Okt 2023 – Mär 2024</strong></p>
+      <p>
+        • MBSE in Cameo SysML & 3DEXPERIENCE<br>
+        • ISO 26262‑konformes Anforderungsmanagement<br>
+        • –60 % Kollisionsrisiko, –30 % Fehlbedienungen<br>
+        • <iframe src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
       </p>
     </div>
   </div>
 
+  <!-- PMF Modal -->
   <div id="modal-pmf" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-pmf-title">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Schließen">&times;</button>
-      <h3 id="modal-pmf-title">PMF – UR10e Endeffektor</h3>
-      <p><strong>Zeitraum:</strong> WS 23/24</p>
-      <p><strong>Details:</strong><br/>
-        • CamLessPick: Entwicklung zweier Schlauchkonzepte ohne Kamera (Dual‑Schlauch, 
-        Drehdurchführung).<br/>
-        • 3D‑Druck‑Prototyping & FEM‑Analysen.<br/>
-        • Drehdurchführungskonzept reduzierte Störeinflüsse um 60 %.<br/>
-        • Platzhalter für Video: <code>pmf_video.mp4</code>
+      <h3 id="modal-pmf-title">PMF UR10e Modul</h3>
+      <p><strong>WS 23/24</strong></p>
+      <p>
+        • CamLessPick: Dual‑Schlauch vs. Drehdurchführung<br>
+        • 3D‑Druck‑Prototypen & FEM‑Analysen<br>
+        • Drehdurchführungskonzept: –60 % Störeinflüsse<br>
+        • Demo-Video: <video controls src="pmf_video.mp4"></video>
       </p>
     </div>
   </div>
 
+  <!-- ITDF Modal -->
   <div id="modal-itdf" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-itdf-title">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Schließen">&times;</button>
-      <h3 id="modal-itdf-title">ITDF – Virtuelle Fabrik (VW)</h3>
-      <p><strong>Zeitraum:</strong> Apr 2023 – Jul 2023</p>
-      <p><strong>Details:</strong><br/>
-        • Digitalisierung der Produktionslinie im Modul „Informationstechnische Prozesse“.<br/>
-        • CAD‑Modelle in NX, Plant Simulation‑Workflow, FMEA & RFLP‑Methodik.<br/>
-        • Optimierungs‑Szenario mit Plant Simulation & Process Simulate.
+      <h3 id="modal-itdf-title">ITDF – Virtuelle Fabrik</h3>
+      <p><strong>Sommer 2023</strong></p>
+      <p>
+        • Digital Factory Process Design & Simulation<br>
+        • CAD‐Modelle in NX, Plant Simulation Workflows<br>
+        • FMEA, RFLP & Prozessoptimierung
       </p>
     </div>
   </div>
 
+  <!-- Bachelor Modal -->
   <div id="modal-bach" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-bach-title">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Schließen">&times;</button>
-      <h3 id="modal-bach-title">Bachelorarbeit – Bestückungsroboter</h3>
-      <p><strong>Zeitraum:</strong> Okt 2021 – Jun 2022</p>
-      <p><strong>Details:</strong><br/>
-        • Entwicklung eines modularen Programmkonzepts für Industrieroboter bei Anton Häring KG.<br/>
-        • Optimierung von Ablaufsteuerungen (–30 % Zykluszeit).<br/>
-        • Kollisionsvermeidungskonzept (–70 % Ausfallrate).<br/>
-        • 3D‑CAD in Fusion 360 & NX.
+      <h3 id="modal-bach-title">Bachelorarbeit</h3>
+      <p><strong>Okt 2021 – Jun 2022</strong></p>
+      <p>
+        • Programmkonzept für UR‐Roboter bei Anton Häring KG<br>
+        • –30 % Zykluszeit durch Algorithmusoptimierung<br>
+        • Kollisionsvermeidungskonzept: –70 % Fehlerquote<br>
+        • 3D‑CAD in Fusion 360 & Siemens NX
       </p>
     </div>
   </div>
 
   <footer>
-    &copy; 2025 Chenshun Weng – Portfolio
+    &copy; 2025 Chenshun Weng – Portfolio
   </footer>
 
   <script>
-    // 打开/关闭 Modal
     document.querySelectorAll('.card').forEach(card=>{
       card.addEventListener('click',()=>{
-        const id = card.getAttribute('data-modal');
-        const modal = document.getElementById(id);
+        const modal = document.getElementById(card.dataset.modal);
         modal.setAttribute('aria-hidden','false');
-        // 延迟注入 iframe src（如有）
-        const videoLink = modal.querySelector('.video-trigger');
-        if(videoLink){
-          const src = videoLink.dataset.src;
-          const iframe = document.createElement('iframe');
-          iframe.src = src;
-          iframe.width = '100%';
-          iframe.height = '240';
-          iframe.frameBorder = 0;
-          iframe.allowFullscreen = true;
-          videoLink.replaceWith(iframe);
-        }
-        // 焦点控制
-        modal.querySelector('.modal-close').focus();
       });
     });
     document.querySelectorAll('.modal-close').forEach(btn=>{
       btn.addEventListener('click',()=>{
-        const modal = btn.closest('.modal');
-        modal.setAttribute('aria-hidden','true');
+        btn.closest('.modal').setAttribute('aria-hidden','true');
       });
     });
-    // ESC 关闭
     document.addEventListener('keydown',e=>{
       if(e.key==='Escape'){
-        document.querySelectorAll('.modal[aria-hidden="false"]').forEach(m=>{
-          m.setAttribute('aria-hidden','true');
-        });
+        document.querySelectorAll('.modal[aria-hidden="false"]').forEach(m=>m.setAttribute('aria-hidden','true'));
       }
     });
   </script>
