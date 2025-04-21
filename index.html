@@ -5,123 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chenshun Weng – Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #1f2937;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .container {
-      display: flex;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      gap: 30px;
-    }
-    .timeline {
-      width: 200px;
-    }
-    .timeline ul {
-      list-style: none;
-      padding: 0;
-    }
-    .timeline li {
-      margin-bottom: 20px;
-      cursor: pointer;
-      font-weight: bold;
-      color: #1f2937;
-    }
-    .timeline li.active {
-      color: #2563eb;
-    }
-    .details {
-      flex: 1;
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      min-height: 400px;
-    }
-    .details h2 {
-      margin-top: 0;
-    }
-    .project-img, .project-video {
-      width: 100%;
-      margin: 20px 0;
-    }
-    .project-video iframe, video {
-      width: 100%;
-      max-height: 400px;
-      border-radius: 10px;
-    }
-  </style>
 </head>
 <body>
   <header>
     <h1>Chenshun Weng</h1>
     <p>Systems Engineer | Robotik | Simulation</p>
+    <nav>
+      <a href="#about">Über mich</a>
+      <a href="#projects">Projekte</a>
+      <a href="#skills">Fähigkeiten</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+    <div class="lang-switch">
+      <button onclick="switchLang('de')">🇩🇪</button>
+      <button onclick="switchLang('en')">🇬🇧</button>
+      <button onclick="switchLang('zh')">🇨🇳</button>
+    </div>
   </header>
-  <div class="container">
+
+  <section id="about">
+    <h2>Über mich</h2>
+    <p>
+      Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch meine Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz. Mein Schwerpunkt liegt auf der Entwicklung intelligenter Testsysteme, Layoutoptimierung in der Fertigung sowie sicherheitskritischer Steuerungen.
+    </p>
+    <a class="button" href="Lebenslauf_Chenshun_Weng.pdf" target="_blank">📄 Lebenslauf herunterladen (PDF)</a>
+  </section>
+
+  <section id="projects">
+    <h2>Projekte</h2>
     <div class="timeline">
-      <ul>
-        <li onclick="showProject('pmf')" class="active">2025 – PMF UR10e</li>
-        <li onclick="showProject('vei')">2024 – BMW / VEI</li>
-        <li onclick="showProject('vw')">2023 – Volkswagen</li>
-        <li onclick="showProject('bsh')">2022 – BSH</li>
-        <li onclick="showProject('bachelor')">2021 – Bachelorarbeit</li>
-      </ul>
+      <div class="timeline-item">
+        <div class="timeline-date">2021.10 – 2022.06</div>
+        <div class="timeline-content">
+          <h3>Anton Häring KG – Praktikum & Projekt</h3>
+          <p>Industriepraktikum und Entwicklung eines modularen Roboterprogramms zur kollisionsfreien Mehrstationenbedienung.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2022.04 – 2025.06</div>
+        <div class="timeline-content">
+          <h3>Studium – TU Berlin</h3>
+          <p>Masterstudium in Automatisierung und Informationstechnik.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2022.10 – Jetzt</div>
+        <div class="timeline-content">
+          <h3>BSH – Automatisiertes Testsystem</h3>
+          <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</p>
+          <img src="bsh_project.png" alt="BSH Projekt" />
+          <video controls src="video_bsh.mp4" width="100%"></video>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2023.04 – 2023.07</div>
+        <div class="timeline-content">
+          <h3>Volkswagen – Virtuelle Fabrik</h3>
+          <p>Layoutoptimierung der Fertigung mit Tecnomatix Plant Simulation. Durch Umgestaltung konnte eine Kapazitätssteigerung von über 20 % erreicht werden.</p>
+          <video controls src="video_vw.mp4" width="100%"></video>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2023.10 – 2024.03</div>
+        <div class="timeline-content">
+          <h3>BMW / VEI – Safe Door Open System</h3>
+          <p>MBSE-basiertes Sicherheitssystem zur Unfallvermeidung beim Öffnen von Autotüren. Systemmodellierung, Prototyping und Video-Demonstration.</p>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video"></iframe>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2023.10 – 2024.03</div>
+        <div class="timeline-content">
+          <h3>PMF Projekt – UR10e Roboterschlauchsystem</h3>
+          <p>Entwicklung eines flexiblen Anschlussmoduls für die Endeffektor-Vakuumsteuerung. Verbesserte Lebensdauer & reduzierte Torsion.</p>
+          <video controls src="video_pmf.mp4" width="100%"></video>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Bachelorarbeit</div>
+        <div class="timeline-content">
+          <h3>Automatisiertes Bestückungssystem</h3>
+          <p>Programmierkonzept für industrielle Roboter zur automatischen Beladung und Entladung von Werkzeugmaschinen, realisiert bei Anton Häring KG.</p>
+          <audio controls src="audio_bachelor.mp3"></audio>
+        </div>
+      </div>
     </div>
-    <div class="details" id="project-details">
-      <!-- 项目内容默认显示 PMF -->
-      <h2>PMF Projekt – UR10e Roboterschlauchsystem</h2>
-      <p>Entwicklung eines flexiblen Anschlussmoduls für die Endeffektor-Vakuumsteuerung. Verbesserte Lebensdauer & reduzierte Torsion. Anwendung in Dauerbelastungsszenarien.</p>
-      <img class="project-img" src="pmf_project.png" alt="PMF Project" />
-      <video class="project-video" controls>
-        <source src="pmf_demo.mp4" type="video/mp4" />
-        Ihr Browser unterstützt das Videoformat nicht.
-      </video>
-    </div>
-  </div>
+  </section>
 
-  <script>
-    const content = {
-      vei: `
-        <h2>Safe Door Open System (BMW / VEI)</h2>
-        <p>MBSE-basiertes Sicherheitssystem zur Unfallvermeidung beim Öffnen von Autotüren. Systemmodellierung, Prototyping und YouTube Video-Demo.</p>
-        <iframe src="https://www.youtube.com/embed/3QzT2lHgjKU" frameborder="0" allowfullscreen></iframe>
-      `,
-      vw: `
-        <h2>Virtuelle Fabrik bei Volkswagen</h2>
-        <p>Layoutoptimierung und Simulation der Fertigung mit Tecnomatix Plant Simulation. Durch die Umgestaltung konnte eine Kapazitätssteigerung von über 20% erreicht werden.</p>
-      `,
-      bsh: `
-        <h2>Automatisiertes Testsystem bei BSH</h2>
-        <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</p>
-        <img class="project-img" src="bsh_project.png" alt="BSH Projekt" />
-      `,
-      bachelor: `
-        <h2>Bachelorarbeit – Automatisiertes Bestückungssystem</h2>
-        <p>Programmierkonzept für industrielle Roboter zur automatischen Beladung und Entladung von Werkzeugmaschinen, realisiert bei Anton Häring KG.</p>
-        <audio controls>
-          <source src="bachelor_audio.mp3" type="audio/mpeg">
-          Ihr Browser unterstützt kein Audio.
-        </audio>
-      `,
-      pmf: document.getElementById("project-details").innerHTML,
-    };
+  <section id="skills">
+    <h2>Fähigkeiten</h2>
+    <ul class="skills">
+      <li>MBSE</li><li>SysML</li><li>Python</li><li>Tecnomatix</li>
+      <li>Fusion 360</li><li>3DEXPERIENCE</li><li>Plant Simulation</li><li>LaTeX</li>
+    </ul>
+  </section>
 
-    function showProject(key) {
-      const listItems = document.querySelectorAll(".timeline li");
-      listItems.forEach(li => li.classList.remove("active"));
-      event.target.classList.add("active");
-      document.getElementById("project-details").innerHTML = content[key];
-    }
-  </script>
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p>Email: chenshunweng.1999@gmail.com</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/chenshunweng">linkedin.com/in/chenshunweng</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Chenshun Weng – Portfolio</p>
+  </footer>
 </body>
 </html>
