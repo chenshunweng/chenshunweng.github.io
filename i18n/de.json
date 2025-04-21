@@ -1,14 +1,44 @@
 {
-  "about.title": "Über mich",
-  "about.text": "Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Mit Praxiserfahrung bei BSH, BMW und Volkswagen bringe ich systemisches Denken und technische Umsetzungskompetenz zusammen.",
-  "hero.download": "Lebenslauf herunterladen (PDF)",
-  "projects.title": "Projekte",
-  "projects.bsh.title": "Waschmaschinen-Testsystem bei BSH",
-  "projects.bsh.desc": "Vollautomatisches Roboter-Testsystem mit über 80% Abdeckung. Deep-Learning-gestütztes visuelles Erkennungssystem. Konstruktion & 3D-Druck neuer Greiferteile. Masterarbeit: Automatisierte Testsysteme mit kollaborativem Roboter.",
-  "projects.vw.title": "Virtuelle Fabrik bei VW",
-  "projects.vw.desc": "Simulation & Layoutoptimierung mit Tecnomatix Plant Simulation. Produktionskapazität +20 %, Durchlaufzeit -30 %.",
-  "vei.title": "VEI Projekt",
-  "vei.desc": "Hardware-in-the-loop Sicherheitsdemo mit visueller Erkennung und Steuerung",
-  "skills.title": "Fähigkeiten",
-  "contact.title": "Kontakt"
+  "header": {
+    "name": "Chenshun Weng",
+    "tagline": "Systems Engineer | Robotik | Simulation"
+  },
+  "about": {
+    "title": "Über mich",
+    "text": "Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz.",
+    "cv": "📄 Lebenslauf herunterladen (PDF)"
+  },
+  "projects": {
+    "title": "Projekte",
+    "bsh": {
+      "title": "BSH Testsystem",
+      "desc": "Waschmaschinen‑Testautomation >80 % Abdeckung",
+      "long": "Im Praktikum bei BSH Hausgeräte: Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen..."
+    },
+    "vw": {
+      "title": "VW Virtuelle Fabrik",
+      "desc": "Plant Simulation & Layout‑Optimierung (+20 %)",
+      "long": "Simulation und Optimierung der Motorenproduktionslinie bei Volkswagen mit Tecnomatix Plant Simulation..."
+    },
+    "bmw": {
+      "title": "BMW SDOS",
+      "desc": "MBSE‑Sicherheitssystem gegen Türunfälle",
+      "long": "Entwicklung eines Safe Door Opening Systems für BMW i3 mithilfe von MBSE und Cameo SysML..."
+    },
+    "pmf": {
+      "title": "PMF UR10e Modul",
+      "desc": "Kameraloses Bin‑Picking, –60 % Störeinflüsse",
+      "long": "CamLessPick: Entwicklung eines Drehdurchführungskonzepts zur Reduktion von Störkräften bei Bin-Picking..."
+    },
+    "itdf": {
+      "title": "ITDF – Virtuelle Fabrik",
+      "desc": "Digital Factory & Effizienzsteigerung",
+      "long": "Transformation verschiedener Automatisierungsstationen mit Simulationsmodellen in Plant Simulation und Process Simulate..."
+    },
+    "bach": {
+      "title": "Bachelorarbeit",
+      "desc": "Robotik‑Programmkonzept für CNC-Beladung",
+      "long": "Konzept zur vollautomatischen Bestückung von Werkzeugmaschinen bei Anton Häring KG, inkl. modularer Software-Framework..."
+    }
+  }
 }
