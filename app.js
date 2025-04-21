@@ -1,72 +1,75 @@
-// 1. 国际化 init
-i18next.init({ lng:'de', debug:false, resources:{} }, ()=>{
-    fetch('/i18n/de.json').then(r=>r.json()).then(r=>{
-      i18next.addResources('de','translation',r);
-      updateContent();
-    });
-  });
-  // 更新文本内容
-  function updateContent(){
-    document.querySelectorAll('[data-i18n]').forEach(el=>{
-      el.innerHTML = i18next.t(el.getAttribute('data-i18n'));
-    });
-  }
-  // 语言切换
-  document.querySelectorAll('.lang-switch button').forEach(btn=>{
-    btn.onclick = async ()=>{
-      const lng = btn.dataset.lang;
-      if(!i18next.hasResourceBundle(lng,'translation')){
-        const res = await fetch(`/i18n/${lng}.json`).then(r=>r.json());
-        i18next.addResources(lng,'translation',res);
+翻译资源内嵌 —— 把 de/en/zh 三份 JSON 内容都粘在这里
+const resources = {
+  de: {
+    translation: {
+      header: {
+        name: "Chenshun Weng",
+        tagline: "Systems Engineer | Robotik | Simulation"
+      },
+      about: {
+        title: "Über mich",
+        text: "Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz.",
+        cv: "📄 Lebenslauf herunterladen (PDF)"
+      },
+      projects: {
+        title: "Projekte",
+        bsh: {
+          title: "BSH Testsystem",
+          desc: "Waschmaschinen‑Testautomation >80 % Abdeckung",
+          long: "Im Praktikum bei BSH Hausgeräte: Entwicklung eines vollautomatischen Robotik‑Systems zur Prüfung von Waschmaschinen..."
+        },
+        vw: {
+          title: "VW Virtuelle Fabrik",
+          desc: "Plant Simulation & Layout‑Optimierung (+20 %)",
+          long: "Simulation und Optimierung der Motorenproduktionslinie bei Volkswagen mit Tecnomatix Plant Simulation..."
+        },
+        bmw: {
+          title: "BMW SDOS",
+          desc: "MBSE‑Sicherheitssystem gegen Türunfälle",
+          long: "Entwicklung eines Safe Door Opening Systems für BMW i3 mithilfe von MBSE und Cameo SysML..."
+        },
+        pmf: {
+          title: "PMF UR10e Modul",
+          desc: "Kameraloses Bin‑Picking, –60 % Störeinflüsse",
+          long: "CamLessPick: Entwicklung eines Drehdurchführungskonzepts zur Reduktion von Störkräften bei Bin-Picking..."
+        },
+        itdf: {
+          title: "ITDF – Virtuelle Fabrik",
+          desc: "Digital Factory & Effizienzsteigerung",
+          long: "Transformation verschiedener Automatisierungsstationen mit Simulationsmodellen in Plant Simulation und Process Simulate..."
+        },
+        bach: {
+          title: "Bachelorarbeit",
+          desc: "Robotik‑Programmkonzept für CNC‑Beladung",
+          long: "Konzept zur vollautomatischen Bestückung von Werkzeugmaschinen bei Anton Häring KG, inkl. modularer Software-Framework..."
+        }
       }
-      i18next.changeLanguage(lng, updateContent);
-    };
-  });
-  
-  // 2. 主题切换
-  const themeBtn = document.getElementById('theme-toggle');
-  themeBtn.onclick = ()=>{
-    const next = document.documentElement.getAttribute('data-theme')==='dark'? '' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-  };
-  document.documentElement.setAttribute('data-theme', localStorage.getItem('theme')||'');
-  
-  // 3. 卡片淡入
-  const observer = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }
-    });
-  },{threshold:0.2});
-  document.querySelectorAll('.card').forEach(c=>observer.observe(c));
-  
-  // 4. 移动端滑动
-  document.querySelectorAll('.projects-row').forEach(row=>{
-    let startX=0;
-    row.addEventListener('touchstart',e=> startX=e.touches[0].pageX);
-    row.addEventListener('touchmove',e=>{
-      const dx = e.touches[0].pageX - startX;
-      row.scrollLeft -= dx;
-      startX = e.touches[0].pageX;
-    });
-  });
-  
-  // 5. Modal 交互 & 键盘无障碍
-  document.querySelectorAll('.card').forEach(card=>{
-    card.addEventListener('click',()=> openModal(card.dataset.modal));
-    card.addEventListener('keydown',e=>{ if(e.key==='Enter') openModal(card.dataset.modal); });
-  });
-  function openModal(id){
-    const m=document.getElementById(id);
-    m.setAttribute('aria-hidden','false');
-    m.querySelector('.modal-dialog').focus();
-  }
-  document.querySelectorAll('.modal-close').forEach(btn=>{
-    btn.onclick = ()=> btn.closest('.modal').setAttribute('aria-hidden','true');
-  });
-  document.addEventListener('keydown',e=>{
-    if(e.key==='Escape'){
-      document.querySelectorAll('.modal[aria-hidden="false"]')
-        .forEach(m=>m.setAttribute('aria-hidden','true'));
     }
+  },
+  en: { translation: { /* ...同理填 en.json ...*/ } },
+  zh: { translation: { /* ...同理填 zh.json ...*/ } },
+};
+
+// 2. 初始化 i18next，直接把 resources 传进去
+i18next.init({
+  lng: 'de',
+  debug: false,
+  resources
+}, () => {
+  updateContent();
+});
+
+// 3. 将 [data-i18n] 的文本替换为翻译内容
+function updateContent(){
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.innerText = i18next.t(el.getAttribute('data-i18n'));
   });
+}
+
+// 4. 语言切换
+document.querySelectorAll('.lang-switch button').forEach(btn => {
+  btn.onclick = () => {
+    const lng = btn.dataset.lang;
+    i18next.changeLanguage(lng, updateContent);
+  };
+});
