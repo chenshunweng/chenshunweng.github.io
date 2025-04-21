@@ -1,49 +1,90 @@
-// i18next 初始化
+// 🌐 i18next 初始化
 i18next.init({
   lng: 'de',
-  debug: true,
+  debug: false,
   resources: {
-    // 多语言内容已省略（你已经有完整配置）
-    // 保留你的原始多语言 JSON
+    de: {
+      translation: {
+        header: { name: "Chenshun Weng", tagline: "Systems Engineer | Robotik | Simulation" },
+        about: {
+          title: "Über mich",
+          text: "Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch meine Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz. Mein Schwerpunkt liegt auf der Entwicklung intelligenter Testsysteme, Layoutoptimierung in der Fertigung sowie sicherheitskritischer Steuerungen.",
+          cv: "📄 Lebenslauf herunterladen (PDF)"
+        },
+        projects: {
+          title: "Projekte",
+          bsh: {
+            title: "Automatisiertes Testsystem bei BSH",
+            desc: "Roboter-Testsystem für Waschmaschinen mit über 80 % automatisierter Abdeckung.",
+            details: "Omron TM14 + Robotiq 2F-85; Landmark-Genauigkeit ±2 mm; 300 h Dauerbetrieb, 72 % Greiferfolg, ≤ 0,5 Eingriffe/h."
+          },
+          vw: {
+            title: "Virtuelle Fabrik bei Volkswagen",
+            desc: "Layoutoptimierung mit Tecnomatix Plant Simulation. Kapazität +20 %, Taktzeit -30 %.",
+            details: "Materialfluss-Simulation, Bottleneck-Analyse, Lean VSM; OEE +15 %."
+          },
+          bmw: {
+            title: "Safe Door Open System (BMW / VEI)",
+            desc: "MBSE-Sicherheitssystem zur Vermeidung von Türunfällen.",
+            details: "SysML-Architektur, Sensorfusion 70 ms, Brems-Prototyp; Kollisionsrisiko -60 %."
+          },
+          pmf: {
+            title: "PMF Projekt – UR10e Endeffektor",
+            desc: "Flexibles Modul zur Vakuumsteuerung, Anwendung im Dauerbetrieb.",
+            details: "Hohlwelle + Drehhülse, FEM-Optimierung; 10 kg Nutzlast, Lebensdauer +25 %."
+          },
+          itdf: {
+            title: "ITDF Projekt – Volkswagen",
+            desc: "Virtuelle Fabrikplanung & Simulation, 20 % Effizienzsteigerung.",
+            details: "Plant Simulation-Modelle, Value-Stream-Analyse, Szenario-ROI."
+          },
+          bachelor: {
+            title: "Bachelorarbeit – Automatisiertes Bestückungssystem",
+            desc: "Roboterprogrammierung für Werkzeugmaschinen bei Anton Häring KG.",
+            details: "5x4 Palettenalgorithmus, Online-Korrektur ± 0,3 mm, Anti-Crash-Logik."
+          }
+        },
+        skills: { title: "Fähigkeiten" },
+        footer: { portfolio: "Portfolio" }
+      }
+    }
   }
-}, function(err, t) {
-  // 初始渲染
+}, function () {
+  renderText();
+  addLanguageSwitch();
+  setupModal();
+  setupThemeToggle();
+});
+
+function renderText() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     el.textContent = i18next.t(el.getAttribute('data-i18n'));
   });
+}
 
-  // 多语言切换
+function addLanguageSwitch() {
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     btn.addEventListener('click', () => {
       i18next.changeLanguage(btn.dataset.lang, () => {
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          el.textContent = i18next.t(el.getAttribute('data-i18n'));
-        });
+        renderText();
       });
     });
   });
+}
 
-  // 模态框逻辑
+function setupModal() {
   const modal = document.getElementById('modal');
   const modalBody = document.getElementById('modal-body');
   const closeBtn = modal.querySelector('.modal-close');
-
-  const videoMap = {
-    bmw: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>`,
-    itdf: `<iframe width="100%" height="315" src="https://www.youtube.com/embed/-PeLRJ_0H5c" frameborder="0" allowfullscreen></iframe>`,
-    bachelor: `<video controls><source src="assets/videos/bachelorarbeit_video.mp4" type="video/mp4">Your browser does not support the video tag.</video>`,
-    pmf: `<video controls><source src="assets/videos/PMF_video.mp4" type="video/mp4">Your browser does not support the video tag.</video>`
-  };
 
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
       const key = card.dataset.key;
       const proj = i18next.t(`projects.${key}`, { returnObjects: true });
-      const video = videoMap[key] || '';
       modalBody.innerHTML = `
         <h2>${proj.title}</h2>
-        <p>${proj.details || ''}</p>
-        ${video}
+        <p>${proj.details}</p>
+        ${card.querySelector('iframe')?.outerHTML || card.querySelector('video')?.outerHTML || ''}
       `;
       modal.style.display = 'flex';
     });
@@ -53,13 +94,14 @@ i18next.init({
   modal.addEventListener('click', e => {
     if (e.target === modal) modal.style.display = 'none';
   });
+}
 
-  // 主题切换
-  const themeBtn = document.querySelector('.theme-toggle');
-  themeBtn.addEventListener('click', () => {
+function setupThemeToggle() {
+  const btn = document.querySelector('.theme-toggle');
+  btn.addEventListener('click', () => {
     const root = document.documentElement;
     const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
-    themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
   });
-});
+}
