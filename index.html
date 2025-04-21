@@ -5,15 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chenshun Weng – Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script>
+    function changeLanguage(lang) {
+      const translations = {
+        de: {
+          about: "\u00dcber mich",
+          download: "\uD83D\uDCC4 Lebenslauf herunterladen (PDF)",
+          projects: "Projekte",
+          skills: "F\u00e4higkeiten",
+          contact: "Kontakt",
+          email: "Email: chenshunweng.1999@gmail.com",
+          linkedin: "LinkedIn: linkedin.com/in/chenshunweng",
+        },
+        en: {
+          about: "About Me",
+          download: "\uD83D\uDCC4 Download Resume (PDF)",
+          projects: "Projects",
+          skills: "Skills",
+          contact: "Contact",
+          email: "Email: chenshunweng.1999@gmail.com",
+          linkedin: "LinkedIn: linkedin.com/in/chenshunweng",
+        },
+        zh: {
+          about: "\u5173\u4e8e\u6211",
+          download: "\uD83D\uDCC4 \u4e0b\u8f7d\u7b80\u5386 (PDF)",
+          projects: "\u9879\u76ee",
+          skills: "\u6280\u80fd",
+          contact: "\u8054\u7cfb\u65b9\u5f0f",
+          email: "\u90ae\u7bb1: chenshunweng.1999@gmail.com",
+          linkedin: "LinkedIn: linkedin.com/in/chenshunweng",
+        },
+      };
+      const t = translations[lang];
+      document.querySelector(".about h2").innerText = t.about;
+      document.querySelector(".cv-button").innerText = t.download;
+      document.querySelector(".timeline-title").innerText = t.projects;
+      document.querySelector("footer h2").innerText = t.skills;
+      document.querySelector("footer h2 + .skills").previousElementSibling.innerText = t.contact;
+      document.querySelector("footer p:nth-of-type(1)").innerText = t.email;
+      document.querySelector("footer p:nth-of-type(2)").innerHTML = t.linkedin;
+    }
+  </script>
 </head>
 <body>
   <header>
     <h1>Chenshun Weng</h1>
     <p>Systems Engineer | Robotik | Simulation</p>
     <div class="lang-switch">
-      <button>🇩🇪</button>
-      <button>🇬🇧</button>
-      <button>🇨🇳</button>
+      <button onclick="changeLanguage('de')">🇩🇪</button>
+      <button onclick="changeLanguage('en')">🇬🇧</button>
+      <button onclick="changeLanguage('zh')">🇨🇳</button>
     </div>
   </header>
 
@@ -26,6 +67,7 @@
   </section>
 
   <main class="timeline">
+    <h2 class="timeline-title">Projekte</h2>
 
     <!-- 2025 -->
     <section class="timeline-year">
@@ -86,7 +128,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
