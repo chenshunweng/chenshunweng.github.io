@@ -1,0 +1,14 @@
+{
+  "about.title": "关于我",
+  "about.text": "我是一名专注于自动化、机器人技术与基于模型的系统工程（MBSE）的工程师，曾在 BSH、BMW 和大众工作，具有丰富的系统开发和实施经验。",
+  "hero.download": "下载简历（PDF）",
+  "projects.title": "项目",
+  "projects.bsh.title": "BSH 洗衣机测试系统",
+  "projects.bsh.desc": "基于机器人与视觉系统的全自动测试平台，覆盖率超过 80%。采用深度学习图像识别，使用 3D 打印优化抓手结构。硕士论文课题。",
+  "projects.vw.title": "大众虚拟工厂",
+  "projects.vw.desc": "使用 Tecnomatix Plant Simulation 进行工厂仿真与优化，产能提升 20%，流程缩短 30%。",
+  "vei.title": "VEI 项目",
+  "vei.desc": "使用视觉与机器人控制的安全系统演示平台",
+  "skills.title": "技能",
+  "contact.title": "联系方式"
+}

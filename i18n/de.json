@@ -1,0 +1,14 @@
+{
+  "about.title": "Über mich",
+  "about.text": "Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Mit Praxiserfahrung bei BSH, BMW und Volkswagen bringe ich systemisches Denken und technische Umsetzungskompetenz zusammen.",
+  "hero.download": "Lebenslauf herunterladen (PDF)",
+  "projects.title": "Projekte",
+  "projects.bsh.title": "Waschmaschinen-Testsystem bei BSH",
+  "projects.bsh.desc": "Vollautomatisches Roboter-Testsystem mit über 80% Abdeckung. Deep-Learning-gestütztes visuelles Erkennungssystem. Konstruktion & 3D-Druck neuer Greiferteile. Masterarbeit: Automatisierte Testsysteme mit kollaborativem Roboter.",
+  "projects.vw.title": "Virtuelle Fabrik bei VW",
+  "projects.vw.desc": "Simulation & Layoutoptimierung mit Tecnomatix Plant Simulation. Produktionskapazität +20 %, Durchlaufzeit -30 %.",
+  "vei.title": "VEI Projekt",
+  "vei.desc": "Hardware-in-the-loop Sicherheitsdemo mit visueller Erkennung und Steuerung",
+  "skills.title": "Fähigkeiten",
+  "contact.title": "Kontakt"
+}
