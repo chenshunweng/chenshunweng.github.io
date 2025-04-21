@@ -5,141 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chenshun Weng – Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    function changeLanguage(lang) {
-      const translations = {
-        de: {
-          about: "\u00dcber mich",
-          download: "\uD83D\uDCC4 Lebenslauf herunterladen (PDF)",
-          projects: "Projekte",
-          skills: "F\u00e4higkeiten",
-          contact: "Kontakt",
-          email: "Email: chenshunweng.1999@gmail.com",
-          linkedin: "LinkedIn: linkedin.com/in/chenshunweng",
-        },
-        en: {
-          about: "About Me",
-          download: "\uD83D\uDCC4 Download Resume (PDF)",
-          projects: "Projects",
-          skills: "Skills",
-          contact: "Contact",
-          email: "Email: chenshunweng.1999@gmail.com",
-          linkedin: "LinkedIn: linkedin.com/in/chenshunweng",
-        },
-        zh: {
-          about: "\u5173\u4e8e\u6211",
-          download: "\uD83D\uDCC4 \u4e0b\u8f7d\u7b80\u5386 (PDF)",
-          projects: "\u9879\u76ee",
-          skills: "\u6280\u80fd",
-          contact: "\u8054\u7cfb\u65b9\u5f0f",
-          email: "\u90ae\u7bb1: chenshunweng.1999@gmail.com",
-          linkedin: "LinkedIn: linkedin.com/in/chenshunweng",
-        },
-      };
-      const t = translations[lang];
-      document.querySelector(".about h2").innerText = t.about;
-      document.querySelector(".cv-button").innerText = t.download;
-      document.querySelector(".timeline-title").innerText = t.projects;
-      document.querySelector("footer h2").innerText = t.skills;
-      document.querySelector("footer h2 + .skills").previousElementSibling.innerText = t.contact;
-      document.querySelector("footer p:nth-of-type(1)").innerText = t.email;
-      document.querySelector("footer p:nth-of-type(2)").innerHTML = t.linkedin;
-    }
-  </script>
 </head>
 <body>
   <header>
     <h1>Chenshun Weng</h1>
     <p>Systems Engineer | Robotik | Simulation</p>
-    <div class="lang-switch">
-      <button onclick="changeLanguage('de')">🇩🇪</button>
-      <button onclick="changeLanguage('en')">🇬🇧</button>
-      <button onclick="changeLanguage('zh')">🇨🇳</button>
+    <div class="language-switch">
+      <button onclick="setLanguage('de')">🇩🇪</button>
+      <button onclick="setLanguage('en')">🇬🇧</button>
+      <button onclick="setLanguage('zh')">🇨🇳</button>
     </div>
   </header>
 
   <section class="about">
     <h2>Über mich</h2>
-    <p>
-      Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE)...
-    </p>
-    <a class="cv-button" href="Lebenslauf_Chenshun_Weng.pdf" download>📄 Lebenslauf herunterladen (PDF)</a>
+    <p>Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch meine Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz. Mein Schwerpunkt liegt auf der Entwicklung intelligenter Testsysteme, Layoutoptimierung in der Fertigung sowie sicherheitskritischer Steuerungen.</p>
+    <a class="download-button" href="Lebenslauf_Chenshun_Weng.pdf" download>📄 Lebenslauf herunterladen (PDF)</a>
   </section>
 
-  <main class="timeline">
-    <h2 class="timeline-title">Projekte</h2>
+  <section class="projects">
+    <h2>Projekte</h2>
 
-    <!-- 2025 -->
-    <section class="timeline-year">
-      <h2 class="year-title">2025</h2>
+    <div class="year-section">
+      <h3>2025</h3>
       <div class="project-row">
-        <div class="project-card">
-          <h3>Automatisiertes Testsystem bei BSH</h3>
-          <p>Robotik-System zur vollautomatischen Waschmaschinenprüfung mit 80% Abdeckung.</p>
-          <img src="bsh_project.png" alt="BSH Project" />
+        <div class="card">
+          <h4>Automatisiertes Testsystem bei BSH</h4>
+          <p>Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit über 80 % Testabdeckung.</p>
+          <img class="project-media" src="bsh_project.png" alt="BSH Testsystem" />
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- 2024 -->
-    <section class="timeline-year">
-      <h2 class="year-title">2024</h2>
+    <div class="year-section">
+      <h3>2024</h3>
       <div class="project-row">
-        <div class="project-card">
-          <h3>Virtuelle Fabrik bei Volkswagen</h3>
-          <p>Layoutoptimierung mit Tecnomatix Plant Simulation. 20% Kapazitätssteigerung.</p>
+        <div class="card">
+          <h4>Virtuelle Fabrik bei Volkswagen</h4>
+          <p>Layoutoptimierung und Simulation der Fertigung mit Tecnomatix Plant Simulation. Durch die Umgestaltung konnte eine Kapazitätssteigerung von über 20 % erreicht werden.</p>
         </div>
-        <div class="project-card">
-          <h3>Safe Door Open System (BMW / VEI)</h3>
-          <p>MBSE-Sicherheitssystem zur Unfallvermeidung beim Öffnen von Autotüren.</p>
-          <iframe width="100%" height="150" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="BMW Video"></iframe>
+
+        <div class="card">
+          <h4>Safe Door Open System (BMW / VEI)</h4>
+          <p>MBSE-basiertes Sicherheitssystem zur Unfallvermeidung beim Öffnen von Autotüren. Systemmodellierung, Prototyping und Integration mit Video-Demonstration.</p>
+          <iframe class="project-media" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="BMW Projektvideo"></iframe>
         </div>
-        <div class="project-card">
-          <h3>PMF Projekt – UR10e Endeffektor</h3>
-          <p>Flexibles Modul zur Vakuumsteuerung. Anwendung im Dauerbetrieb.</p>
-          <video width="100%" height="150" controls>
+
+        <div class="card">
+          <h4>PMF Projekt – UR10e Roboterschlauchsystem</h4>
+          <p>Entwicklung eines flexiblen Anschlussmoduls für die Endeffektor-Vakuumsteuerung. Verbesserte Lebensdauer & reduzierte Torsion. Anwendung in Dauerbelastungsszenarien.</p>
+          <video class="project-media" controls>
             <source src="pmf_video.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- 2023 -->
-    <section class="timeline-year">
-      <h2 class="year-title">2023</h2>
+    <div class="year-section">
+      <h3>2023</h3>
       <div class="project-row">
-        <div class="project-card">
-          <h3>ITDF Projekt – Volkswagen</h3>
-          <p>Virtuelle Fabrikplanung & Simulation. 20% Effizienzsteigerung.</p>
+        <div class="card">
+          <h4>ITDF Projekt – Volkswagen</h4>
+          <p>Virtuelle Fabrikplanung & Simulation. 20 % Effizienzsteigerung durch Layoutoptimierung.</p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- 2022 -->
-    <section class="timeline-year">
-      <h2 class="year-title">2022</h2>
+    <div class="year-section">
+      <h3>2022</h3>
       <div class="project-row">
-        <div class="project-card">
-          <h3>Bachelorarbeit – Automatisiertes Bestückungssystem</h3>
-          <p>Programmierung für Robotik-gestützte Werkzeugmaschinenbeladung bei Anton Häring KG.</p>
-          <video width="100%" height="150" controls>
+        <div class="card">
+          <h4>Bachelorarbeit – Automatisiertes Bestückungssystem</h4>
+          <p>Programmierkonzept für industrielle Roboter zur automatischen Beladung und Entladung von Werkzeugmaschinen, realisiert bei Anton Häring KG.</p>
+          <video class="project-media" controls>
             <source src="bachelorarbeit_video.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <h2>Fähigkeiten</h2>
-    <div class="skills">
-      <span>MBSE</span> <span>SysML</span> <span>Python</span> <span>Tecnomatix</span>
-      <span>Fusion 360</span> <span>3DEXPERIENCE</span> <span>Plant Simulation</span> <span>LaTeX</span>
     </div>
+  </section>
+
+  <section class="skills">
+    <h2>Fähigkeiten</h2>
+    <div class="skill-tags">
+      <span>MBSE</span><span>SysML</span><span>Python</span><span>Tecnomatix</span><span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
+    </div>
+  </section>
+
+  <section class="contact">
     <h2>Kontakt</h2>
     <p>Email: chenshunweng.1999@gmail.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/chenshunweng">linkedin.com/in/chenshunweng</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/chenshunweng" target="_blank">linkedin.com/in/chenshunweng</a></p>
+  </section>
+
+  <footer>
     <p>&copy; 2025 Chenshun Weng – Portfolio</p>
   </footer>
+
+  <script>
+    function setLanguage(lang) {
+      alert("Mehrsprachigkeit ist bald verfügbar. Aktuell ist nur Deutsch aktiv.");
+    }
+  </script>
 </body>
 </html>
