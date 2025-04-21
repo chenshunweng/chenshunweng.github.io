@@ -1,232 +1,111 @@
-:root[data-theme='light'] {
-  --bg: #f4f4f4;
-  --text: #1a1a1a;
-  --primary: #1f2937;
-  --card-bg: #ffffff;
-  --card-shadow: rgba(0, 0, 0, 0.1);
-  --tag-bg: #e2e8f0;
-  --tag-text: #1a1a1a;
-  --btn-bg: #1f2937;
-  --btn-text: #ffffff;
-}
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chenshun Weng Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/i18next@23.6.0/i18next.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 data-i18n="header.name">Chenshun Weng</h1>
+    <p data-i18n="header.tagline">Systems Engineer | Robotik | Simulation</p>
+    <div class="controls">
+      <div class="lang-switch">
+        <button data-lang="de">DE</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="zh">中文</button>
+      </div>
+      <button class="theme-toggle">🌙</button>
+    </div>
+  </header>
 
-:root[data-theme='dark'] {
-  --bg: #121212;
-  --text: #f0f0f0;
-  --primary: #ffffff;
-  --card-bg: #1e1e1e;
-  --card-shadow: rgba(255, 255, 255, 0.05);
-  --tag-bg: #2d2d2d;
-  --tag-text: #ffffff;
-  --btn-bg: #ffffff;
-  --btn-text: #121212;
-}
+  <main class="container">
+    <section class="about">
+      <h2 data-i18n="about.title">Über mich</h2>
+      <p data-i18n="about.text">Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und MBSE...</p>
+      <div class="cv-download">
+        <a href="Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv">📄 Lebenslauf herunterladen</a>
+      </div>
+    </section>
 
-* {
-  box-sizing: border-box;
-}
+    <section class="projects">
+      <h2 data-i18n="projects.title">Projekte</h2>
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  transition: all 0.3s ease;
-}
+      <!-- 2025 -->
+      <div class="project-year">
+        <div class="year-label">2025</div>
+        <div class="projects-row">
+          <div class="card" data-key="bsh">
+            <video src="assets/videos/PMF_video.mp4" poster="assets/images/bsh_project.png" controls></video>
+            <h3 data-i18n="projects.bsh.title">BSH Waschmaschine</h3>
+            <p data-i18n="projects.bsh.desc">Roboter + Vision + Greifer = 80% Testabdeckung</p>
+          </div>
+        </div>
+      </div>
 
-header {
-  background-color: var(--primary);
-  color: var(--btn-text);
-  padding: 40px 20px;
-  text-align: center;
-  position: relative;
-}
+      <!-- 2024 -->
+      <div class="project-year">
+        <div class="year-label">2024</div>
+        <div class="projects-row">
+          <div class="card" data-key="bmw">
+            <iframe src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
+            <h3 data-i18n="projects.bmw.title">VEI Safe Door</h3>
+            <p data-i18n="projects.bmw.desc">MBSE Systemmodellierung</p>
+          </div>
+          <div class="card" data-key="pmf">
+            <video src="assets/videos/PMF_video.mp4" poster="assets/images/PMF_cover.jpg" controls></video>
+            <h3 data-i18n="projects.pmf.title">PMF UR10e</h3>
+            <p data-i18n="projects.pmf.desc">Drehbare Endeffektor-Entwicklung</p>
+          </div>
+        </div>
+      </div>
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
+      <!-- 2023 -->
+      <div class="project-year">
+        <div class="year-label">2023</div>
+        <div class="projects-row">
+          <div class="card" data-key="itdf">
+            <iframe src="https://www.youtube.com/embed/-PeLRJ_0H5c" frameborder="0" allowfullscreen></iframe>
+            <h3 data-i18n="projects.itdf.title">VW ITDF</h3>
+            <p data-i18n="projects.itdf.desc">Virtuelle Fabrikplanung mit ROI</p>
+          </div>
+        </div>
+      </div>
 
-header p {
-  margin-top: 10px;
-  font-size: 1.1rem;
-}
+      <!-- 2022 -->
+      <div class="project-year">
+        <div class="year-label">2022</div>
+        <div class="projects-row">
+          <div class="card" data-key="bachelor">
+            <video src="assets/videos/bachelorarbeit_video.mp4" poster="assets/images/bachelorarbeit_cover.jpg" controls></video>
+            <h3 data-i18n="projects.bachelor.title">Bachelorarbeit</h3>
+            <p data-i18n="projects.bachelor.desc">Yaskawa GP7 + 5x4 Palettierung</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.controls {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-}
+    <section class="skills">
+      <h2 data-i18n="skills.title">Fähigkeiten</h2>
+      <div class="skills-list">
+        <span>MBSE</span><span>SysML</span><span>Python</span><span>Tecnomatix</span>
+        <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
+      </div>
+    </section>
+  </main>
 
-.lang-switch button,
-.theme-toggle {
-  padding: 6px 10px;
-  border: none;
-  border-radius: 5px;
-  background: var(--btn-bg);
-  color: var(--btn-text);
-  font-weight: bold;
-  cursor: pointer;
-}
+  <footer>
+    <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio">Portfolio</span></p>
+  </footer>
 
-.lang-switch button:hover,
-.theme-toggle:hover {
-  opacity: 0.9;
-}
-
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.cv-download {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.cv-download a {
-  background-color: var(--btn-bg);
-  color: var(--btn-text);
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.project-year {
-  margin-bottom: 60px;
-}
-
-.year-label {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.projects-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.card {
-  background-color: var(--card-bg);
-  box-shadow: 0 4px 12px var(--card-shadow);
-  border-radius: 16px;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card video,
-.card img {
-  width: 100%;
-  height: 180px;
-  border-radius: 12px;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-.card p {
-  font-size: 0.95rem;
-  color: var(--text);
-}
-
-.skills {
-  text-align: center;
-  margin-top: 80px;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 15px;
-}
-
-.skills-list span {
-  background-color: var(--tag-bg);
-  color: var(--tag-text);
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-footer {
-  background-color: var(--primary);
-  color: var(--btn-text);
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-.modal {
-  position: fixed;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
-}
-
-.modal-content {
-  background-color: var(--card-bg);
-  color: var(--text);
-  padding: 30px;
-  border-radius: 16px;
-  max-width: 720px;
-  width: 90%;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  text-align: left;
-}
-
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: transparent;
-  color: var(--text);
-  font-size: 1.5rem;
-  border: none;
-  cursor: pointer;
-}
-
-.modal iframe,
-.modal video {
-  width: 100%;
-  max-height: 400px;
-  margin-top: 20px;
-  border-radius: 10px;
-}
-
-@media screen and (max-width: 768px) {
-  .card {
-    width: 90%;
-  }
-}
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+</body>
+</html>
