@@ -3,6 +3,7 @@ i18next.init({
   lng: 'de',
   debug: true,
   resources: {
+    /* ===================  Deutsch  =================== */
     de: {
       translation: {
         header: { name: "Chenshun Weng", tagline: "Systems Engineer | Robotik | Simulation" },
@@ -13,17 +14,43 @@ i18next.init({
         },
         projects: {
           title: "Projekte",
-          bsh: { title: "Automatisiertes Testsystem bei BSH", desc: "Roboter-gesteuertes Prüfsystem für Waschmaschinen, >80% Abdeckung." , details: "Hier kommt die ausführliche Beschreibung des BSH-Projekts..." },
-          vw: { title: "Virtuelle Fabrik bei Volkswagen", desc: "Layoutoptimierung mit Tecnomatix Plant Simulation. 20% Kapazitätssteigerung.", details: "Detaillierte Infos zum VW-Projekt..." },
-          bmw: { title: "Safe Door Open System (BMW i3)", desc: "MBSE-Sicherheitssystem zur Vermeidung von Türunfällen.", details: "Ausführlicher Text zum BMW-VEI Projekt..." },
-          pmf: { title: "PMF Projekt – UR10e Endeffektor", desc: "Flexibles Modul zur Vakuumsteuerung, Anwendung im Dauerbetrieb.", details: "Tiefergehende Beschreibung des PMF Projekts..." },
-          itdf:{ title:"ITDF Projekt – Volkswagen", desc:"Virtuelle Fabrikplanung & Simulation, 20% Effizienzsteigerung.", details:"Genauere Details zum ITDF Projekt..." },
-          bachelor:{ title:"Bachelorarbeit – Automatisiertes Bestückungssystem", desc:"Roboterprogrammierung für Werkzeugmaschinen bei Anton Häring KG.", details:"Ausführliche Beschreibung der Bachelorarbeit..." }
+          bsh: {
+            title: "Automatisiertes Testsystem bei BSH",
+            desc: "Roboter‑gestütztes Waschmaschinen‑Prüfsystem, automatisiert > 80 % der Testfälle. Vision bestimmt Greifpunkte in Echtzeit (keine Textil‑Klassifikation).",
+            details: "Omron TM14 + Robotiq 2F‑85; Landmark‑Genauigkeit ± 2 mm; 300 h Dauerbetrieb, 72 % Greiferfolg, ≤ 0,5 Eingriffe / h."
+          },
+          vw: {
+            title: "Virtuelle Fabrik bei Volkswagen",
+            desc: "Layoutoptimierung mit Tecnomatix Plant Simulation. Kapazität +20 %, Taktzeit –30 %.",
+            details: "Materialfluss‑Simulation, Bottleneck‑Analyse, Lean VSM; OEE +15 %."
+          },
+          bmw: {
+            title: "Safe Door Open System (BMW i3)",
+            desc: "MBSE‑basiertes Sicherheitssystem gegen Dooring‑Unfälle, Reaktionszeit < 0,3 s.",
+            details: "SysML‑Architektur, Sensorfusion 70 ms, Brems‑Prototyp; Kollisionsrisiko –60 %."
+          },
+          pmf: {
+            title: "PMF Projekt – UR10e Endeffektor",
+            desc: "Leichtbau‑Rotations‑Schlauchadapter für UR10e‑Vakuumgreifer; 60 % weniger Störmoment.",
+            details: "Hohlwelle + Drehhülse, FEM‑Optimierung; 10 kg Nutzlast, Lebensdauer +25 %."
+          },
+          itdf: {
+            title: "ITDF Projekt – Volkswagen",
+            desc: "Virtuelle Prozess‑ & Layoutplanung, Effizienz +18 %.",
+            details: "Plant Simulation‑Modelle, Value‑Stream‑Analyse, Szenario‑ROI."
+          },
+          bachelor: {
+            title: "Bachelorarbeit – Automatisiertes Bestückungssystem",
+            desc: "Modulares Yaskawa‑GP7 Lade‑/Entladeprogramm, Zyklus –30 %.",
+            details: "5×4‑Palettenalgorithmus, Online‑Korrektur ± 0,3 mm, Anti‑Crash‑Logik."
+          }
         },
         skills:{ title:"Fähigkeiten" },
         footer:{ portfolio:"Portfolio" }
       }
     },
+
+    /* ===================  English  =================== */
     en: {
       translation: {
         header: { name: "Chenshun Weng", tagline: "Systems Engineer | Robotics | Simulation" },
@@ -34,17 +61,43 @@ i18next.init({
         },
         projects: {
           title: "Projects",
-          bsh: { title: "Automated Test System at BSH", desc: "Robot‑driven washing machine test system, >80% coverage.", details: "Detailed description of the BSH project..." },
-          vw: { title: "Virtual Factory at Volkswagen", desc: "Layout optimization with Tecnomatix Plant Simulation. 20% capacity increase.", details: "In‑depth info on the VW project..." },
-          bmw: { title: "Safe Door Open System (BMW i3)", desc: "MBSE safety system to prevent dooring accidents.", details: "Extended description of the BMW‑VEI project..." },
-          pmf: { title: "PMF Project – UR10e End‑Effector", desc: "Flexible vacuum control module, continuous operation.", details: "Detailed information on the PMF project..." },
-          itdf:{ title:"ITDF Project – Volkswagen", desc:"Virtual factory planning & simulation, 20% efficiency boost.", details:"Exact details on the ITDF project..." },
-          bachelor:{ title:"Bachelor Thesis – Automated Loading System", desc:"Robot programming for machine tools at Anton Häring KG.", details:"Full description of the bachelor thesis..." }
+          bsh: {
+            title: "Automated Test System at BSH",
+            desc: "Robot‑driven washing‑machine test system, > 80 % coverage; vision predicts grasp points in real time (no fabric classification).",
+            details: "Omron TM14 & Robotiq 2F‑85; ±2 mm landmark repeatability; 300 h continuous run, 72 % success, ≤ 0.5 interventions/hr."
+          },
+          vw: {
+            title: "Virtual Factory at Volkswagen",
+            desc: "Layout optimization with Tecnomatix Plant Simulation. +20 % throughput, −30 % cycle time.",
+            details: "Flow simulation, bottleneck scan, Lean VSM; OEE +15 %."
+          },
+          bmw: {
+            title: "Safe Door Open System (BMW i3)",
+            desc: "MBSE‑driven door safety; < 0.3 s reaction, 60 % risk reduction.",
+            details: "SysML architecture, 70 ms sensor fusion, brake prototype."
+          },
+          pmf: {
+            title: "PMF Project – UR10e End‑Effector",
+            desc: "Lightweight rotary hose adapter for UR10e vacuum gripper; 60 % torque reduction on FT sensor.",
+            details: "Hollow‑shaft + sleeve, FEM‑optimised; supports 10 kg payload, +25 % life."
+          },
+          itdf: {
+            title: "ITDF Project – Volkswagen",
+            desc: "Virtual process & layout planning; +18 % efficiency.",
+            details: "Plant Simulation models, VSM, scenario‑ROI analysis."
+          },
+          bachelor: {
+            title: "Bachelor Thesis – Automated Loading System",
+            desc: "Modular Yaskawa GP7 loading/unloading program; −30 % cycle time.",
+            details: "5×4 virtual‑pallet algorithm, ±0.3 mm correction, anti‑crash logic."
+          }
         },
         skills:{ title:"Skills" },
         footer:{ portfolio:"Portfolio" }
       }
     },
+
+    /* ===================  中文  =================== */
     zh: {
       translation: {
         header: { name: "翁陈顺", tagline: "系统工程师 | 机器人 | 仿真" },
@@ -55,12 +108,36 @@ i18next.init({
         },
         projects: {
           title: "项目",
-          bsh: { title: "BSH 自动化测试系统", desc: "基于机器人的洗衣机测试系统，>80% 覆盖率。", details: "这里是 BSH 项目的详细描述..." },
-          vw: { title: "大众 虚拟工厂", desc: "使用 Tecnomatix Plant Simulation 进行布局优化，产能提升 20%。", details: "关于大众项目的深入信息..." },
-          bmw: { title: "安全开门系统 (BMW i3)", desc: "基于 MBSE 的防止开门碰撞安全系统。", details: "关于 BMW VEI 项目的详细说明..." },
-          pmf: { title: "PMF 项目 – UR10e 末端执行器", desc: "柔性真空控制模块，持续运行。", details: "PMF 项目的详细介绍..." },
-          itdf:{ title:"ITDF 项目 – 大众", desc:"虚拟工厂规划与仿真，效率提升 20%。", details:"ITDF 项目的具体细节..." },
-          bachelor:{ title:"本科论文 – 自动上下料系统", desc:"为 Anton Häring KG 设计工业机器人程序。", details:"本科论文的完整描述..." }
+          bsh: {
+            title: "BSH 自动化测试系统",
+            desc: "机器人洗衣机耐久测试系统，自动覆盖 > 80 % 测试用例；视觉模块实时预测抓取点（不做衣物材质分类）。",
+            details: "Omron TM14 + Robotiq 2F‑85；定位精度 ± 2 mm；连续运行 300 h，抓取成功率 72 %，人工干预 ≤ 0.5 次/小时。"
+          },
+          vw: {
+            title: "大众 虚拟工厂",
+            desc: "使用 Tecnomatix Plant Simulation 进行布局优化，产能提升 20%，节拍减少 30%。",
+            details: "物料流仿真、瓶颈分析、Lean VSM；设备综合效率提高 15%。"
+          },
+          bmw: {
+            title: "安全开门系统 (BMW i3)",
+            desc: "基于 MBSE 的安全开门系统，反应时间 < 0.3 s，碰撞风险降低 60 %。",
+            details: "SysML 架构，传感融合 70 ms，门刹原型。"
+          },
+          pmf: {
+            title: "PMF 项目 – UR10e 末端执行器",
+            desc: "UR10e 真空抓手轻量化旋转软管接口，测力平台干扰力矩降低 60 %。",
+            details: "中空轴 + 旋转套筒，FEM 优化；支持 10 kg 负载，寿命提升 25 %。"
+          },
+          itdf: {
+            title: "ITDF 项目 – 大众",
+            desc: "虚拟工厂规划与仿真，效率提升 18 %。",
+            details: "Plant Simulation 模型，价值流分析，ROI 评估。"
+          },
+          bachelor: {
+            title: "本科论文 – 自动上下料系统",
+            desc: "Yaskawa GP7 上下料模块化程序框架，节拍缩短 30 %。",
+            details: "5×4 虚拟托盘算法，在线修正 ± 0.3 mm，防碰撞逻辑。"
+          }
         },
         skills:{ title:"技能" },
         footer:{ portfolio:"作品集" }
@@ -93,7 +170,6 @@ i18next.init({
     card.addEventListener('click', () => {
       const key = card.dataset.key;
       const proj = i18next.t(`projects.${key}`, { returnObjects: true });
-      // 构建内容
       modalBody.innerHTML = `
         <h2>${proj.title}</h2>
         <p>${proj.details}</p>
@@ -112,6 +188,6 @@ i18next.init({
     const root = document.documentElement;
     const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     root.setAttribute('data-theme', next);
-    themeBtn.textContent = next==='dark' ? '☀️' : '🌙';
+    themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
   });
 });
