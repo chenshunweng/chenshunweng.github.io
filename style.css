@@ -1,8 +1,8 @@
-/* Updated style.css for timeline layout with horizontal project rows */
+/* style.css */
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: #f9f9f9;
   color: #333;
 }
@@ -28,94 +28,124 @@ nav a {
 }
 
 .container {
-  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-section {
-  margin-bottom: 60px;
+.timeline-section {
+  padding: 40px 0;
+  background-color: #f8f9fa;
 }
 
-.year-block {
-  margin-bottom: 40px;
+.timeline-year {
+  margin-bottom: 30px;
 }
 
-.year-block h2 {
+.timeline-year h2 {
+  margin-bottom: 15px;
   font-size: 1.5rem;
+  text-align: left;
   color: #1f2937;
-  margin-bottom: 10px;
-  border-left: 4px solid #1f2937;
-  padding-left: 12px;
+  padding-left: 5px;
 }
 
-.projects-row {
+.timeline-projects {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-.project-card {
+.card {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 16px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  flex: 0 0 300px;
+  width: 300px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
-.project-card img,
-.project-card video,
-.project-card iframe {
+.card img, .card video, .card iframe {
   width: 100%;
-  border-radius: 6px;
-  margin-top: 12px;
+  border-radius: 12px;
+  margin-top: 15px;
+  max-height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 20px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .skills span {
   display: inline-block;
   background-color: #e5e7eb;
-  padding: 6px 12px;
-  border-radius: 5px;
-  font-size: 0.85em;
+  padding: 6px 14px;
+  margin: 4px;
+  border-radius: 6px;
+  font-size: 0.85rem;
 }
 
-.download-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 18px;
-  background-color: #1f2937;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.download-button:hover {
-  background-color: #374151;
+.contact {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.95rem;
+  background-color: #fff;
 }
 
 footer {
   background-color: #1f2937;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 16px 0;
+  font-size: 0.85rem;
+}
+
+.download-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1f2937;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
   font-size: 0.9rem;
 }
 
-.language-switcher {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 8px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .timeline-projects {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90%;
+  }
+  nav a {
+    display: inline-block;
+    margin: 8px;
+  }
 }
