@@ -1,111 +1,237 @@
-<!DOCTYPE html>
-<html lang="de" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chenshun Weng Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/i18next@23.6.0/i18next.min.js"></script>
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <header>
-    <h1 data-i18n="header.name">Chenshun Weng</h1>
-    <p data-i18n="header.tagline">Systems Engineer | Robotik | Simulation</p>
-    <div class="controls">
-      <div class="lang-switch">
-        <button data-lang="de">DE</button>
-        <button data-lang="en">EN</button>
-        <button data-lang="zh">中文</button>
-      </div>
-      <button class="theme-toggle">🌙</button>
-    </div>
-  </header>
+/* =================== CSS FOR CHENSHUN WENG'S RESPONSIVE PORTFOLIO =================== */
 
-  <main class="container">
-    <section class="about">
-      <h2 data-i18n="about.title">Über mich</h2>
-      <p data-i18n="about.text">Ich bin ein Ingenieur mit Fokus auf Automatisierung, Robotik und MBSE...</p>
-      <div class="cv-download">
-        <a href="Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv">📄 Lebenslauf herunterladen</a>
-      </div>
-    </section>
+:root[data-theme='light'] {
+  --bg: #f4f4f4;
+  --text: #333;
+  --primary: #1f2937;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+}
 
-    <section class="projects">
-      <h2 data-i18n="projects.title">Projekte</h2>
+:root[data-theme='dark'] {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --primary: #ffffff;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(255, 255, 255, 0.1);
+}
 
-      <!-- 2025 -->
-      <div class="project-year">
-        <div class="year-label">2025</div>
-        <div class="projects-row">
-          <div class="card" data-key="bsh">
-            <video src="assets/videos/PMF_video.mp4" poster="assets/images/bsh_project.png" controls></video>
-            <h3 data-i18n="projects.bsh.title">BSH Waschmaschine</h3>
-            <p data-i18n="projects.bsh.desc">Roboter + Vision + Greifer = 80% Testabdeckung</p>
-          </div>
-        </div>
-      </div>
+* {
+  box-sizing: border-box;
+}
 
-      <!-- 2024 -->
-      <div class="project-year">
-        <div class="year-label">2024</div>
-        <div class="projects-row">
-          <div class="card" data-key="bmw">
-            <iframe src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
-            <h3 data-i18n="projects.bmw.title">VEI Safe Door</h3>
-            <p data-i18n="projects.bmw.desc">MBSE Systemmodellierung</p>
-          </div>
-          <div class="card" data-key="pmf">
-            <video src="assets/videos/PMF_video.mp4" poster="assets/images/PMF_cover.jpg" controls></video>
-            <h3 data-i18n="projects.pmf.title">PMF UR10e</h3>
-            <p data-i18n="projects.pmf.desc">Drehbare Endeffektor-Entwicklung</p>
-          </div>
-        </div>
-      </div>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
 
-      <!-- 2023 -->
-      <div class="project-year">
-        <div class="year-label">2023</div>
-        <div class="projects-row">
-          <div class="card" data-key="itdf">
-            <iframe src="https://www.youtube.com/embed/-PeLRJ_0H5c" frameborder="0" allowfullscreen></iframe>
-            <h3 data-i18n="projects.itdf.title">VW ITDF</h3>
-            <p data-i18n="projects.itdf.desc">Virtuelle Fabrikplanung mit ROI</p>
-          </div>
-        </div>
-      </div>
+header {
+  background-color: var(--primary);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
 
-      <!-- 2022 -->
-      <div class="project-year">
-        <div class="year-label">2022</div>
-        <div class="projects-row">
-          <div class="card" data-key="bachelor">
-            <video src="assets/videos/bachelorarbeit_video.mp4" poster="assets/images/bachelorarbeit_cover.jpg" controls></video>
-            <h3 data-i18n="projects.bachelor.title">Bachelorarbeit</h3>
-            <p data-i18n="projects.bachelor.desc">Yaskawa GP7 + 5x4 Palettierung</p>
-          </div>
-        </div>
-      </div>
-    </section>
+header h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
 
-    <section class="skills">
-      <h2 data-i18n="skills.title">Fähigkeiten</h2>
-      <div class="skills-list">
-        <span>MBSE</span><span>SysML</span><span>Python</span><span>Tecnomatix</span>
-        <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
-      </div>
-    </section>
-  </main>
+header p {
+  margin-top: 10px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
 
-  <footer>
-    <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio">Portfolio</span></p>
-  </footer>
+.controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close">&times;</button>
-      <div id="modal-body"></div>
-    </div>
-  </div>
-</body>
-</html>
+.lang-switch button,
+.theme-toggle {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  background: white;
+  color: var(--primary);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lang-switch button:hover,
+.theme-toggle:hover {
+  background-color: #e2e8f0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 30px;
+}
+
+.cv-download {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.cv-download a {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-year {
+  margin-bottom: 60px;
+}
+
+.year-label {
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.projects-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 10px var(--card-shadow);
+  border-radius: 16px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img,
+.card iframe,
+.card video {
+  width: 100%;
+  height: 170px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.skills {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.skills-list span {
+  background-color: #d1d5db;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+footer {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--text);
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 720px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  color: var(--text);
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.modal iframe,
+.modal video {
+  width: 100%;
+  max-height: 400px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 90%;
+    margin: auto;
+  }
+  .controls {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  .skills-list span {
+    font-size: 0.85rem;
+  }
+}
