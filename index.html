@@ -1,9 +1,8 @@
-<!-- 完整 index.html 文件 -->
 <!DOCTYPE html>
 <html lang="de" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chenshun Weng Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/i18next@23.6.0/i18next.min.js"></script>
@@ -11,8 +10,8 @@
 </head>
 <body>
   <header>
-    <h1 data-i18n="header.name"></h1>
-    <p data-i18n="header.tagline"></p>
+    <h1 data-i18n="header.name">header.name</h1>
+    <p data-i18n="header.tagline">header.tagline</p>
     <div class="controls">
       <div class="lang-switch">
         <button data-lang="de">DE</button>
@@ -25,89 +24,85 @@
 
   <main class="container">
     <section class="about">
-      <h2 data-i18n="about.title"></h2>
-      <p data-i18n="about.text"></p>
+      <h2 data-i18n="about.title">about.title</h2>
+      <p data-i18n="about.text">about.text</p>
       <div class="cv-download">
-        <a href="Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv"></a>
+        <a href="Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv">about.cv</a>
       </div>
     </section>
 
     <section class="projects">
-      <h2 data-i18n="projects.title"></h2>
+      <h2 data-i18n="projects.title">projects.title</h2>
 
-      <!-- 2025 -->
       <div class="project-year">
         <div class="year-label">2025</div>
         <div class="projects-row">
           <div class="card" data-key="bsh">
-            <img src="assets/images/bsh_project.png" alt="BSH Cover">
-            <h3 data-i18n="projects.bsh.title"></h3>
-            <p data-i18n="projects.bsh.desc"></p>
-            <video controls><source src="assets/videos/bachelorarbeit_video.mp4" type="video/mp4"></video>
+            <video controls preload="metadata" poster="assets/images/bsh_project.png">
+              <source src="assets/videos/bachelorarbeit_video.mp4" type="video/mp4" />
+            </video>
+            <h3 data-i18n="projects.bsh.title">projects.bsh.title</h3>
+            <p data-i18n="projects.bsh.desc">projects.bsh.desc</p>
           </div>
         </div>
       </div>
 
-      <!-- 2024 -->
       <div class="project-year">
         <div class="year-label">2024</div>
         <div class="projects-row">
           <div class="card" data-key="bmw">
-            <img src="assets/images/769F136C-2758-478B-9AA6-593980A133B9.png" alt="BMW VEI">
-            <h3 data-i18n="projects.bmw.title"></h3>
-            <p data-i18n="projects.bmw.desc"></p>
-            <iframe width="100%" height="180" src="https://www.youtube.com/embed/dDNO7qBxwFA" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="160" src="https://www.youtube.com/embed/dDNO7qBxwFA" title="VEI Projekt" frameborder="0" allowfullscreen></iframe>
+            <h3 data-i18n="projects.bmw.title">projects.bmw.title</h3>
+            <p data-i18n="projects.bmw.desc">projects.bmw.desc</p>
           </div>
           <div class="card" data-key="pmf">
-            <img src="assets/images/PMF_cover.jpg" alt="PMF Cover">
-            <h3 data-i18n="projects.pmf.title"></h3>
-            <p data-i18n="projects.pmf.desc"></p>
-            <video controls><source src="assets/videos/PMF_video.mp4" type="video/mp4"></video>
+            <video controls preload="metadata" poster="assets/images/PMF_cover.jpg">
+              <source src="assets/videos/PMF_video.mp4" type="video/mp4" />
+            </video>
+            <h3 data-i18n="projects.pmf.title">projects.pmf.title</h3>
+            <p data-i18n="projects.pmf.desc">projects.pmf.desc</p>
           </div>
         </div>
       </div>
 
-      <!-- 2023：合并 VW 与 ITDF -->
       <div class="project-year">
         <div class="year-label">2023</div>
         <div class="projects-row">
           <div class="card" data-key="itdf">
-            <img src="assets/images/3C504BE3-8290-4A2D-948F-111D43051025.png" alt="ITDF Cover">
-            <h3 data-i18n="projects.itdf.title"></h3>
-            <p data-i18n="projects.itdf.desc"></p>
-            <iframe width="100%" height="180" src="https://www.youtube.com/embed/-PeLRJ_0H5c" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="160" src="https://www.youtube.com/embed/-PeLRJ_0H5c" title="ITDF Projekt" frameborder="0" allowfullscreen></iframe>
+            <h3 data-i18n="projects.itdf.title">projects.itdf.title</h3>
+            <p data-i18n="projects.itdf.desc">projects.itdf.desc</p>
           </div>
         </div>
       </div>
 
-      <!-- 2022 -->
       <div class="project-year">
         <div class="year-label">2022</div>
         <div class="projects-row">
           <div class="card" data-key="bachelor">
-            <img src="assets/images/bachelorarbeit_cover.jpg" alt="Bachelor Cover">
-            <h3 data-i18n="projects.bachelor.title"></h3>
-            <p data-i18n="projects.bachelor.desc"></p>
-            <video controls><source src="assets/videos/bachelorarbeit_video.mp4" type="video/mp4"></video>
+            <video controls preload="metadata" poster="assets/images/bachelorarbeit_cover.jpg">
+              <source src="assets/videos/bachelorarbeit_video.mp4" type="video/mp4" />
+            </video>
+            <h3 data-i18n="projects.bachelor.title">projects.bachelor.title</h3>
+            <p data-i18n="projects.bachelor.desc">projects.bachelor.desc</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="skills">
-      <h2 data-i18n="skills.title"></h2>
+      <h2 data-i18n="skills.title">skills.title</h2>
       <div class="skills-list">
         <span>MBSE</span><span>SysML</span><span>Python</span><span>Tecnomatix</span>
-        <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
+        <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio"></span></p>
+    <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio">footer.portfolio</span></p>
   </footer>
 
-  <!-- 弹窗结构 -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <button class="modal-close">&times;</button>
