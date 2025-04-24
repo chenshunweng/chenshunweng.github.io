@@ -1,107 +1,107 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chenshun Weng Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/i18next@23.6.0/i18next.min.js"></script>
-    <script src="app.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <h1 data-i18n="header.name">Chenshun Weng</h1>
-      <p data-i18n="header.tagline">Systems Engineer | Robotik | Simulation</p>
-      <div class="controls">
-        <div class="lang-switch">
-          <button data-lang="de">DE</button>
-          <button data-lang="en">EN</button>
-          <button data-lang="zh">中文</button>
-        </div>
-        <button class="theme-toggle">🌙</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chenshun Weng Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/i18next@23.6.0/i18next.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1 data-i18n="header.name">Chenshun Weng</h1>
+    <p data-i18n="header.tagline">Systems Engineer | Robotik | Simulation</p>
+    <div class="controls">
+      <div class="lang-switch">
+        <button data-lang="de">DE</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="zh">中文</button>
       </div>
-    </header>
-
-    <main class="container">
-      <section class="about">
-        <h2 data-i18n="about.title">Über mich</h2>
-        <p data-i18n="about.text">Ich bin ein zuverlässiger Ingenieur mit Fokus auf Automatisierung und Robotik.</p>
-        <div class="cv-download">
-          <a href="Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv">📄 Lebenslauf herunterladen (PDF)</a>
-        </div>
-      </section>
-
-      <section class="projects">
-        <h2 data-i18n="projects.title">Projekte</h2>
-
-        <div class="project-year">
-          <div class="year-label">2025</div>
-          <div class="projects-row">
-            <div class="card" data-key="bsh">
-              <img src="assets/images/bsh_project.png" alt="BSH Projekt" />
-              <h3 data-i18n="projects.bsh.title">BSH Testsystem</h3>
-              <p data-i18n="projects.bsh.desc">Waschmaschinen‑Testautomation >80 %</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-year">
-          <div class="year-label">2024</div>
-          <div class="projects-row">
-            <div class="card" data-key="bmw">
-              <video src="assets/videos/VEI_video.mp4" poster="assets/images/VEI_cover.jpg" controls muted></video>
-              <h3 data-i18n="projects.bmw.title">BMW SDOS</h3>
-              <p data-i18n="projects.bmw.desc">MBSE‑Sicherheitssystem</p>
-            </div>
-            <div class="card" data-key="pmf">
-              <video src="assets/videos/PMF_video.mp4" poster="assets/images/PMF_cover.jpg" controls muted></video>
-              <h3 data-i18n="projects.pmf.title">PMF UR10e Modul</h3>
-              <p data-i18n="projects.pmf.desc">–60 % Störeinflüsse</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-year">
-          <div class="year-label">2023</div>
-          <div class="projects-row">
-            <div class="card" data-key="itdf">
-              <video src="assets/videos/ITDF_video.mp4" poster="assets/images/ITDF_cover.jpg" controls muted></video>
-              <h3 data-i18n="projects.itdf.title">ITDF – Virtuelle Fabrik</h3>
-              <p data-i18n="projects.itdf.desc">Digital Factory & Effizienz</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-year">
-          <div class="year-label">2022</div>
-          <div class="projects-row">
-            <div class="card" data-key="bach">
-              <img src="assets/images/bachelorarbeit_cover.jpg" alt="Bachelorarbeit" />
-              <h3 data-i18n="projects.bach.title">Bachelorarbeit</h3>
-              <p data-i18n="projects.bach.desc">CNC‑Beladung</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="skills">
-        <h2 data-i18n="skills.title">Fähigkeiten</h2>
-        <div class="skills-list">
-          <span>MBSE</span><span>SysML</span><span>Python</span><span>Tecnomatix</span>
-          <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio">Portfolio</span></p>
-    </footer>
-
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <button class="modal-close">&times;</button>
-        <div id="modal-body"></div>
-      </div>
+      <button class="theme-toggle">🌙</button>
     </div>
-  </body>
+  </header>
+
+  <main class="container">
+    <section class="about">
+      <h2 data-i18n="about.title">Über mich</h2>
+      <p data-i18n="about.text"></p>
+      <div class="cv-download">
+        <a href="Lebenslauf_Chenshun_Weng.pdf" download data-i18n="about.cv"></a>
+      </div>
+    </section>
+
+    <section class="projects">
+      <h2 data-i18n="projects.title">Projekte</h2>
+
+      <div class="project-year">
+        <div class="year-label">2025</div>
+        <div class="projects-row">
+          <div class="card" data-key="bsh">
+            <img src="assets/images/bsh_project.png" alt="BSH Projekt">
+            <h3 data-i18n="projects.bsh.title"></h3>
+            <p data-i18n="projects.bsh.desc"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-year">
+        <div class="year-label">2024</div>
+        <div class="projects-row">
+          <div class="card" data-key="bmw">
+            <img src="assets/images/VEI_cover.jpg" alt="BMW VEI Projekt">
+            <h3 data-i18n="projects.bmw.title"></h3>
+            <p data-i18n="projects.bmw.desc"></p>
+          </div>
+          <div class="card" data-key="pmf">
+            <img src="assets/images/PMF_cover.jpg" alt="PMF Projekt">
+            <h3 data-i18n="projects.pmf.title"></h3>
+            <p data-i18n="projects.pmf.desc"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-year">
+        <div class="year-label">2023</div>
+        <div class="projects-row">
+          <div class="card" data-key="itdf">
+            <img src="assets/images/ITDF_cover.jpg" alt="ITDF Projekt">
+            <h3 data-i18n="projects.itdf.title"></h3>
+            <p data-i18n="projects.itdf.desc"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-year">
+        <div class="year-label">2022</div>
+        <div class="projects-row">
+          <div class="card" data-key="bach">
+            <img src="assets/images/bachelorarbeit_cover.jpg" alt="Bachelorarbeit">
+            <h3 data-i18n="projects.bach.title"></h3>
+            <p data-i18n="projects.bach.desc"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills">
+      <h2 data-i18n="skills.title">Skills</h2>
+      <div class="skills-list">
+        <span>MBSE</span><span>SysML</span><span>Python</span><span>Tecnomatix</span>
+        <span>Fusion 360</span><span>3DEXPERIENCE</span><span>Plant Simulation</span><span>LaTeX</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Chenshun Weng – <span data-i18n="footer.portfolio">Portfolio</span></p>
+  </footer>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+</body>
 </html>
