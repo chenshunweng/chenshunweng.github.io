@@ -1,49 +1,26 @@
-// app.js
-
+// i18next 初始化
 i18next.init({
   lng: 'de',
-  debug: true,
-  resources: {
-    de: {
-      translation: {
-        projects: {
-          bsh: {
-            title: "BSH Testsystem",
-            desc: "Waschmaschinen‑Testautomation >80 % Abdeckung",
-            long: "Im Praktikum bei BSH Hausgeräte: Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen...",
-            video: "bsh_video.mp4"
-          },
-          pmf: {
-            title: "PMF UR10e Modul",
-            desc: "Kameraloses Bin‑Picking, –60 % Störeinflüsse",
-            long: "CamLessPick: Entwicklung eines Drehdurchführungskonzepts zur Reduktion von Störkräften bei Bin-Picking...",
-            video: "PMF_video.mp4"
-          },
-          bmw: {
-            title: "BMW SDOS",
-            desc: "MBSE‑Sicherheitssystem gegen Türunfälle",
-            long: "Entwicklung eines Safe Door Opening Systems für BMW i3 mithilfe von MBSE und Cameo SysML...",
-            video: "bmw_video.mp4"
-          }
-        }
-      }
-    }
-  }
+  debug: false,
+  resources: translations
 }, function(err, t) {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    el.textContent = i18next.t(el.getAttribute('data-i18n'));
-  });
+  updateText();
 
+  // 切换语言
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     btn.addEventListener('click', () => {
-      i18next.changeLanguage(btn.dataset.lang, () => {
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-          el.textContent = i18next.t(el.getAttribute('data-i18n'));
-        });
-      });
+      i18next.changeLanguage(btn.dataset.lang, updateText);
     });
   });
 
+  // 语言更新逻辑
+  function updateText() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      el.textContent = i18next.t(el.getAttribute('data-i18n'));
+    });
+  }
+
+  // 模态框控制
   const modal = document.getElementById('modal');
   const modalBody = document.getElementById('modal-body');
   const closeBtn = modal.querySelector('.modal-close');
@@ -52,32 +29,32 @@ i18next.init({
     card.addEventListener('click', () => {
       const key = card.dataset.key;
       const proj = i18next.t(`projects.${key}`, { returnObjects: true });
-      const title = proj.title;
-      const text = proj.long;
-      const video = proj.video;
 
-      let html = `<h2>${title}</h2><p>${text}</p>`;
-      if (video) {
-        html += `<video controls style="margin-top: 20px; border-radius: 12px; width: 100%; max-height: 400px;"><source src="assets/videos/${video}" type="video/mp4">Your browser does not support the video tag.</video>`;
+      let videoHTML = '';
+      if (proj.video) {
+        if (proj.video.includes('.mp4')) {
+          videoHTML = `<video controls><source src="${proj.video}" type="video/mp4"></video>`;
+        } else if (proj.video.includes('youtube.com')) {
+          const id = proj.video.split('v=')[1].split('&')[0];
+          videoHTML = `<iframe src="https://www.youtube.com/embed/${id}" frameborder="0" allowfullscreen></iframe>`;
+        }
       }
 
-      modalBody.innerHTML = html;
+      modalBody.innerHTML = `
+        <h2>${proj.title}</h2>
+        <p>${proj.long}</p>
+        ${videoHTML}
+      `;
       modal.style.display = 'flex';
     });
   });
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modalBody.innerHTML = '';
-  });
-
+  closeBtn.addEventListener('click', () => modal.style.display = 'none');
   modal.addEventListener('click', e => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      modalBody.innerHTML = '';
-    }
+    if (e.target === modal) modal.style.display = 'none';
   });
 
+  // 主题切换
   const themeBtn = document.querySelector('.theme-toggle');
   themeBtn.addEventListener('click', () => {
     const root = document.documentElement;
