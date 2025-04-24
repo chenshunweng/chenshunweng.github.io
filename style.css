@@ -47,6 +47,16 @@ body {
   padding: 6px 10px; cursor: pointer;
 }
 
+/* Parallax */
+.parallax {
+  background-image: url('assets/images/parallax-bg.jpg');
+  min-height: 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /* Container */
 .container { max-width: 1280px; margin: auto; padding: 40px 20px; }
 .about { margin-bottom: 60px; }
@@ -65,7 +75,7 @@ body {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;
 }
 
-/* 卡片翻转容器尺寸（只定义一次） */
+/* 卡片翻转容器 */
 .flip-card {
   perspective: 1000px;
   display: inline-block;
@@ -86,10 +96,11 @@ body {
   width: 100%; height: 260px; object-fit: cover;
 }
 .card h3 {
-  margin: 10px 0 5px; font-size: 1.1rem; text-align: center;
+  margin: 10px 0 5px; font-size: 1rem; text-align: center;
 }
 .card p {
-  flex-grow: 0; padding: 8 12px; font-size: .85rem; max-height: 2.6em; text-align: center;
+  flex-grow: 0; padding: 8px 12px; font-size: .85rem;
+  max-height: 2.6em; overflow: hidden; text-align: center;
 }
 
 /* 翻转内部结构 */
@@ -106,19 +117,36 @@ body {
 .flip-back {
   background: var(--card-bg); color: var(--text);
   transform: rotateY(180deg);
-  padding: 20px; display: flex; flex-direction: column; align-items: center;
+  padding: 20px; display: flex; flex-direction: column; align-items: flex-start;
 }
 .flip-back h3 {
   margin-bottom: 10px;
+  align-self: center;
 }
-.flip-back p {
-  flex-grow: 1; font-size: .9rem; line-height: 1.4; text-align: left;
+.flip-back p.role,
+.flip-back p.impact {
+  margin: 6px 0;
+  font-size: .9rem;
+}
+.tools-list {
+  list-style: disc inside;
+  margin: 6px 0 12px;
+  padding-left: 0;
+}
+.tools-list li {
+  font-size: .85rem;
+  line-height: 1.4;
+}
+.flip-back p.long {
+  margin: 10px 0;
+  font-size: .9rem;
+  line-height: 1.4;
 }
 .flip-back video {
   width: 100%; border-radius: 10px; margin-top: 10px;
 }
 
-/* 仅点击时 .flipped 生效 */
+/* 点击 .flipped 时才翻转 */
 .flip-inner.flipped {
   transform: rotateY(180deg);
 }
