@@ -2,10 +2,10 @@
 <html lang="de" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chenshun Weng • Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- 确保 defer，脚本在 DOM 加载后执行 -->
+  <!-- defer：保证脚本在 DOM 和 CSSVars 就绪后执行 -->
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -14,26 +14,31 @@
       <h1 class="logo">Chenshun Weng</h1>
       <p class="tagline">Systems Engineer | Robotik | Simulation</p>
     </div>
-    <div class="header-right">
+    <div class="header-right controls">
       <select id="lang-switcher">
         <option value="de">DE</option>
         <option value="en">EN</option>
         <option value="zh">中文</option>
       </select>
-      <button id="theme-toggle" class="btn-theme">🌙</button>
-      <a class="btn-resume" href="Lebenslauf_Chenshun_Weng.pdf" target="_blank">📄 简历下载</a>
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
+      <a class="btn-resume" href="Lebenslauf_Chenshun_Weng.pdf" target="_blank">
+        📄 简历下载
+      </a>
     </div>
   </header>
 
-  <section class="about">
-    <h2>Über mich</h2>
-    <p>Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung und Robotik…</p>
-  </section>
+  <div class="container">
+    <section class="about">
+      <h2 data-i18n="about.title">Über mich</h2>
+      <p data-i18n="about.text">
+        Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung und Robotik…
+      </p>
+    </section>
 
-  <!-- 这里留空，只放入正确的 id -->
-  <section id="projects" class="projects"></section>
+    <!-- 这里留空，JS 会按 year 把 .year-group 插入进来 -->
+    <section id="projects"></section>
+  </div>
 
-  <!-- Modal -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <button class="modal-close">&times;</button>
