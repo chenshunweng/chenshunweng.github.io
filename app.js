@@ -3,166 +3,158 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('✅ DOMContentLoaded');
 
   const I18N = {
-    de: {
-      header: {
-        name: "Chenshun Weng",
-        tagline: "Systems Engineer | Robotik | Simulation",
-        cvText: "📄 Lebenslauf herunterladen (PDF)"
+   const I18N = {
+  const I18N = {
+  zh: {
+    projects: {
+      bsh: {
+        year: 2025,
+        title: "BSH 洗衣机测试系统",
+        desc: "洗衣机测试自动化 >80% 覆盖率",
+        myRole: "负责系统架构设计、控制流程构建、路径规划逻辑开发及抓手模块集成，完成视觉识别功能与测试平台机械结构设计。",
+        tools: ["TMflow", "Omron TM14", "路径规划算法", "Landmark 校准系统"],
+        impact: "系统在标准洗衣流程中实现衣物的识别和抓取，测试覆盖率超过 80%；具备反馈调整机制与抓取错误恢复能力，支持全天候连续运行，显著降低人工干预频率。",
+        long: "开发了一套基于协作机器人的洗衣机测试自动化系统，覆盖从洗衣程序结束识别、衣物状态检测、路径规划到湿衣抓取与干衣补充的全流程。系统支持连续运行与自动化自纠正，适用于高负载无人值守测试场景。"
       },
-      about: {
-        title: "Über mich",
-        text: "Ich bin ein erfahrener Systems Engineer mit Fokus auf Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). In meinem Masterstudium arbeitete ich an Industrieprojekten mit BMW (Safe Door Opening System auf MBSE-Basis) und Volkswagen (Virtuelle Fabrik mit Tecnomatix Simulation). Derzeit entwickle ich bei BSH ein robotergestütztes Testsystem für Waschmaschinen, das über 80 % der Testfälle automatisiert abdeckt."
+      bmw: {
+        year: 2024,
+        title: "BMW SDOS 安全开门系统",
+        desc: "MBSE 安全系统，防止开门事故",
+        myRole: "负责系统建模流程，构建 SysML 需求图、功能图与行为逻辑模型；参与系统原型搭建，完成硬件控制逻辑与行为模型联动调试。",
+        tools: ["Cameo SysML", "3DEXPERIENCE", "SysML", "Arduino", "FDMU"],
+        impact: "系统具备基于交通情景识别的智能预警能力，能够有效判断门控风险并延迟开门，原型系统在五类复杂情境测试中预警准确率达到 85%。",
+        long: "设计并实现了一套基于 MBSE 的智能车门安全系统原型，用于应对城市交通中因盲目开门引发的骑行者碰撞事故。"
       },
-      projects: {
-        bsh: {
-          year: 2025,
-          title: "BSH Testsystem",
-          desc: "Waschmaschinen-Testautomation >80 % Abdeckung",
-          long: "Dieses Projekt ist Teil meiner Masterarbeit und zielt auf die Entwicklung eines robotergestützten Systems zur vollautomatischen Prüfung von Waschmaschinen ab. Es integriert einen TM14-Roboter, visuelle Erkennungsmodule (inkl. Template Matching und Multi-Skalen-Bildpyramiden), einen adaptiven Greifer sowie Pfadplanungsalgorithmen. Das System erkennt autonom das Waschende (\"END\") und greift anschließend nasse Handtücher zur Ablage in den Trocknungskorb. Mit über 80 % Testabdeckung unterstützt es verschiedene Handtuchlagen und verfügt über Fehlererkennung und Selbstkorrektur – ideal für dauerhafte, unbeaufsichtigte Testläufe.",
-          cover: "assets/images/bsh_project.png",
-          video: "assets/videos/bsh_video.mp4"
-        },
-        vw: {
-          year: 2023,
-          title: "VW / ITDF Virtuelle Fabrik",
-          desc: "Plant Simulation & Layout-Optimierung (+20 %)",
-          long: "Dieses Projekt entstand im Rahmen einer Kooperationsaufgabe mit Volkswagen und wurde auf der ITDF-Plattform (Virtuelle Fabrik) umgesetzt. Meine Aufgabe war die Modellierung digitaler Zwillinge mithilfe von Tecnomatix Plant Simulation, um Produktionslayouts zu optimieren und Engpässe zu identifizieren. Durch Prozesslogik, Förderparameteranpassung und automatische Auswertungen konnte eine Effizienzsteigerung von über 20 % erzielt werden. Das Projekt stärkte meine Fähigkeiten in datengetriebener Fabrikplanung und Ressourcenmodellierung.",
-          cover: "assets/images/ITDF_cover.jpg",
-          video: "assets/videos/ITDF_video.mp4"
-        },
-        bmw: {
-          year: 2024,
-          title: "BMW SDOS",
-          desc: "MBSE-Sicherheitssystem gegen Türunfälle",
-          long: "Dieses Projekt wurde als Teil eines Uni-Kurses in Zusammenarbeit mit BMW durchgeführt. Ziel war die MBSE-basierte Modellierung eines Safe Door Opening Systems (SDOS) für den BMW i3 zur Vermeidung von Türunfällen. Ich erstellte mit Cameo Systems Modeler ein vollständiges SysML-Modell mit Anforderungsverfolgung, Strukturdiagrammen, Zustandsautomaten und Ablaufplänen. Zusätzlich wurden Simulationskomponenten integriert, um Sicherheitsstrategien in verschiedenen Szenarien zu analysieren.",
-          cover: "assets/images/VEI_cover.jpg",
-          video: "assets/videos/VEI_video.mp4"
-        },
-        pmf: {
-          year: 2024,
-          title: "PMF UR10e Modul",
-          desc: "Kameraloses Bin-Picking, –60 % Störeinflüsse",
-          long: "In diesem Projekt entwickelte ich eigenständig einen drehbaren Endeffektor für den UR10e-Roboter. Er kombiniert einen Vakuumgreifer mit passiven, flexiblen Gelenken und ist für kamerafreies Bin-Picking konzipiert. Der modulare Aufbau reduziert Querkräfte und minimiert das Abrutschen beim Greifen unregelmäßiger Objekte. Das System eignet sich besonders für industrielle Szenarien mit niedrigen Kosten und geringen Sensoranforderungen.",
-          cover: "assets/images/PMF_cover.jpg",
-          video: "assets/videos/PMF_video.mp4"
-        },
-        bach: {
-          year: 2022,
-          title: "Bachelorarbeit",
-          desc: "Robotik-Programmkonzept für CNC-Beladung",
-          long: "Im Rahmen meiner Bachelorarbeit bei Anton Häring KG entwickelte ich ein modulares Programmsystem zur automatisierten Be- und Entladung von CNC-Maschinen. Der Fokus lag auf Multi-Station-Kompatibilität und Kollisionserkennung. Ich programmierte den Yaskawa-Roboter für reale Fertigungsaufgaben und validierte das System vor Ort. Das Projekt steigerte die Beladungseffizienz erheblich und bildete die Grundlage für spätere flexible Fertigungssysteme.",
-          cover: "assets/images/bachelorarbeit_cover.jpg",
-          video: "assets/videos/bachelorarbeit_video.mp4"
-        }
-      }
-    },
-    en: {
-      header: {
-        name: "Chenshun Weng",
-        tagline: "Systems Engineer | Robotics | Simulation",
-        cvText: "📄 Download CV (PDF)"
+      vw: {
+        year: 2023,
+        title: "VW / ITDF 虚拟工厂",
+        desc: "工厂仿真与布局优化（+20% 效率提升）",
+        myRole: "负责三条产线的模型搭建与优化流程设计，包括生产节拍分析、流程瓶颈识别、资源配置仿真以及布局可视化优化。",
+        tools: ["Tecnomatix Plant Simulation", "价值流图分析", "节拍测算工具", "资源调度脚本"],
+        impact: "优化后的布局节拍效率提升超过 20%，显著降低工位等待时间与人工干预需求，完成仿真验证并形成结构化汇报材料。",
+        long: "基于 Plant Simulation 构建数字孪生模型，进行产能仿真与瓶颈优化，实现多工位节拍协调。"
       },
-      about: {
-        title: "About Me",
-        text: "I am a systems engineer specializing in automation, robotics, and model-based systems engineering (MBSE). During my master’s studies, I contributed to industrial projects with BMW (MBSE-based Safe Door Opening System) and Volkswagen (Virtual Factory optimization using Tecnomatix). Currently, I am developing a robotic testing system at BSH, achieving over 80% test coverage for washing machines."
+      pmf: {
+        year: 2024,
+        title: "PMF UR10e 模块",
+        desc: "无视觉抓取系统，–60% 干扰力",
+        myRole: "负责抓手结构设计、柔性关节建模、干扰力测试方案制定与实验平台搭建，完成多轮设计迭代与性能优化。",
+        tools: ["UR10e", "FUSION 360", "3D 打印原型机测试", "力传感器", "Formhand 真空吸盘抓手"],
+        impact: "干扰力矩降低 60%，吸附稳定性通过验证，结构支持模块化复用。",
+        long: "构建 UR10e 无视觉抓取系统，结合旋转与柔性结构，适用于柔性分拣场景。"
       },
-      projects: {
-        bsh: {
-          year: 2025,
-          title: "BSH Test System",
-          desc: "Washing machine test automation >80% coverage",
-          long: "This project, part of my master's thesis, focuses on developing a robotic system for fully automated washing machine testing. It integrates the TM14 robot, vision detection modules (including template matching and multi-scale image pyramids), an adaptive gripper, and path planning algorithms. The system performs the entire workflow autonomously from detecting the 'END' indicator to grabbing wet towels and placing them into the drying basket. It achieves over 80% test coverage and supports different towel positions, including error handling and self-correction for long-term unattended operation.",
-          cover: "assets/images/bsh_project.png",
-          video: "assets/videos/bsh_video.mp4"
-        },
-        vw: {
-          year: 2023,
-          title: "VW / ITDF Virtual Factory",
-          desc: "Plant Simulation & Layout Optimization (+20%)",
-          long: "This project was part of a simulation optimization task in collaboration with Volkswagen, conducted on the ITDF (Virtuelle Fabrik) platform. My role involved building digital twins of production units using Tecnomatix Plant Simulation, optimizing layouts and identifying bottlenecks. By refining process logic, adjusting conveyor parameters, and applying automated performance analysis, we achieved over 20% improvement in production efficiency. The project strengthened my skills in data-driven factory planning and resource modeling.",
-          cover: "assets/images/ITDF_cover.jpg",
-          video: "assets/videos/ITDF_video.mp4"
-        },
-        bmw: {
-          year: 2024,
-          title: "BMW SDOS",
-          desc: "MBSE safety system against door accidents",
-          long: "This project was part of an academic collaboration with BMW during a course on system modeling and analysis. The goal was to create a prototype model of a Safe Door Opening System (SDOS) for the BMW i3 using MBSE methodologies. I used Cameo Systems Modeler to build comprehensive SysML models including requirements tracing, structure diagrams, state machines, and activity flows. The model was also tested with simulation components to evaluate safety strategies under various scenarios.",
-          cover: "assets/images/VEI_cover.jpg",
-          video: "assets/videos/VEI_video.mp4"
-        },
-        pmf: {
-          year: 2024,
-          title: "PMF UR10e Module",
-          desc: "Camera-free bin-picking, –60% disturbances",
-          long: "In this project, I independently designed a rotatable end-effector for the UR10e robot, combining a vacuum gripper with passive flexible joints. The module was developed for bin-picking tasks without a camera system, reducing lateral forces and slippage issues commonly seen with traditional rigid grippers. It achieved stable grasping performance in visually-challenged environments and reduced setup complexity, making it suitable for low-cost deployment in industrial applications.",
-          cover: "assets/images/PMF_cover.jpg",
-          video: "assets/videos/PMF_video.mp4"
-        },
-        bach: {
-          year: 2022,
-          title: "Bachelor Thesis",
-          desc: "Robotic CNC-loading program concept",
-          long: "As part of my bachelor’s thesis at Anton Häring KG, I developed a modular software framework for automated loading and unloading of CNC machines. The system supported multi-station compatibility and collision avoidance. I programmed the Yaskawa industrial robot to handle real production tasks and validated the system’s performance on-site. The project significantly improved loading efficiency and laid a foundation for future flexible manufacturing solutions.",
-          cover: "assets/images/bachelorarbeit_cover.jpg",
-          video: "assets/videos/bachelorarbeit_video.mp4"
-        }
-      }
-    },
-    zh: {
-      header: {
-        name: "翁陈顺",
-        tagline: "系统工程师 | 机器人 | 仿真",
-        cvText: "📄 下载简历 (PDF)"
-      },
-      about: {
-        title: "关于我",
-        text: "我是一名专注于自动化、机器人与模型驱动系统工程（MBSE）的系统工程师。在硕士阶段，我参与了多个来自工业界的合作项目，包括 BMW 的“安全开门系统（SDOS）”模型建立项目和 Volkswagen 的“虚拟工厂仿真优化”项目。在这些项目中，我主要负责系统建模、仿真优化和结构分析。此外，我正在 BSH 家电公司开展毕业设计课题，开发一套机器人辅助的全自动洗衣机测试系统，已实现超过 80% 的测试场景覆盖。我的工作结合了系统性思维与实践动手能力，擅长从理论建模到实际部署全过程的系统集成。"
-      },
-      projects: {
-        bsh: {
-          year: 2025,
-          title: "BSH 测试系统",
-          desc: "洗衣机测试自动化 >80% 覆盖率",
-          long: "本项目作为我的硕士毕业设计，旨在开发一套机器人辅助的全自动洗衣机测试系统。系统通过集成 TM14 机器人、视觉检测模块（包括模板匹配和多尺度图像金字塔算法）、自适应抓手及路径规划模块，实现了从检测洗衣程序完成标志“END”开始，到抓取湿毛巾并放入干衣框的完整自动流程。测试覆盖率达到 80% 以上，支持多种湿衣物抓取状态，并具备错误反馈与自纠正功能。整个系统适用于高频无人值守测试任务。",
-          cover: "assets/images/bsh_project.png",
-          video: "assets/videos/bsh_video.mp4"
-        },
-        vw: {
-          year: 2023,
-          title: "大众虚拟工厂",
-          desc: "工厂仿真与布局优化 (+20%)",
-          long: "本项目作为与大众集团合作的仿真优化任务，在 ITDF（Virtuelle Fabrik）平台上开展。我的主要工作是基于 Tecnomatix Plant Simulation 构建数字孪生模型，对多个生产单元进行布局优化与瓶颈分析。通过流程逻辑建模、输送线参数调优和自动统计评估，实现产线整体效率提升超过 20%。该项目强调数据驱动的工厂规划方案，并强化了我在生产仿真与资源建模方面的实际能力。",
-          cover: "assets/images/ITDF_cover.jpg",
-          video: "assets/videos/ITDF_video.mp4"
-        },
-        bmw: {
-          year: 2024,
-          title: "BMW SDOS 安全开门系统",
-          desc: "MBSE 安全系统，防止开门事故",
-          long: "本项目是我在“系统建模与分析”课程中的实际工业任务，由 BMW 提出需求。项目目标是基于 MBSE 方法为 BMW i3 建立一个“安全开门系统”原型模型（Safe Door Opening System），以预防车辆停车时乘客开门引发的事故。我负责使用 Cameo Systems Modeler 建立 SysML 模型，包括需求链追踪、系统结构图、状态机和行为流程图等。项目还包含仿真分析模块，通过参数调节评估不同环境下的风险控制效果。",
-          cover: "assets/images/VEI_cover.jpg",
-          video: "assets/videos/VEI_video.mp4"
-        },
-        pmf: {
-          year: 2024,
-          title: "PMF UR10e 模块",
-          desc: "无视觉抓取，–60% 干扰",
-          long: "在该项目中，我独立设计了一款旋转式 UR10e 末端执行器，结合真空吸盘和被动柔性关节结构，用于无视觉系统的 Bin-Picking 操作。通过柔性模块减少夹取过程中的侧向干扰力，解决了传统机械臂在抓取不规则物体时容易滑脱的问题。该模块在无摄像头辅助的前提下，实现了稳定抓取率并降低调试复杂度，适用于复杂工业场景下的低成本部署方案。",
-          cover: "assets/images/PMF_cover.jpg",
-          video: "assets/videos/PMF_video.mp4"
-        },
-        bach: {
-          year: 2022,
-          title: "本科毕业论文",
-          desc: "CNC 上料机器人程序概念",
-          long: "在 Anton Häring KG 进行的毕业设计项目中，我开发了一套用于 CNC 机床自动上下料的机器人程序框架。项目重点在于设计模块化的程序结构，以支持多工位兼容与碰撞规避功能。我使用 Yaskawa 工业机器人编程语言编写完整流程，并实现了系统在实际生产环境中的部署与验证。项目显著提升了上下料效率，为后续柔性制造系统奠定了基础。",
-          cover: "assets/images/bachelorarbeit_cover.jpg",
-          video: "assets/videos/bachelorarbeit_video.mp4"
-        }
+      bach: {
+        year: 2022,
+        title: "本科毕业项目 – CNC 自动上下料系统",
+        desc: "CNC 上料自动化 +模块化机器人程序",
+        myRole: "负责编写完整控制程序逻辑，优化原先的算法设计，设计模块化结构与流程状态图。",
+        tools: ["Yaskawa", "碰撞规避算法", "状态图建模"],
+        impact: "节拍缩短 25%，支持快速部署与复用，结构标准化程度高。",
+        long: "构建模块化机器人上下料控制程序，部署于 CNC 产线，提升自动化效率。"
       }
     }
-  };
+  },
+
+  en: {
+    projects: {
+      bsh: {
+        year: 2025,
+        title: "BSH Washing Machine Testing System",
+        desc: "Washing machine test automation with >80% coverage",
+        myRole: "Designed the system architecture, developed control flows and path planning logic, integrated the gripper module and vision recognition into the test platform.",
+        tools: ["TMflow", "Omron TM14", "Path planning algorithm", "Landmark calibration system"],
+        impact: "Enabled reliable detection and grasping of laundry in standard wash cycles with over 80% coverage. Equipped with feedback adjustment and failure recovery mechanisms to ensure 24/7 autonomous operation with minimal manual intervention.",
+        long: "Developed a collaborative robot-based automation system for washing machine testing. Covered end-of-cycle recognition, laundry state detection, path planning, and both wet laundry extraction and dry item supplementation. The system supports continuous operation and self-correction, suitable for high-load unattended testing scenarios."
+      },
+      bmw: {
+        year: 2024,
+        title: "BMW SDOS Safe Door Opening System",
+        desc: "MBSE-based safety system for door accident prevention",
+        myRole: "Led the system modeling process, created SysML requirement, function, and behavior diagrams; participated in prototype implementation and integrated hardware control logic with behavior models.",
+        tools: ["Cameo SysML", "3DEXPERIENCE", "SysML", "Arduino", "FDMU"],
+        impact: "The system detects traffic scenarios and provides intelligent door control warnings. Achieved 85% alert accuracy in five complex traffic simulation scenarios.",
+        long: "Designed and implemented a model-based intelligent door safety prototype for urban cycling environments. The system was built using MBSE methods and integrates scenario simulation with hardware prototype validation."
+      },
+      vw: {
+        year: 2023,
+        title: "VW / ITDF Virtual Factory",
+        desc: "Factory simulation and layout optimization (+20% efficiency)",
+        myRole: "Built simulation models for three production lines and optimized flows through cycle time analysis, bottleneck identification, resource simulation, and layout visualization.",
+        tools: ["Tecnomatix Plant Simulation", "Value stream mapping", "Cycle time calculation tools", "Resource scheduling scripts"],
+        impact: "Improved layout efficiency by over 20%, significantly reduced workstation delays and manual interventions, and delivered simulation-backed restructuring reports.",
+        long: "Constructed digital twin models using Plant Simulation to analyze throughput capacity and resolve production bottlenecks, enabling synchronized cycle times across multiple stations."
+      },
+      pmf: {
+        year: 2024,
+        title: "PMF UR10e Gripper Module",
+        desc: "Vision-free grasping system, –60% torque disturbance",
+        myRole: "Responsible for gripper structure design, flexible joint modeling, test bench construction, and execution of mechanical interference tests across multiple design iterations.",
+        tools: ["UR10e", "Fusion 360", "3D-printed prototype testing", "Force sensor", "Formhand vacuum gripper"],
+        impact: "Reduced torque disturbance by 60%, verified stable adhesion, and enabled modular design for flexible reusability.",
+        long: "Designed a vision-independent grasping system based on the UR10e robot, combining rotary and flexible components. Suitable for dynamic object handling in flexible sorting applications."
+      },
+      bach: {
+        year: 2022,
+        title: "Bachelor Project – CNC Automation System",
+        desc: "Robotic CNC loading automation with modular program structure",
+        myRole: "Developed the complete control logic, optimized algorithm structure, and designed modular architecture and flow diagrams.",
+        tools: ["Yaskawa", "Collision avoidance algorithm", "State diagram modeling"],
+        impact: "Reduced loading cycle time by 25%. The program structure supports rapid deployment, reuse, and high modular standardization.",
+        long: "Built a modular robot loading and unloading control system for CNC applications. Successfully deployed on production lines to enhance automation throughput."
+      }
+    }
+  },
+
+  de: {
+    projects: {
+      bsh: {
+        year: 2025,
+        title: "BSH Waschmaschinen-Testsystem",
+        desc: "Automatisierung mit >80% Testabdeckung",
+        myRole: "Entwicklung der Systemarchitektur, Erstellung der Steuerungslogik und Pfadplanung, Integration von Greifmodul und Bilderkennung in die Testplattform.",
+        tools: ["TMflow", "Omron TM14", "Pfadplanungsalgorithmus", "Landmark-Kalibriersystem"],
+        impact: "Ermöglicht zuverlässige Erkennung und Greifen von Wäsche im Standardwaschprogramm mit über 80% Abdeckung. Verfügt über Mechanismen zur Fehlerkorrektur und Rückmeldung für kontinuierlichen 24/7-Betrieb mit minimalem Personaleinsatz.",
+        long: "Ein kollaboratives Robotersystem zur automatisierten Prüfung von Waschmaschinen. Umfasst Programmende-Erkennung, Zustandserfassung, Pfadplanung sowie Nasswäsche- und Trockenwäsche-Handhabung. Geeignet für hochfrequente Testszenarien ohne Bedienpersonal."
+      },
+      bmw: {
+        year: 2024,
+        title: "BMW SDOS Sicherheits-Türsystem",
+        desc: "MBSE-Sicherheitssystem zur Unfallvermeidung beim Türöffnen",
+        myRole: "Modellierung des Gesamtsystems mittels SysML, Erstellung von Anforderungs-, Funktions- und Verhaltensmodellen; Aufbau eines Hardware-Prototyps mit modellbasierter Steuerung.",
+        tools: ["Cameo SysML", "3DEXPERIENCE", "SysML", "Arduino", "FDMU"],
+        impact: "System erkennt Verkehrssituationen und gibt intelligente Tür-Warnsignale. In 5 Szenarientests wurde eine Vorhersagegenauigkeit von 85% erreicht.",
+        long: "Entwicklung eines intelligenten Sicherheitssystems zur Vermeidung von Unfällen mit Radfahrern im Stadtverkehr. Umsetzung erfolgte auf Basis eines modellbasierten Systementwicklungsansatzes (MBSE)."
+      },
+      vw: {
+        year: 2023,
+        title: "VW / ITDF Virtuelle Fabrik",
+        desc: "Werkslayout-Optimierung und Simulation (+20% Effizienz)",
+        myRole: "Erstellung von Simulationsmodellen für drei Produktionslinien, Analyse von Zykluszeiten, Engpässen und Ressourcen, Optimierung der Layoutstruktur.",
+        tools: ["Tecnomatix Plant Simulation", "Wertstromanalyse", "Taktzeitberechnung", "Skriptbasierte Ressourcenplanung"],
+        impact: "Produktionsleistung um über 20% gesteigert, Wartezeiten reduziert, fundierte Entscheidungsgrundlage durch Simulationsergebnisse geschaffen.",
+        long: "Digitale Zwillingsmodelle mit Plant Simulation erstellt, um Fertigungsengpässe zu analysieren und Taktzeitabstimmungen zwischen Stationen zu optimieren."
+      },
+      pmf: {
+        year: 2024,
+        title: "PMF UR10e Greifermodul",
+        desc: "Visionsloses Greifsystem, –60% Störmoment",
+        myRole: "Konstruktion des Greifers mit flexiblen Gelenken, Aufbau eines Prüfstands, Durchführung mehrerer Design- und Belastungstests.",
+        tools: ["UR10e", "Fusion 360", "3D-Druck-Prototyp", "Kraftsensor", "Formhand Vakuumgreifer"],
+        impact: "Störmoment um 60% reduziert, zuverlässige Haftung durch Tests bestätigt, modulare Wiederverwendbarkeit gewährleistet.",
+        long: "Entwicklung eines UR10e-basierten Greifsystems ohne visuelle Unterstützung. Ideal für flexible Sortieranwendungen mit wechselnden Objektformen."
+      },
+      bach: {
+        year: 2022,
+        title: "Bachelorarbeit – CNC-Automatisierung",
+        desc: "Modulare Robotersteuerung für CNC-Beschickung",
+        myRole: "Programmierung der vollständigen Steuerlogik, Optimierung der Algorithmen und Erstellung modularer Ablauf- und Zustandsdiagramme.",
+        tools: ["Yaskawa", "Kollisionsvermeidungsalgorithmus", "Zustandsdiagramm-Modellierung"],
+        impact: "Taktzeit um 25% reduziert, standardisierte Struktur ermöglicht schnelle Wiederverwendung und Einsatz.",
+        long: "Entwicklung einer modularen Robotersteuerung zur automatisierten Beladung und Entladung von CNC-Maschinen. Im Produktionsumfeld erfolgreich implementiert."
+      }
+    }
+  }
+};
 
   // DOM 引用
   const htmlEl        = document.documentElement;
