@@ -129,3 +129,72 @@ i18next.init({
 }, function(err, t) {
   renderTexts();
 });
+// 语言切换
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      i18next.changeLanguage(btn.dataset.lang, () => {
+        renderTexts();
+      });
+    });
+  });
+
+  // 模态框逻辑
+  const modal = document.getElementById('modal');
+  const modalBody = document.getElementById('modal-body');
+  const closeBtn = modal.querySelector('.modal-close');
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      const key = card.dataset.key;
+      const proj = i18next.t(`projects.${key}`, { returnObjects: true });
+
+      // 判断是否有本地视频文件
+      const hasVideo = ['bsh', 'vw', 'bmw', 'pmf', 'itdf', 'bach'].includes(key);
+      const videoMap = {
+        vw: "vw_video.mp4",
+        bmw: "bmw_video.mp4",
+        pmf: "pmf_video.mp4",
+        itdf: "itdf_video.mp4",
+        bach: "bachelor_video.mp4"
+      };
+
+      let videoHTML = "";
+      if (videoMap[key]) {
+        videoHTML = `
+          <video controls style="width: 100%; border-radius: 10px; margin-top: 20px;">
+            <source src="assets/videos/${videoMap[key]}" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        `;
+      }
+
+      modalBody.innerHTML = `
+        <h2>${proj.title}</h2>
+        <p style="margin-top: 10px;">${proj.long}</p>
+        ${videoHTML}
+      `;
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => modal.style.display = 'none');
+  modal.addEventListener('click', e => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+
+  // 暗黑模式切换
+  const themeBtn = document.querySelector('.theme-toggle');
+  themeBtn.addEventListener('click', () => {
+    const root = document.documentElement;
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+});
+
+// 文本渲染函数
+function renderTexts() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    el.textContent = i18next.t(el.getAttribute('data-i18n'));
+  });
+}
