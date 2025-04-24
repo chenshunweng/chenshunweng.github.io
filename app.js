@@ -6,7 +6,6 @@ const htmlEl         = document.documentElement;
 const langSwitcher   = document.getElementById('lang-switcher');
 const themeToggle    = document.getElementById('theme-toggle');
 const cvLink         = document.getElementById('cv-link');
-const cvViewBtn      = document.getElementById('cv-view-btn');
 const cvCounterEl    = document.getElementById('cv-counter');
 const headerName     = document.getElementById('header-name');
 const headerTagline  = document.getElementById('header-tagline');
@@ -24,13 +23,11 @@ langSwitcher.value = currentLang;
 htmlEl.lang        = currentLang;
 htmlEl.setAttribute('data-theme', 'light');
 
-// 预览/下载计数
-const CV_VIEW_KEY = 'cv_view_count';
-const CV_DL_KEY   = 'cv_download_count';
+// 下载计数
+const CV_DL_KEY = 'cv_download_count';
 function updateCvCounter() {
-  const views = parseInt(localStorage.getItem(CV_VIEW_KEY) || '0', 10);
-  const dls   = parseInt(localStorage.getItem(CV_DL_KEY)   || '0', 10);
-  cvCounterEl.textContent = `预览: ${views} 次 | 下载: ${dls} 次`;
+  const dls = parseInt(localStorage.getItem(CV_DL_KEY) || '0', 10);
+  cvCounterEl.textContent = `下载: ${dls} 次`;
 }
 
 // 语言切换
@@ -54,21 +51,9 @@ modal.addEventListener('click', e => {
   if (e.target === modal) closeModal();
 });
 
-// 初始按钮事件：预览 & 下载
-cvViewBtn.addEventListener('click', () => {
-  const viewer = document.getElementById('cv-viewer');
-  const isOpen = viewer.style.display === 'block';
-  if (isOpen) {
-    viewer.style.display = 'none';
-  } else {
-    viewer.style.display = 'block';
-    // 增加预览计数
-    localStorage.setItem(CV_VIEW_KEY, (parseInt(localStorage.getItem(CV_VIEW_KEY) || '0',10) + 1));
-    updateCvCounter();
-  }
-});
+// 下载按钮计数
 cvLink.addEventListener('click', () => {
-  localStorage.setItem(CV_DL_KEY, (parseInt(localStorage.getItem(CV_DL_KEY) || '0',10) + 1));
+  localStorage.setItem(CV_DL_KEY, (parseInt(localStorage.getItem(CV_DL_KEY) || '0', 10) + 1));
   updateCvCounter();
 });
 
@@ -82,7 +67,6 @@ async function renderAll() {
     headerName.textContent    = data.header.name;
     headerTagline.textContent = data.header.tagline;
     cvLink.textContent        = data.header.cvText;
-    cvViewBtn.textContent     = data.header.cvText.replace(/下载|Download|Herunterladen/, '预览');
 
     // About
     aboutTitle.textContent = data.about.title;
