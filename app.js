@@ -6,7 +6,6 @@ const htmlEl         = document.documentElement;
 const langSwitcher   = document.getElementById('lang-switcher');
 const themeToggle    = document.getElementById('theme-toggle');
 const cvLink         = document.getElementById('cv-link');
-const cvCounterEl    = document.getElementById('cv-counter');
 const headerName     = document.getElementById('header-name');
 const headerTagline  = document.getElementById('header-tagline');
 const aboutTitle     = document.getElementById('about-title');
@@ -18,17 +17,10 @@ const modalDesc      = document.getElementById('modal-desc');
 const videoContainer = document.getElementById('modal-video-container');
 const btnClose       = document.querySelector('.modal-close');
 
-// 初始化
+// 初始化语言和主题
 langSwitcher.value = currentLang;
 htmlEl.lang        = currentLang;
 htmlEl.setAttribute('data-theme', 'light');
-
-// 下载计数
-const CV_DL_KEY = 'cv_download_count';
-function updateCvCounter() {
-  const dls = parseInt(localStorage.getItem(CV_DL_KEY) || '0', 10);
-  cvCounterEl.textContent = `下载: ${dls} 次`;
-}
 
 // 语言切换
 langSwitcher.addEventListener('change', e => {
@@ -51,13 +43,7 @@ modal.addEventListener('click', e => {
   if (e.target === modal) closeModal();
 });
 
-// 下载按钮计数
-cvLink.addEventListener('click', () => {
-  localStorage.setItem(CV_DL_KEY, (parseInt(localStorage.getItem(CV_DL_KEY) || '0', 10) + 1));
-  updateCvCounter();
-});
-
-// 渲染全部：Header / About / Projects
+// 渲染全部
 async function renderAll() {
   try {
     const res  = await fetch(`i18n/${currentLang}.json`);
@@ -72,9 +58,6 @@ async function renderAll() {
     aboutTitle.textContent = data.about.title;
     aboutText.textContent  = data.about.text;
 
-    // 更新计数显示
-    updateCvCounter();
-
     // Projects
     renderProjects(data.projects);
   } catch (err) {
@@ -82,19 +65,18 @@ async function renderAll() {
   }
 }
 
-// 按 year 分组渲染项目卡片
+// 按 year 分组并渲染带 flip-card
 function renderProjects(projectsObj) {
   projectsEl.innerHTML = '';
+  // 将对象条目转数组，过滤 title 字段
   const items = Object.entries(projectsObj)
-    .filter(([key]) => key !== 'title')
-    .map(([key, p]) => ({ id: key, ...p }));
+    .filter(([k]) => k !== 'title')
+    .map(([k,p]) => ({ id:k, ...p }));
 
   const byYear = {};
-  items.forEach(p => {
-    (byYear[p.year] ||= []).push(p);
-  });
+  items.forEach(p => (byYear[p.year] ||= []).push(p));
 
-  Object.keys(byYear).sort((a,b) => b - a).forEach(year => {
+  Object.keys(byYear).sort((a,b) => b-a).forEach(year => {
     const group = document.createElement('div');
     group.className = 'year-group';
 
@@ -105,23 +87,37 @@ function renderProjects(projectsObj) {
 
     const row = document.createElement('div');
     row.className = 'projects-row';
+
     byYear[year].forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <img src="${p.cover}" alt="${p.title}" />
-        <h3>${p.title}</h3>
-        <p>${p.desc}</p>
+      const flip = document.createElement('div');
+      flip.className = 'flip-card';
+      flip.innerHTML = `
+        <div class="flip-inner">
+          <div class="flip-front card">
+            <img src="${p.cover}" alt="${p.title}" />
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+          </div>
+          <div class="flip-back">
+            <h3>技术栈</h3>
+            <p>${p.tech.join(', ')}</p>
+            ${p.github ? `<a href="${p.github}" target="_blank">查看 GitHub →</a>` : ''}
+          </div>
+        </div>
       `;
-      card.addEventListener('click', () => openModal(p));
-      row.append(card);
+      // 点击时也可翻转
+      flip.addEventListener('click', () => {
+        flip.querySelector('.flip-inner').classList.toggle('flipped');
+      });
+      row.append(flip);
     });
+
     group.append(row);
     projectsEl.append(group);
   });
 }
 
-// 打开 Modal 并注入长描述+视频
+// 打开 Modal 并注入视频
 function openModal(p) {
   modalTitle.textContent = p.title;
   modalDesc.textContent  = p.long;
