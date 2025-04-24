@@ -1,4 +1,4 @@
-// 内嵌 i18n 数据，彻底避免 fetch
+// 内嵌多语言数据
 const I18N = {
   de: {
     header: {
@@ -193,7 +193,7 @@ themeToggle.addEventListener('click', () => {
   themeToggle.textContent = next === 'light' ? '🌙' : '☀️';
 });
 
-// Render all content
+// Render everything
 function renderAll() {
   const data = I18N[currentLang];
 
@@ -210,12 +210,10 @@ function renderAll() {
   renderProjects(data.projects);
 }
 
-// Render flip-cards with text + video on back
+// Render flip-cards
 function renderProjects(projObj) {
   projectsEl.innerHTML = '';
-  const items = Object.entries(projObj)
-    .filter(([k]) => k !== 'title')
-    .map(([_,p]) => p);
+  const items = Object.values(projObj);
 
   // group by year
   const byYear = {};
