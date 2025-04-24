@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chenshun Weng • Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="app.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -24,8 +23,8 @@
     </div>
   </header>
 
+  <!-- About Section -->
   <div class="container">
-    <!-- About -->
     <section class="about">
       <h2 id="about-title"></h2>
       <p id="about-text"></p>
@@ -34,8 +33,11 @@
       </div>
     </section>
 
-    <!-- Projects will be injected here -->
+    <!-- Projects injected here -->
     <section id="projects"></section>
   </div>
+
+  <!-- 放在 body 末尾，保证 DOM 已就绪 -->
+  <script src="app.js"></script>
 </body>
-</html>
+</html>S
