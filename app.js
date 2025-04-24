@@ -1,21 +1,7 @@
 const LANGS = ['de','en','zh'];
 let currentLang = localStorage.getItem('lang') || 'de';
 
-// DOM 引用
-const htmlEl         = document.documentElement;
-const langSwitcher   = document.getElementById('lang-switcher');
-const themeToggle    = document.getElementById('theme-toggle');
-const cvLink         = document.getElementById('cv-link');
-const headerName     = document.getElementById('header-name');
-const headerTagline  = document.getElementById('header-tagline');
-const aboutTitle     = document.getElementById('about-title');
-const aboutText      = document.getElementById('about-text');
-const projectsEl     = document.getElementById('projects');
-const modal          = document.getElementById('modal');
-const modalTitle     = document.getElementById('modal-title');
-const modalDesc      = document.getElementById('modal-desc');
-const videoContainer = document.getElementById('modal-video-container');
-const btnClose       = document.querySelector('.modal-close');
+// DOM 引用\ nconst htmlEl         = document.documentElement;\ nconst langSwitcher   = document.getElementById('lang-switcher');\ nconst themeToggle    = document.getElementById('theme-toggle');\ nconst cvLink         = document.getElementById('cv-link');\ nconst headerName     = document.getElementById('header-name');\ nconst headerTagline  = document.getElementById('header-tagline');\ nconst aboutTitle     = document.getElementById('about-title');\ nconst aboutText      = document.getElementById('about-text');\ nconst projectsEl     = document.getElementById('projects');\ nconst modal          = document.getElementById('modal');\ nconst modalTitle     = document.getElementById('modal-title');\ nconst modalDesc      = document.getElementById('modal-desc');\ nconst videoContainer = document.getElementById('modal-video-container');\ nconst btnClose       = document.querySelector('.modal-close');
 
 // 初始化
 langSwitcher.value = currentLang;
@@ -37,7 +23,7 @@ themeToggle.addEventListener('click', () => {
   themeToggle.textContent = next === 'light' ? '🌙' : '☀️';
 });
 
-// 关闭 Modal
+// 关闭 Modal（包含暂停并移除视频）
 btnClose.addEventListener('click', closeModal);
 modal.addEventListener('click', e => {
   if (e.target === modal) closeModal();
@@ -108,6 +94,7 @@ function renderProjects(projectsObj) {
 function openModal(p) {
   modalTitle.textContent = p.title;
   modalDesc.textContent  = p.long;
+  // 清空旧视频
   videoContainer.innerHTML = '';
   const vid = document.createElement('video');
   vid.src = p.video;
@@ -124,6 +111,8 @@ function closeModal() {
     vid.pause();
     vid.currentTime = 0;
   }
+  // 移除视频元素，彻底停止
+  videoContainer.innerHTML = '';
   modal.classList.remove('open');
 }
 
