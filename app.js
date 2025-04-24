@@ -1,115 +1,70 @@
-// app.js
+// 支持的语言
+const langs = ['de','en','zh'];
+let currentLang = localStorage.getItem('lang') || 'de';
 
-// =======================
-// i18n 初始化
-// =======================
-i18next.init({
-  lng: 'de',
-  debug: true,
-  resources: {
-    de: {
-      translation: {
-        header: {
-          name: "Chenshun Weng",
-          tagline: "Systems Engineer | Robotik | Simulation"
-        },
-        about: {
-          title: "Über mich",
-          text: "Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz.",
-          cv: "📄 Lebenslauf herunterladen (PDF)"
-        },
-        projects: {
-          title: "Projekte",
-          bsh: {
-            title: "BSH Testsystem",
-            desc: "Waschmaschinen-Testautomation >80 %",
-            long: "Im Praktikum bei BSH Hausgeräte: Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen mit Landmark-Kalibrierung, Omron TM14 + Robotiq 2F-85, Genauigkeit ± 2 mm, 300 h Dauerbetrieb, ≤ 0.5 Eingriffe/h."
-          },
-          bmw: {
-            title: "BMW SDOS",
-            desc: "MBSE Sicherheitssystem",
-            long: "Entwicklung eines Safe Door Opening Systems für BMW i3 mithilfe von MBSE, SysML, Sensorfusion (70ms), Bremsprototyp, –60% Kollisionsrisiko."
-          },
-          pmf: {
-            title: "PMF Modul",
-            desc: "Rotationsmodul für UR10e",
-            long: "CamLessPick: Entwicklung eines UR10e-Drehmoduls mit flexibler Vakuumanbindung zur Reduktion von Störmomenten ohne Kamera."
-          },
-          itdf: {
-            title: "Virtuelle Fabrik (VW)",
-            desc: "Digital Factory & Layout-Optimierung (+20 %)",
-            long: "Optimierung der Volkswagen Motorlinie mit Tecnomatix Plant Simulation, Layout-Effizienz +20 %, Taktzeit –30 %."
-          },
-          bach: {
-            title: "Bachelorarbeit",
-            desc: "CNC-Roboterbeladung",
-            long: "Konzept zur vollautomatischen Beladung/Entladung von Werkzeugmaschinen bei Anton Häring KG mit modularer Roboterarchitektur."
-          }
-        }
-      }
-    },
-    // 更多语言可按相同结构添加 en / zh
+// DOM 元素
+const langSwitcher = document.getElementById('lang-switcher');
+const themeToggle  = document.getElementById('theme-toggle');
+const projectsEl   = document.getElementById('projects');
+const modal        = document.getElementById('modal');
+const modalTitle   = document.getElementById('modal-title');
+const modalDesc    = document.getElementById('modal-desc');
+const videoCnt     = document.getElementById('modal-video-container');
+const btnClose     = document.querySelector('.modal-close');
+
+// 1. 语言切换逻辑
+langSwitcher.value = currentLang;
+langSwitcher.addEventListener('change', e => {
+  currentLang = e.target.value;
+  localStorage.setItem('lang', currentLang);
+  renderProjects();
+});
+
+// 2. 主题切换逻辑
+themeToggle.addEventListener('click', () => {
+  const next = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  document.body.setAttribute('data-theme', next);
+  themeToggle.textContent = next === 'light' ? '🌙' : '☀️';
+});
+
+// 3. 渲染项目列表
+async function renderProjects() {
+  try {
+    const res = await fetch(`i18n/${currentLang}.json`);
+    const { projects } = await res.json();
+
+    projectsEl.innerHTML = '';
+    projects.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${p.cover}" alt="${p.name}" />
+        <div class="info">
+          <h3>${p.name}</h3>
+          <p>${p.shortDesc}</p>
+        </div>
+      `;
+      card.addEventListener('click', () => openModal(p));
+      projectsEl.append(card);
+    });
+  } catch (err) {
+    console.error('加载项目数据出错：', err);
   }
-}, function(err, t) {
-  updateTexts();
-});
-
-// =======================
-// 多语言切换
-// =======================
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    i18next.changeLanguage(btn.dataset.lang, updateTexts);
-  });
-});
-
-// =======================
-// 渲染翻译文本内容
-// =======================
-function updateTexts() {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    el.innerHTML = i18next.t(key);
-  });
 }
 
-// =======================
-// 弹窗逻辑
-// =======================
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('click', () => {
-    const projectKey = card.dataset.project;
-    const modal = document.querySelector('#projectModal');
-    const modalTitle = modal.querySelector('.modal-title');
-    const modalDesc = modal.querySelector('.modal-desc');
-    const modalVideo = modal.querySelector('video');
-
-    modalTitle.innerHTML = i18next.t(`projects.${projectKey}.title`);
-    modalDesc.innerHTML = i18next.t(`projects.${projectKey}.long`);
-    if (modalVideo) {
-      modalVideo.src = `assets/videos/${projectKey}_video.mp4`;
-      modalVideo.load();
-    }
-
-    modal.style.display = 'flex';
-  });
+// 4. 弹窗打开/关闭
+btnClose.addEventListener('click', () => modal.classList.remove('open'));
+modal.addEventListener('click', e => {
+  if (e.target === modal) modal.classList.remove('open');
 });
 
-document.querySelector('#modalClose').addEventListener('click', () => {
-  const modal = document.querySelector('#projectModal');
-  const modalVideo = modal.querySelector('video');
-  if (modalVideo) {
-    modalVideo.pause();
-    modalVideo.currentTime = 0;
-  }
-  modal.style.display = 'none';
-});
+function openModal(p) {
+  modalTitle.textContent = p.name;
+  modalDesc.textContent  = p.longDesc;
+  videoCnt.innerHTML     = `<video src="${p.video}" controls></video>`;
+  modal.classList.add('open');
+}
 
-// =======================
-// 暗黑模式切换
-// =======================
-document.querySelector('.theme-toggle').addEventListener('click', () => {
-  const root = document.documentElement;
-  const isDark = root.getAttribute('data-theme') === 'dark';
-  root.setAttribute('data-theme', isDark ? 'light' : 'dark');
-});
+// 页面初始化
+document.body.setAttribute('data-theme', 'light');
+renderProjects();
