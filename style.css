@@ -69,7 +69,7 @@ body {
 .flip-card {
   perspective: 1000px;
   display: inline-block;
-  width: 420px; height: 320px;
+  width: 520px; height: 420px;
   margin-bottom: 20px;
 }
 
