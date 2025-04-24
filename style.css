@@ -2,29 +2,6 @@ console.log('🛠 app.js loaded');
 document.addEventListener('DOMContentLoaded', () => {
   console.log('✅ DOMContentLoaded');
 
-  // 懒加载观察者：图片
-  const imgObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const img = e.target;
-        img.src = img.dataset.src;
-        obs.unobserve(img);
-      }
-    });
-  }, { rootMargin: '200px' });
-
-  // 懒加载观察者：视频
-  const videoObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const vid = e.target;
-        vid.src = vid.dataset.src;
-        vid.load();
-        obs.unobserve(vid);
-      }
-    });
-  }, { rootMargin: '200px' });
-
   // 多语言内容
   const I18N = {
     zh: {
@@ -193,8 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
           tools: ["Cameo SysML", "3DEXPERIENCE", "Arduino", "FDMU", "MBSE"],
           impact: "85% Erkennungsrate in Testszenarien; vollständige MBSE-Modellkette umgesetzt.",
           long: "Entwicklung eines intelligenten Türsystems zur Prävention von Unfällen mit Radfahrern, basierend auf MBSE.",
-          cover: "assets/images/VEI_cover.jpg",
-          video: "assets/videos/VEI_video.mp4"
+          cover: "assets/images/ITDF_cover.jpg",
+          video: "assets/videos/ITDF_video.mp4"
         },
         vw: {
           year: 2023,
@@ -215,8 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
           tools: ["UR10e", "SolidWorks", "3D-Druck", "Kraftsensor", "Formhand"],
           impact: "Querbelastung um 60% reduziert, Greifsicherheit durch Tests validiert.",
           long: "Entwicklung eines visuell unabhängigen Greifers für industrielle Kommissionieraufgaben mit flexibler Struktur.",
-          cover: "assets/images/PMF_cover.jpg",
-          video: "assets/videos/PMF_video.mp4"
+          cover: "assets/images/pmf_cover.jpg",
+          video: "assets/videos/pmf_video.mp4"
         },
         bach: {
           year: 2022,
@@ -300,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
         flip.innerHTML = `
           <div class="flip-inner">
             <div class="flip-front card">
-              <img data-src="${p.cover}" alt="${p.title}" loading="lazy"/>
+              <img src="${p.cover}" alt="${p.title}"/>
               <h3>${p.title}</h3>
               <p>${p.desc}</p>
             </div>
@@ -313,21 +290,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${p.tools.map(t => `<li>${t}</li>`).join('')}
               </ul>
               <p class="long">${p.long}</p>
-              <video data-src="${p.video}" controls preload="none"></video>
+              <video src="${p.video}" controls></video>
             </div>
           </div>
         `;
         const inner = flip.querySelector('.flip-inner');
-        const img   = flip.querySelector('img');
         const vid   = flip.querySelector('video');
 
-        // 懒加载
-        imgObserver.observe(img);
-        videoObserver.observe(vid);
-
-        // 阻止点击视频翻转
+        // 阻止点击视频时触发翻转
         vid.addEventListener('click', e => e.stopPropagation());
-        // 点击卡片翻转
+        // 点击卡片本身翻转
         flip.addEventListener('click', () => inner.classList.toggle('flipped'));
 
         row.append(flip);
