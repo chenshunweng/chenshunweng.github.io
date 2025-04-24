@@ -1,38 +1,44 @@
-de<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CHENSHUN WENG</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chenshun Weng • Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <!-- 页头 -->
   <header class="header">
     <div class="header-left">
       <h1 id="header-name">Loading…</h1>
       <p id="header-tagline"></p>
     </div>
-    <div class="controls">
+    <div class="header-right controls">
       <select id="lang-switcher">
-        <option value="zh">中文</option>
-        <option value="en">EN</option>
         <option value="de">DE</option>
+        <option value="en">EN</option>
+        <option value="zh">中文</option>
       </select>
-      <button id="theme-toggle">🌙</button>
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
     </div>
   </header>
 
-  <main class="container">
+  <!-- 内容区 -->
+  <div class="container">
+    <!-- 关于我 -->
     <section class="about">
       <h2 id="about-title"></h2>
       <p id="about-text"></p>
-      <a id="cv-link" class="btn-resume" href="Lebenslauf_Chenshun_Weng.pdf" target="_blank"></a>
+      <div class="cv-download">
+        <a id="cv-link" class="btn-resume" href="Lebenslauf_Chenshun_Weng.pdf" target="_blank"></a>
+      </div>
     </section>
 
+    <!-- 项目展示 -->
     <section id="projects"></section>
-  </main>
+  </div>
 
-  <!-- 放到 body 底部，确保能正确加载 -->
+  <!-- 脚本放在末尾 -->
   <script src="app.js"></script>
 </body>
 </html>
