@@ -38,9 +38,9 @@ themeToggle.addEventListener('click', () => {
 });
 
 // 关闭 Modal
-btnClose.addEventListener('click', () => modal.classList.remove('open'));
+btnClose.addEventListener('click', closeModal);
 modal.addEventListener('click', e => {
-  if (e.target === modal) modal.classList.remove('open');
+  if (e.target === modal) closeModal();
 });
 
 // 渲染全部：Header / About / Projects
@@ -49,7 +49,7 @@ async function renderAll() {
     const res  = await fetch(`i18n/${currentLang}.json`);
     const data = await res.json();
 
-    // Header & CV 链接文字
+    // Header
     headerName.textContent    = data.header.name;
     headerTagline.textContent = data.header.tagline;
     cvLink.textContent        = data.header.cvText;
@@ -68,16 +68,15 @@ async function renderAll() {
 // 按 year 分组渲染项目卡片
 function renderProjects(projectsObj) {
   projectsEl.innerHTML = '';
-  // 排除 title 字段，取出条目并按 year 分组
   const items = Object.entries(projectsObj)
     .filter(([key]) => key !== 'title')
     .map(([key, p]) => ({ id: key, ...p }));
+
   const byYear = {};
   items.forEach(p => {
     (byYear[p.year] ||= []).push(p);
   });
 
-  // 按年份降序渲染
   Object.keys(byYear).sort((a,b) => b - a).forEach(year => {
     const group = document.createElement('div');
     group.className = 'year-group';
@@ -100,7 +99,6 @@ function renderProjects(projectsObj) {
       card.addEventListener('click', () => openModal(p));
       row.append(card);
     });
-
     group.append(row);
     projectsEl.append(group);
   });
@@ -110,8 +108,23 @@ function renderProjects(projectsObj) {
 function openModal(p) {
   modalTitle.textContent = p.title;
   modalDesc.textContent  = p.long;
-  videoContainer.innerHTML = `<video src="${p.video}" controls autoplay></video>`;
+  videoContainer.innerHTML = '';
+  const vid = document.createElement('video');
+  vid.src = p.video;
+  vid.controls = true;
+  vid.autoplay = true;
+  videoContainer.append(vid);
   modal.classList.add('open');
+}
+
+// 关闭 Modal 并停止视频
+function closeModal() {
+  const vid = videoContainer.querySelector('video');
+  if (vid) {
+    vid.pause();
+    vid.currentTime = 0;
+  }
+  modal.classList.remove('open');
 }
 
 // 首次渲染
