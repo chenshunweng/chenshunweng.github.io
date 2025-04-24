@@ -7,7 +7,6 @@
   --button-bg: #1f2937;
   --button-text: #fff;
 }
-
 :root[data-theme='dark'] {
   --bg: #121212;
   --text: #f4f4f4;
@@ -17,7 +16,6 @@
   --button-bg: #fff;
   --button-text: #1f2937;
 }
-
 * { box-sizing: border-box; }
 body {
   margin: 0;
@@ -37,113 +35,135 @@ header h1 { font-size: 3rem; margin: 0; }
 header p { font-size: 1.25rem; margin-top: 10px; }
 .controls {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
+  top: 20px; right: 20px;
+  display: flex; gap: 10px;
 }
-.lang-switch button, .theme-toggle {
+.theme-toggle {
   background: var(--button-bg);
   color: var(--button-text);
   border: none;
   border-radius: 6px;
   padding: 6px 10px;
   cursor: pointer;
-  font-weight: bold;
 }
 .container { max-width: 1280px; margin: auto; padding: 40px 20px; }
-.year-label { text-align: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; }
+.about { margin-bottom: 60px; }
+.btn-resume {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
 .projects-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+  margin-bottom: 60px;
 }
+.year-group .year-label {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 40px 0 20px;
+}
+
+/* 卡片基础样式 */
 .card {
   background: var(--card-bg);
   box-shadow: 0 6px 16px var(--card-shadow);
   border-radius: 20px;
-  padding: 20px;
   width: 360px;
+  height: 260px;
+  overflow: hidden;
   text-align: center;
-  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
 }
-.card:hover { transform: translateY(-6px); }
-.card img, .card video, .card iframe {
+.card img {
   width: 100%;
-  height: 190px;
-  max-height: 190px;
+  height: 140px;
   object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 15px;
 }
 .card h3 {
-  font-size: 1.1rem;
-  font-weight: bold;
   margin: 10px 0 5px;
+  font-size: 1.1rem;
 }
 .card p {
+  flex-grow: 1;
+  padding: 0 10px 10px;
   font-size: 0.95rem;
 }
-.skills { text-align: center; margin-top: 60px; }
-.skills-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+
+/* 3D 翻转容器 */
+.flip-card {
+  perspective: 1000px;
 }
-.skills-list span {
-  background: #d1d5db;
-  padding: 6px 12px;
-  border-radius: 6px;
+.flip-inner {
+  position: relative;
+  width: 100%; height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
 }
-footer {
-  background: var(--primary);
-  color: var(--bg);
-  text-align: center;
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%; height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.flip-front { /* 正面 */
+  background: var(--card-bg);
+}
+.flip-back { /* 背面 */
+  background: var(--card-bg);
+  color: var(--text);
+  transform: rotateY(180deg);
   padding: 20px;
-  margin-top: 60px;
-}
-.modal {
-  position: fixed;
-  display: none;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  inset: 0;
+}
+.flip-card:hover .flip-inner,
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Modal */
+.modal {
+  position: fixed; top:0; left:0;
+  width:100%; height:100%;
   background: rgba(0,0,0,0.6);
-  z-index: 1000;
+  display: none;
+  justify-content:center; align-items:center;
+  z-index:1000;
 }
 .modal.open { display: flex; }
 .modal-content {
   background: var(--card-bg);
   padding: 30px;
   border-radius: 16px;
-  max-width: 720px;
-  width: 90%;
-  text-align: left;
+  max-width: 720px; width: 90%;
   position: relative;
+  text-align: left;
 }
 .modal-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
+  position: absolute; top:10px; right:15px;
+  background:transparent; border:none;
+  font-size:1.5rem; cursor:pointer; color:var(--text);
 }
-.modal iframe, .modal video {
-  width: 100%;
-  margin-top: 20px;
-  border-radius: 10px;
-}
-@media (max-width: 768px) {
-  .card { width: 95%; }
-  header h1 { font-size: 2rem; }
-  header p { font-size: 1rem; }
+.modal-content video {
+  width:100%; margin-top:20px; border-radius:10px;
 }
 
-/* 隐藏下载计数器 */
-.cv-counter {
-  display: none;
+@media (max-width: 768px) {
+  .card { width: 95%; height: auto; }
+  header h1 { font-size: 2rem; }
+  header p { font-size: 1rem; }
 }
