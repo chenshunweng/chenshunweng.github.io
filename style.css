@@ -16,6 +16,7 @@
   --button-bg: #fff;
   --button-text: #1f2937;
 }
+
 * { box-sizing: border-box; }
 body {
   margin: 0;
@@ -24,6 +25,8 @@ body {
   font-family: system-ui, sans-serif;
   transition: 0.3s;
 }
+
+/* Header */
 header {
   background: var(--primary);
   color: var(--bg);
@@ -46,6 +49,8 @@ header p { font-size: 1.25rem; margin-top: 10px; }
   padding: 6px 10px;
   cursor: pointer;
 }
+
+/* Container */
 .container { max-width: 1280px; margin: auto; padding: 40px 20px; }
 .about { margin-bottom: 60px; }
 .btn-resume {
@@ -57,36 +62,33 @@ header p { font-size: 1.25rem; margin-top: 10px; }
   border-radius: 6px;
   text-decoration: none;
 }
-.projects-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-bottom: 60px;
-}
+
+/* Year & Projects */
 .year-group .year-label {
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 40px 0 20px;
 }
+.projects-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
 
-/* 卡片基础样式 */
+/* 卡片基础 */
 .card {
+  width: 360px; height: 260px;
   background: var(--card-bg);
   box-shadow: 0 6px 16px var(--card-shadow);
   border-radius: 20px;
-  width: 360px;
-  height: 260px;
   overflow: hidden;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s;
+  display: flex; flex-direction: column;
+  cursor: pointer;
 }
 .card img {
-  width: 100%;
-  height: 140px;
+  width: 100%; height: 140px;
   object-fit: cover;
 }
 .card h3 {
@@ -99,36 +101,29 @@ header p { font-size: 1.25rem; margin-top: 10px; }
   font-size: 0.95rem;
 }
 
-/* 3D 翻转容器 */
-.flip-card {
-  perspective: 1000px;
-}
+/* 3D 翻转 */
+.flip-card { perspective: 1000px; }
 .flip-inner {
   position: relative;
   width: 100%; height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.6s;
 }
-.flip-front,
-.flip-back {
+.flip-front, .flip-back {
   position: absolute;
   width: 100%; height: 100%;
   backface-visibility: hidden;
   border-radius: 20px;
   overflow: hidden;
 }
-.flip-front { /* 正面 */
-  background: var(--card-bg);
-}
-.flip-back { /* 背面 */
+.flip-front { /* 正面 */ }
+.flip-back {
   background: var(--card-bg);
   color: var(--text);
   transform: rotateY(180deg);
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
 }
 .flip-card:hover .flip-inner,
 .flip-card.flipped .flip-inner {
@@ -140,8 +135,7 @@ header p { font-size: 1.25rem; margin-top: 10px; }
   position: fixed; top:0; left:0;
   width:100%; height:100%;
   background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content:center; align-items:center;
+  display: none; justify-content:center; align-items:center;
   z-index:1000;
 }
 .modal.open { display: flex; }
@@ -150,8 +144,7 @@ header p { font-size: 1.25rem; margin-top: 10px; }
   padding: 30px;
   border-radius: 16px;
   max-width: 720px; width: 90%;
-  position: relative;
-  text-align: left;
+  position: relative; text-align: left;
 }
 .modal-close {
   position: absolute; top:10px; right:15px;
