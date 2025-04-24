@@ -1,255 +1,255 @@
-// 确保脚本加载
-console.log('✅ app.js loaded');
-
+console.log('🛠 app.js loaded');
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. 多语言数据
+  console.log('✅ DOMContentLoaded');
+
   const I18N = {
-  zh: {
-    projects: {
-      bsh: {
-        year: 2025,
-        title: "BSH 洗衣机测试系统",
-        desc: "洗衣机测试自动化 >80% 覆盖率",
-        myRole: "负责系统架构设计、控制流程构建、路径规划逻辑开发及抓手模块集成，完成视觉识别功能与测试平台机械结构设计。",
-        tools: ["TMflow", "Omron TM14", "路径规划算法", "Landmark 校准系统"],
-        impact: "系统在标准洗衣流程中实现衣物的识别和抓取，测试覆盖率超过 80%；具备反馈调整机制与抓取错误恢复能力，支持全天候连续运行，显著降低人工干预频率。",
-        long: "开发了一套基于协作机器人的洗衣机测试自动化系统，覆盖从洗衣程序结束识别、衣物状态检测、路径规划到湿衣抓取与干衣补充的全流程。系统支持连续运行与自动化自纠正，适用于高负载无人值守测试场景。"
+    de: {
+      header: {
+        name: "Chenshun Weng",
+        tagline: "Systems Engineer | Robotik | Simulation",
+        cvText: "📄 Lebenslauf herunterladen (PDF)"
       },
-      bmw: {
-        year: 2024,
-        title: "BMW SDOS 安全开门系统",
-        desc: "MBSE 安全系统，防止开门事故",
-        myRole: "负责系统建模流程，构建 SysML 需求图、功能图与行为逻辑模型；参与系统原型搭建，完成硬件控制逻辑与行为模型联动调试。",
-        tools: ["Cameo SysML", "3DEXPERIENCE", "SysML", "Arduino", "FDMU"],
-        impact: "系统具备基于交通情景识别的智能预警能力，能够有效判断门控风险并延迟开门，原型系统在五类复杂情境测试中预警准确率达到 85%。",
-        long: "设计并实现了一套基于 MBSE 的智能车门安全系统原型，用于应对城市交通中因盲目开门引发的骑行者碰撞事故。"
+      about: {
+        title: "Über mich",
+        text: "Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz."
       },
-      vw: {
-        year: 2023,
-        title: "VW / ITDF 虚拟工厂",
-        desc: "工厂仿真与布局优化（+20% 效率提升）",
-        myRole: "负责三条产线的模型搭建与优化流程设计，包括生产节拍分析、流程瓶颈识别、资源配置仿真以及布局可视化优化。",
-        tools: ["Tecnomatix Plant Simulation", "价值流图分析", "节拍测算工具", "资源调度脚本"],
-        impact: "优化后的布局节拍效率提升超过 20%，显著降低工位等待时间与人工干预需求，完成仿真验证并形成结构化汇报材料。",
-        long: "基于 Plant Simulation 构建数字孪生模型，进行产能仿真与瓶颈优化，实现多工位节拍协调。"
+      projects: {
+        bsh: {
+          year: 2025,
+          title: "BSH Testsystem",
+          desc: "Waschmaschinen-Testautomation >80 % Abdeckung",
+          long: "Entwicklung eines robotergestützten Systems zur automatisierten Prüfung von Waschmaschinen. Integration von Vision-Systemen zur Erkennung von Endzuständen, modularer Teststeuerung und automatischer Pfadplanung.",
+          cover: "assets/images/bsh_project.png",
+          video: "assets/videos/bsh_video.mp4"
+        },
+        vw: {
+          year: 2023,
+          title: "VW / ITDF Virtuelle Fabrik",
+          desc: "Plant Simulation & Layout-Optimierung (+20 %)",
+          long: "Optimierung der Fertigungslayouts bei Volkswagen mithilfe von Tecnomatix Plant Simulation. Entwicklung digitaler Zwillinge für mehrere Produktionsstationen.",
+          cover: "assets/images/ITDF_cover.jpg",
+          video: "assets/videos/ITDF_video.mp4"
+        },
+        bmw: {
+          year: 2024,
+          title: "BMW SDOS",
+          desc: "MBSE-Sicherheitssystem gegen Türunfälle",
+          long: "Modellierung eines Safe Door Opening Systems für den BMW i3. Anwendung von Cameo SysML, MBSE und Simulationsmodellen zur Risikoprävention.",
+          cover: "assets/images/VEI_cover.jpg",
+          video: "assets/videos/VEI_video.mp4"
+        },
+        pmf: {
+          year: 2024,
+          title: "PMF UR10e Modul",
+          desc: "Kameraloses Bin-Picking, –60 % Störeinflüsse",
+          long: "Entwicklung eines drehbaren UR10e-Endeffektors zur flexiblen Positionierung. Kombination aus Vakuumgreifer und passiver Gelenkstruktur zur Reduktion von Querbelastungen.",
+          cover: "assets/images/PMF_cover.jpg",
+          video: "assets/videos/PMF_video.mp4"
+        },
+        bach: {
+          year: 2022,
+          title: "Bachelorarbeit",
+          desc: "Robotik-Programmkonzept für CNC-Beladung",
+          long: "Erstellung eines modularen Programmsystems zur automatisierten Beladung und Entladung von Werkzeugmaschinen.",
+          cover: "assets/images/bachelorarbeit_cover.jpg",
+          video: "assets/videos/bachelorarbeit_video.mp4"
+        }
+      }
+    },
+    en: {
+      header: {
+        name: "Chenshun Weng",
+        tagline: "Systems Engineer | Robotics | Simulation",
+        cvText: "📄 Download CV (PDF)"
       },
-      pmf: {
-        year: 2024,
-        title: "PMF UR10e 模块",
-        desc: "无视觉抓取系统，–60% 干扰力",
-        myRole: "负责抓手结构设计、柔性关节建模、干扰力测试方案制定与实验平台搭建，完成多轮设计迭代与性能优化。",
-        tools: ["UR10e", "FUSION 360", "3D 打印原型机测试", "力传感器", "Formhand 真空吸盘抓手"],
-        impact: "干扰力矩降低 60%，吸附稳定性通过验证，结构支持模块化复用。",
-        long: "构建 UR10e 无视觉抓取系统，结合旋转与柔性结构，适用于柔性分拣场景。"
+      about: {
+        title: "About Me",
+        text: "A reliable engineer specializing in automation, robotics, and model-based systems engineering (MBSE). With experience at BSH, BMW, and Volkswagen, I combine systemic thinking with hands-on implementation expertise."
       },
-      bach: {
-        year: 2022,
-        title: "本科毕业项目 – CNC 自动上下料系统",
-        desc: "CNC 上料自动化 +模块化机器人程序",
-        myRole: "负责编写完整控制程序逻辑，优化原先的算法设计，设计模块化结构与流程状态图。",
-        tools: ["Yaskawa", "碰撞规避算法", "状态图建模"],
-        impact: "节拍缩短 25%，支持快速部署与复用，结构标准化程度高。",
-        long: "构建模块化机器人上下料控制程序，部署于 CNC 产线，提升自动化效率。"
+      projects: {
+        bsh: {
+          year: 2025,
+          title: "BSH Test System",
+          desc: "Washing machine test automation >80% coverage",
+          long: "Developed a robot-assisted system for automated washing-machine testing. Integrated vision systems and automatic path planning.",
+          cover: "assets/images/bsh_project.png",
+          video: "assets/videos/bsh_video.mp4"
+        },
+        vw: {
+          year: 2023,
+          title: "VW / ITDF Virtual Factory",
+          desc: "Plant Simulation & Layout Optimization (+20%)",
+          long: "Optimized production layouts at Volkswagen using Tecnomatix Plant Simulation. Built digital twins of multiple stations.",
+          cover: "assets/images/ITDF_cover.jpg",
+          video: "assets/videos/ITDF_video.mp4"
+        },
+        bmw: {
+          year: 2024,
+          title: "BMW SDOS",
+          desc: "MBSE safety system against door accidents",
+          long: "Modeled a Safe Door Opening System for the BMW i3 using Cameo SysML and MBSE to prevent cyclist collisions.",
+          cover: "assets/images/VEI_cover.jpg",
+          video: "assets/videos/VEI_video.mp4"
+        },
+        pmf: {
+          year: 2024,
+          title: "PMF UR10e Module",
+          desc: "Camera-free bin-picking, –60% disturbances",
+          long: "Designed a rotatable UR10e end-effector with vacuum gripper and passive joints to reduce lateral loads.",
+          cover: "assets/images/PMF_cover.jpg",
+          video: "assets/videos/PMF_video.mp4"
+        },
+        bach: {
+          year: 2022,
+          title: "Bachelor Thesis",
+          desc: "Robotic CNC-loading program concept",
+          long: "Created a modular software system for automated CNC machine loading and unloading.",
+          cover: "assets/images/bachelorarbeit_cover.jpg",
+          video: "assets/videos/bachelorarbeit_video.mp4"
+        }
+      }
+    },
+    zh: {
+      header: {
+        name: "翁陈顺",
+        tagline: "系统工程师 | 机器人 | 仿真",
+        cvText: "📄 下载简历 (PDF)"
+      },
+      about: {
+        title: "关于我",
+        text: "可靠的工程师，专注于自动化、机器人及模型驱动的系统工程 (MBSE)。在 BSH、BMW 和大众的经历，使我兼具系统思维与实践能力。"
+      },
+      projects: {
+        bsh: {
+          year: 2025,
+          title: "BSH 测试系统",
+          desc: "洗衣机测试自动化 >80% 覆盖率",
+          long: "开发了机器人辅助的洗衣机测试系统，集成视觉检测与自动路径规划。",
+          cover: "assets/images/bsh_project.png",
+          video: "assets/videos/bsh_video.mp4"
+        },
+        vw: {
+          year: 2023,
+          title: "大众虚拟工厂",
+          desc: "工厂仿真与布局优化 (+20%)",
+          long: "使用 Tecnomatix Plant Simulation 优化生产布局，提升产能超过 20%。",
+          cover: "assets/images/ITDF_cover.jpg",
+          video: "assets/videos/ITDF_video.mp4"
+        },
+        bmw: {
+          year: 2024,
+          title: "BMW SDOS 安全开门系统",
+          desc: "MBSE 安全系统，防止开门事故",
+          long: "为 BMW i3 建立安全开门系统模型，使用 SysML 与 MBSE 方法预防事故。",
+          cover: "assets/images/VEI_cover.jpg",
+          video: "assets/videos/VEI_video.mp4"
+        },
+        pmf: {
+          year: 2024,
+          title: "PMF UR10e 模块",
+          desc: "无视觉抓取，–60% 干扰",
+          long: "设计了可旋转 UR10e 末端执行器，结合真空吸盘与被动关节结构。",
+          cover: "assets/images/PMF_cover.jpg",
+          video: "assets/videos/PMF_video.mp4"
+        },
+        bach: {
+          year: 2022,
+          title: "本科毕业论文",
+          desc: "CNC 上料机器人程序概念",
+          long: "创建模块化程序系统，实现自动上下料与碰撞规避。",
+          cover: "assets/images/bachelorarbeit_cover.jpg",
+          video: "assets/videos/bachelorarbeit_video.mp4"
+        }
       }
     }
-  },
+  };
 
-  en: {
-    projects: {
-      bsh: {
-        year: 2025,
-        title: "BSH Washing Machine Testing System",
-        desc: "Washing machine test automation with >80% coverage",
-        myRole: "Designed the system architecture, developed control flows and path planning logic, integrated the gripper module and vision recognition into the test platform.",
-        tools: ["TMflow", "Omron TM14", "Path planning algorithm", "Landmark calibration system"],
-        impact: "Enabled reliable detection and grasping of laundry in standard wash cycles with over 80% coverage. Equipped with feedback adjustment and failure recovery mechanisms to ensure 24/7 autonomous operation with minimal manual intervention.",
-        long: "Developed a collaborative robot-based automation system for washing machine testing. Covered end-of-cycle recognition, laundry state detection, path planning, and both wet laundry extraction and dry item supplementation. The system supports continuous operation and self-correction, suitable for high-load unattended testing scenarios."
-      },
-      bmw: {
-        year: 2024,
-        title: "BMW SDOS Safe Door Opening System",
-        desc: "MBSE-based safety system for door accident prevention",
-        myRole: "Led the system modeling process, created SysML requirement, function, and behavior diagrams; participated in prototype implementation and integrated hardware control logic with behavior models.",
-        tools: ["Cameo SysML", "3DEXPERIENCE", "SysML", "Arduino", "FDMU"],
-        impact: "The system detects traffic scenarios and provides intelligent door control warnings. Achieved 85% alert accuracy in five complex traffic simulation scenarios.",
-        long: "Designed and implemented a model-based intelligent door safety prototype for urban cycling environments. The system was built using MBSE methods and integrates scenario simulation with hardware prototype validation."
-      },
-      vw: {
-        year: 2023,
-        title: "VW / ITDF Virtual Factory",
-        desc: "Factory simulation and layout optimization (+20% efficiency)",
-        myRole: "Built simulation models for three production lines and optimized flows through cycle time analysis, bottleneck identification, resource simulation, and layout visualization.",
-        tools: ["Tecnomatix Plant Simulation", "Value stream mapping", "Cycle time calculation tools", "Resource scheduling scripts"],
-        impact: "Improved layout efficiency by over 20%, significantly reduced workstation delays and manual interventions, and delivered simulation-backed restructuring reports.",
-        long: "Constructed digital twin models using Plant Simulation to analyze throughput capacity and resolve production bottlenecks, enabling synchronized cycle times across multiple stations."
-      },
-      pmf: {
-        year: 2024,
-        title: "PMF UR10e Gripper Module",
-        desc: "Vision-free grasping system, –60% torque disturbance",
-        myRole: "Responsible for gripper structure design, flexible joint modeling, test bench construction, and execution of mechanical interference tests across multiple design iterations.",
-        tools: ["UR10e", "Fusion 360", "3D-printed prototype testing", "Force sensor", "Formhand vacuum gripper"],
-        impact: "Reduced torque disturbance by 60%, verified stable adhesion, and enabled modular design for flexible reusability.",
-        long: "Designed a vision-independent grasping system based on the UR10e robot, combining rotary and flexible components. Suitable for dynamic object handling in flexible sorting applications."
-      },
-      bach: {
-        year: 2022,
-        title: "Bachelor Project – CNC Automation System",
-        desc: "Robotic CNC loading automation with modular program structure",
-        myRole: "Developed the complete control logic, optimized algorithm structure, and designed modular architecture and flow diagrams.",
-        tools: ["Yaskawa", "Collision avoidance algorithm", "State diagram modeling"],
-        impact: "Reduced loading cycle time by 25%. The program structure supports rapid deployment, reuse, and high modular standardization.",
-        long: "Built a modular robot loading and unloading control system for CNC applications. Successfully deployed on production lines to enhance automation throughput."
-      }
-    }
-  },
-
-  de: {
-    projects: {
-      bsh: {
-        year: 2025,
-        title: "BSH Waschmaschinen-Testsystem",
-        desc: "Automatisierung mit >80% Testabdeckung",
-        myRole: "Entwicklung der Systemarchitektur, Erstellung der Steuerungslogik und Pfadplanung, Integration von Greifmodul und Bilderkennung in die Testplattform.",
-        tools: ["TMflow", "Omron TM14", "Pfadplanungsalgorithmus", "Landmark-Kalibriersystem"],
-        impact: "Ermöglicht zuverlässige Erkennung und Greifen von Wäsche im Standardwaschprogramm mit über 80% Abdeckung. Verfügt über Mechanismen zur Fehlerkorrektur und Rückmeldung für kontinuierlichen 24/7-Betrieb mit minimalem Personaleinsatz.",
-        long: "Ein kollaboratives Robotersystem zur automatisierten Prüfung von Waschmaschinen. Umfasst Programmende-Erkennung, Zustandserfassung, Pfadplanung sowie Nasswäsche- und Trockenwäsche-Handhabung. Geeignet für hochfrequente Testszenarien ohne Bedienpersonal."
-      },
-      bmw: {
-        year: 2024,
-        title: "BMW SDOS Sicherheits-Türsystem",
-        desc: "MBSE-Sicherheitssystem zur Unfallvermeidung beim Türöffnen",
-        myRole: "Modellierung des Gesamtsystems mittels SysML, Erstellung von Anforderungs-, Funktions- und Verhaltensmodellen; Aufbau eines Hardware-Prototyps mit modellbasierter Steuerung.",
-        tools: ["Cameo SysML", "3DEXPERIENCE", "SysML", "Arduino", "FDMU"],
-        impact: "System erkennt Verkehrssituationen und gibt intelligente Tür-Warnsignale. In 5 Szenarientests wurde eine Vorhersagegenauigkeit von 85% erreicht.",
-        long: "Entwicklung eines intelligenten Sicherheitssystems zur Vermeidung von Unfällen mit Radfahrern im Stadtverkehr. Umsetzung erfolgte auf Basis eines modellbasierten Systementwicklungsansatzes (MBSE)."
-      },
-      vw: {
-        year: 2023,
-        title: "VW / ITDF Virtuelle Fabrik",
-        desc: "Werkslayout-Optimierung und Simulation (+20% Effizienz)",
-        myRole: "Erstellung von Simulationsmodellen für drei Produktionslinien, Analyse von Zykluszeiten, Engpässen und Ressourcen, Optimierung der Layoutstruktur.",
-        tools: ["Tecnomatix Plant Simulation", "Wertstromanalyse", "Taktzeitberechnung", "Skriptbasierte Ressourcenplanung"],
-        impact: "Produktionsleistung um über 20% gesteigert, Wartezeiten reduziert, fundierte Entscheidungsgrundlage durch Simulationsergebnisse geschaffen.",
-        long: "Digitale Zwillingsmodelle mit Plant Simulation erstellt, um Fertigungsengpässe zu analysieren und Taktzeitabstimmungen zwischen Stationen zu optimieren."
-      },
-      pmf: {
-        year: 2024,
-        title: "PMF UR10e Greifermodul",
-        desc: "Visionsloses Greifsystem, –60% Störmoment",
-        myRole: "Konstruktion des Greifers mit flexiblen Gelenken, Aufbau eines Prüfstands, Durchführung mehrerer Design- und Belastungstests.",
-        tools: ["UR10e", "Fusion 360", "3D-Druck-Prototyp", "Kraftsensor", "Formhand Vakuumgreifer"],
-        impact: "Störmoment um 60% reduziert, zuverlässige Haftung durch Tests bestätigt, modulare Wiederverwendbarkeit gewährleistet.",
-        long: "Entwicklung eines UR10e-basierten Greifsystems ohne visuelle Unterstützung. Ideal für flexible Sortieranwendungen mit wechselnden Objektformen."
-      },
-      bach: {
-        year: 2022,
-        title: "Bachelorarbeit – CNC-Automatisierung",
-        desc: "Modulare Robotersteuerung für CNC-Beschickung",
-        myRole: "Programmierung der vollständigen Steuerlogik, Optimierung der Algorithmen und Erstellung modularer Ablauf- und Zustandsdiagramme.",
-        tools: ["Yaskawa", "Kollisionsvermeidungsalgorithmus", "Zustandsdiagramm-Modellierung"],
-        impact: "Taktzeit um 25% reduziert, standardisierte Struktur ermöglicht schnelle Wiederverwendung und Einsatz.",
-        long: "Entwicklung einer modularen Robotersteuerung zur automatisierten Beladung und Entladung von CNC-Maschinen. Im Produktionsumfeld erfolgreich implementiert."
-      }
-    }
-  }
-};
-  // 2. DOM 引用
+  // DOM 引用
   const htmlEl        = document.documentElement;
   const langSwitcher  = document.getElementById('lang-switcher');
   const themeToggle   = document.getElementById('theme-toggle');
   const headerName    = document.getElementById('header-name');
   const headerTagline = document.getElementById('header-tagline');
-  const cvLink        = document.getElementById('cv-link');
   const aboutTitle    = document.getElementById('about-title');
   const aboutText     = document.getElementById('about-text');
+  const cvLink        = document.getElementById('cv-link');
   const projectsEl    = document.getElementById('projects');
 
-  // 3. 初始语言 & 主题
-  let currentLang = localStorage.getItem('lang') || 'zh';
+  // 初始化语言与主题
+  let currentLang = localStorage.getItem('lang') || 'de';
   htmlEl.lang = currentLang;
   langSwitcher.value = currentLang;
-  htmlEl.setAttribute('data-theme','light');
+  htmlEl.setAttribute('data-theme', 'light');
 
-  // 4. 语言切换
+  // 语言切换
   langSwitcher.addEventListener('change', e => {
     currentLang = e.target.value;
     localStorage.setItem('lang', currentLang);
     htmlEl.lang = currentLang;
-    renderPage();
+    renderAll();
   });
 
-  // 5. 主题切换
+  // 主题切换
   themeToggle.addEventListener('click', () => {
-    const next = htmlEl.getAttribute('data-theme')==='light'?'dark':'light';
-    htmlEl.setAttribute('data-theme',next);
-    themeToggle.textContent = next==='light'?'🌙':'☀️';
+    const next = htmlEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    htmlEl.setAttribute('data-theme', next);
+    themeToggle.textContent = next === 'light' ? '🌙' : '☀️';
   });
 
-  // 6. 渲染函数
-  function renderPage() {
-    const D = I18N[currentLang];
-    if (!D) return console.error('No I18N for', currentLang);
+  // 渲染所有
+  function renderAll() {
+    console.log('🔄 renderAll()', currentLang);
+    const data = I18N[currentLang];
+    headerName.textContent    = data.header.name;
+    headerTagline.textContent = data.header.tagline;
+    cvLink.textContent        = data.header.cvText;
+    aboutTitle.textContent    = data.about.title;
+    aboutText.textContent     = data.about.text;
+    renderProjects(data.projects);
+  }
 
-    headerName.textContent    = D.header.name;
-    headerTagline.textContent = D.header.tagline;
-    cvLink.textContent        = D.header.cvText;
-    aboutTitle.textContent    = D.about.title;
-    aboutText.textContent     = D.about.text;
-
+  // 渲染项目卡片
+  function renderProjects(projObj) {
+    console.log('📦 renderProjects()', projObj);
     projectsEl.innerHTML = '';
-    Object.values(D.projects)
-      .sort((a,b)=>b.year-a.year)
-      .forEach(p=>{
-        // 年份分组
-        let grp = projectsEl.querySelector(`[data-year="${p.year}"]`);
-        if (!grp) {
-          grp = document.createElement('div');
-          grp.setAttribute('data-year', p.year);
-          grp.innerHTML = `<div class="year-label">${p.year}</div><div class="projects-row"></div>`;
-          projectsEl.append(grp);
+    Object.values(projObj)
+      .sort((a, b) => b.year - a.year)
+      .forEach(p => {
+        let group = projectsEl.querySelector(`[data-year="${p.year}"]`);
+        if (!group) {
+          group = document.createElement('div');
+          group.setAttribute('data-year', p.year);
+          group.innerHTML = `<div class="year-label">${p.year}</div><div class="projects-row"></div>`;
+          projectsEl.append(group);
         }
-        const row = grp.querySelector('.projects-row');
+        const row = group.querySelector('.projects-row');
 
-        // 卡片
-        const flipCard = document.createElement('div');
-        flipCard.className = 'flip-card';
-        flipCard.innerHTML = `
+        const flip = document.createElement('div');
+        flip.className = 'flip-card';
+        flip.innerHTML = `
           <div class="flip-inner">
             <div class="flip-front card">
-              <img src="${p.cover}" alt="${p.title}" />
+              <img src="${p.cover}" alt="${p.title}"/>
               <h3>${p.title}</h3>
               <p>${p.desc}</p>
             </div>
             <div class="flip-back">
-              <h3>${ currentLang==='zh'? '项目详情' : currentLang==='en'? 'Project Details':'Projekt Details' }</h3>
-              <p class="role"><strong>${ currentLang==='zh'? '我的职责': currentLang==='en'? 'Role':'Meine Rolle' }:</strong> ${p.myRole}</p>
-              <p class="impact"><strong>${ currentLang==='zh'? '成果': currentLang==='en'? 'Impact':'Ergebnis' }:</strong> ${p.impact}</p>
-              <p><strong>${ currentLang==='zh'? '工具': currentLang==='en'? 'Tools':'Werkzeuge' }:</strong></p>
-              <ul class="tools-list">${p.tools.map(t=>`<li>${t}</li>`).join('')}</ul>
-              <p class="long">${p.long}</p>
+              <h3>Projekt Details</h3>
+              <p>${p.long}</p>
               <video src="${p.video}" controls></video>
             </div>
           </div>
         `;
-        const inner = flipCard.querySelector('.flip-inner');
-        const vid   = flipCard.querySelector('video');
-
-        // 点击视频不翻转
-        vid.addEventListener('click', e=>e.stopPropagation());
-
-        // 点击卡片翻转 & 关闭时暂停视频
-        flipCard.addEventListener('click', ()=>{
-          if (inner.classList.contains('flipped')) {
-            vid.pause(); vid.currentTime = 0;
-          }
+        const inner = flip.querySelector('.flip-inner');
+        const video = flip.querySelector('video');
+        video.addEventListener('click', e => e.stopPropagation());
+        flip.addEventListener('click', () => {
           inner.classList.toggle('flipped');
         });
-
-        row.append(flipCard);
+        row.append(flip);
       });
   }
 
-  // 7. 首次渲染
-  renderPage();
+  // 首次渲染
+  renderAll();
 });
