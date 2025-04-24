@@ -18,36 +18,23 @@
   --button-text: #1f2937;
 }
 
-* {
-  box-sizing: border-box;
-}
-
+* { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--text);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: system-ui, sans-serif;
+  transition: 0.3s;
 }
-
 header {
-  background-color: var(--primary);
+  background: var(--primary);
   color: var(--bg);
-  padding: 60px 20px 40px;
   text-align: center;
+  padding: 60px 20px 40px;
   position: relative;
 }
-
-header h1 {
-  margin: 0;
-  font-size: 3rem;
-}
-
-header p {
-  margin-top: 12px;
-  font-size: 1.25rem;
-}
-
+header h1 { font-size: 3rem; margin: 0; }
+header p { font-size: 1.25rem; margin-top: 10px; }
 .controls {
   position: absolute;
   top: 20px;
@@ -55,188 +42,101 @@ header p {
   display: flex;
   gap: 10px;
 }
-
-.lang-switch button,
-.theme-toggle {
-  padding: 6px 10px;
+.lang-switch button, .theme-toggle {
+  background: var(--button-bg);
+  color: var(--button-text);
   border: none;
   border-radius: 6px;
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  font-weight: bold;
+  padding: 6px 10px;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-}
-
-.lang-switch button:hover,
-.theme-toggle:hover {
-  opacity: 0.8;
-}
-
-.container {
-  max-width: 1280px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.cv-download {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.cv-download a {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
   font-weight: bold;
-  display: inline-block;
-  transition: background 0.3s;
 }
-
-.cv-download a:hover {
-  opacity: 0.85;
-}
-
-.project-year {
-  margin-bottom: 60px;
-}
-
-.year-label {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
+.container { max-width: 1280px; margin: auto; padding: 40px 20px; }
+.year-label { text-align: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 20px; }
 .projects-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
 }
-
 .card {
-  background-color: var(--card-bg);
+  background: var(--card-bg);
   box-shadow: 0 6px 16px var(--card-shadow);
   border-radius: 20px;
   padding: 20px;
-  width: 320px;
-  max-width: 90vw;
+  width: 360px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: 0.3s;
 }
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.card img,
-.card iframe {
+.card:hover { transform: translateY(-6px); }
+.card img, .card video, .card iframe {
   width: 100%;
   height: 190px;
-  border-radius: 12px;
+  max-height: 190px;
   object-fit: cover;
+  border-radius: 12px;
   margin-bottom: 15px;
 }
-
 .card h3 {
   font-size: 1.1rem;
   font-weight: bold;
   margin: 10px 0 5px;
 }
-
 .card p {
   font-size: 0.95rem;
-  color: var(--text);
 }
-
-.skills {
-  text-align: center;
-  margin-top: 80px;
-}
-
+.skills { text-align: center; margin-top: 60px; }
 .skills-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
-  margin-top: 15px;
 }
-
 .skills-list span {
-  background-color: #d1d5db;
+  background: #d1d5db;
   padding: 6px 12px;
   border-radius: 6px;
-  font-size: 0.95rem;
 }
-
 footer {
-  background-color: var(--primary);
+  background: var(--primary);
   color: var(--bg);
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
+  margin-top: 60px;
 }
-
 .modal {
   position: fixed;
   display: none;
   justify-content: center;
   align-items: center;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   z-index: 1000;
 }
-
 .modal-content {
-  background-color: var(--card-bg);
-  color: var(--text);
+  background: var(--card-bg);
   padding: 30px;
   border-radius: 16px;
   max-width: 720px;
   width: 90%;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   text-align: left;
 }
-
 .modal-close {
   position: absolute;
   top: 10px;
   right: 15px;
-  background: transparent;
-  color: var(--text);
   font-size: 1.5rem;
+  background: transparent;
   border: none;
   cursor: pointer;
 }
-
-.modal iframe,
-.modal video {
+.modal iframe, .modal video {
   width: 100%;
-  max-height: 400px;
   margin-top: 20px;
   border-radius: 10px;
 }
-
-@media screen and (max-width: 768px) {
-  .card {
-    width: 95%;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  header p {
-    font-size: 1rem;
-  }
+@media (max-width: 768px) {
+  .card { width: 95%; }
+  header h1 { font-size: 2rem; }
+  header p { font-size: 1rem; }
 }
