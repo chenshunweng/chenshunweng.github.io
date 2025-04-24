@@ -3,15 +3,15 @@ i18next.init({
   lng: 'de',
   debug: true,
   resources: {
-    // 保留原始多语言结构
-  }
+    // JSON 文件资源结构已经通过独立的 de.json, en.json, zh.json 支持
+  },
 }, function(err, t) {
-  // 文本多语言绑定
+  // 文本内容初始化渲染
   document.querySelectorAll('[data-i18n]').forEach(el => {
     el.textContent = i18next.t(el.getAttribute('data-i18n'));
   });
 
-  // 切换语言按钮
+  // 语言切换按钮绑定
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     btn.addEventListener('click', () => {
       i18next.changeLanguage(btn.dataset.lang, () => {
@@ -22,7 +22,7 @@ i18next.init({
     });
   });
 
-  // 模态框逻辑
+  // 模态框控制逻辑
   const modal = document.getElementById('modal');
   const modalBody = document.getElementById('modal-body');
   const closeBtn = modal.querySelector('.modal-close');
@@ -32,52 +32,31 @@ i18next.init({
       const key = card.dataset.key;
       const proj = i18next.t(`projects.${key}`, { returnObjects: true });
 
-      // 视频路径与封面图片路径
-      const videoMap = {
-        bsh: ['assets/videos/bachelorarbeit_video.mp4', 'assets/images/bsh_project.png'],
-        bachelor: ['assets/videos/bachelorarbeit_video.mp4', 'assets/images/bachelorarbeit_cover.jpg'],
-        pmf: ['assets/videos/PMF_video.mp4', 'assets/images/PMF_cover.jpg'],
-        itdf: ['assets/videos/ITDF_video.mp4', 'assets/images/ITDF_cover.jpg'],
-        bmw: ['assets/videos/VEI_video.mp4', 'assets/images/VEI_cover.jpg']
-      };
-
-      let videoHTML = '';
-      if (videoMap[key]) {
-        const [videoPath] = videoMap[key];
-        videoHTML = `
-          <video controls autoplay>
-            <source src="${videoPath}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>`;
-      }
+      const localVideoPath = proj.video ? `assets/videos/${proj.video}` : null;
+      const youtubeEmbed = proj.youtube ? `<iframe src="https://www.youtube.com/embed/${proj.youtube}" frameborder="0" allowfullscreen></iframe>` : '';
+      const videoEmbed = localVideoPath ? `<video controls src="${localVideoPath}"></video>` : youtubeEmbed;
 
       modalBody.innerHTML = `
         <h2>${proj.title}</h2>
         <p>${proj.details}</p>
-        ${videoHTML}
+        ${videoEmbed}
       `;
+
       modal.style.display = 'flex';
     });
   });
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modalBody.innerHTML = '';
-  });
-
+  closeBtn.addEventListener('click', () => modal.style.display = 'none');
   modal.addEventListener('click', e => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      modalBody.innerHTML = '';
-    }
+    if (e.target === modal) modal.style.display = 'none';
   });
 
   // 主题切换
   const themeBtn = document.querySelector('.theme-toggle');
   themeBtn.addEventListener('click', () => {
     const root = document.documentElement;
-    const nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    root.setAttribute('data-theme', nextTheme);
-    themeBtn.textContent = nextTheme === 'dark' ? '☀️' : '🌙';
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
   });
 });
