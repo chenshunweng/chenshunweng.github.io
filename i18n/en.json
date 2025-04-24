@@ -5,40 +5,35 @@
   },
   "about": {
     "title": "About Me",
-    "text": "Reliable engineer specializing in automation, robotics, and model-based systems engineering (MBSE). With experience at BSH, BMW, and Volkswagen, I combine systemic thinking with hands-on implementation skills.",
+    "text": "Reliable engineer specializing in automation, robotics, and model-based systems engineering (MBSE). With experience at BSH, BMW, and Volkswagen, I combine systemic thinking with practical implementation skills.",
     "cv": "📄 Download CV (PDF)"
   },
   "projects": {
     "title": "Projects",
     "bsh": {
       "title": "BSH Test System",
-      "desc": "Machine-vision test automation >80% coverage",
-      "long": "During internship at BSH Home Appliances: Developed a fully automated robotic testing system for washing machines..."
+      "desc": "Washing machine test automation >80% coverage",
+      "long": "Developed a robotic testing system for fully automated washing machine validation. Integrated computer vision for 'END' detection, automated gripper movement, and path planning. Over 80% test cases are handled without human intervention."
     },
     "vw": {
-      "title": "VW Virtual Factory",
-      "desc": "Plant Simulation & layout optimization (+20%)",
-      "long": "Modeled and optimized Volkswagen engine production line using Tecnomatix Plant Simulation..."
+      "title": "VW / ITDF Virtual Factory",
+      "desc": "Plant simulation & layout optimization (+20%)",
+      "long": "Simulated and optimized Volkswagen production layouts using Tecnomatix Plant Simulation. Built digital twins for multiple automation stations, improving production efficiency by more than 20%."
     },
     "bmw": {
       "title": "BMW SDOS",
       "desc": "MBSE safety system to prevent dooring accidents",
-      "long": "Developed Safe Door Opening System for BMW i3 using MBSE and Cameo SysML..."
+      "long": "Designed a Safe Door Opening System for BMW i3 using MBSE and SysML modeling in Cameo. Prevents cycling accidents through early system warning logic and hazard analysis."
     },
     "pmf": {
       "title": "PMF UR10e Module",
       "desc": "Camera-less bin-picking, –60% interference",
-      "long": "CamLessPick: Created rotary joint concept to reduce disturbances in robotic bin-picking..."
-    },
-    "itdf": {
-      "title": "ITDF – Virtual Factory",
-      "desc": "Digital factory & efficiency boost",
-      "long": "Transformed automation stations via simulation in Plant Simulation and Process Simulate..."
+      "long": "Created a flexible rotary end-effector module for the UR10e robot. Combines vacuum gripper with passive rotation joint to minimize disturbance forces during bin-picking tasks."
     },
     "bach": {
       "title": "Bachelor Thesis",
       "desc": "Robotic loading concept for CNC machines",
-      "long": "Concept for fully automated loading/unloading of CNC machines at Anton Häring KG..."
+      "long": "Developed a modular robotic program framework to enable automated CNC machine loading/unloading. Implemented at Anton Häring KG with station-based logic and collision avoidance."
     }
   }
 }
