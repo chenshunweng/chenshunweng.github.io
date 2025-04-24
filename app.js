@@ -1,161 +1,76 @@
-import i18next from "i18next";
+// app.js
+import i18n from './i18n/de.json'; // 默认加载德语，可根据语言切换机制加载对应 json
 
-i18next.init({
-  lng: 'de', // 默认语言
-  debug: true,
-  resources: {
-    zh: await (await fetch('assets/i18n/zh.json')).json(),
-    en: await (await fetch('assets/i18n/en.json')).json(),
-    de: await (await fetch('assets/i18n/de.json')).json()
-  }
-}, function () {
-  renderPage();
-});
+const langButtons = document.querySelectorAll('.lang-switch button');
+const themeToggle = document.querySelector('.theme-toggle');
+const root = document.documentElement;
+let currentLang = 'de';
 
-function renderPage() {
-  // 所有多语言标签替换
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    el.textContent = i18next.t(el.getAttribute('data-i18n'));
-  });
+const t = (key) => {
+  const keys = key.split('.');
+  return keys.reduce((o, i) => (o ? o[i] : ''), i18n);
+};
 
-  // 多语言切换
-  document.querySelectorAll('.lang-switch button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      i18next.changeLanguage(btn.dataset.lang, () => renderPage());
-    });
-  });
+function updateTexts() {
+  document.querySelector('header h1').textContent = t('header.name');
+  document.querySelector('header p').textContent = t('header.tagline');
+  document.querySelector('.about-title').textContent = t('about.title');
+  document.querySelector('.about-text').textContent = t('about.text');
+  document.querySelector('.about-cv').textContent = t('about.cv');
+  document.querySelector('.projects-title').textContent = t('projects.title');
 
-  // 模态框控制
-  const modal = document.getElementById('modal');
-  const modalTitle = modal.querySelector('h2');
-  const modalText = modal.querySelector('p');
-  const modalVideo = modal.querySelector('video');
-  const closeBtn = modal.querySelector('.modal-close');
-
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    modalVideo.pause();
-  });
-
-  modal.addEventListener('click', e => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      modalVideo.pause();
-    }
-  });
-
-  // 项目数据定义（视频和封面）
-  const projects = [
-    {
-      key: 'bsh',
-      year: 2025,
-      cover: 'assets/images/bsh_project.png',
-      video: null
-    },
-    {
-      key: 'bmw',
-      year: 2024,
-      cover: 'assets/images/VEI_cover.png',
-      video: 'assets/videos/VEI_video.mp4'
-    },
-    {
-      key: 'pmf',
-      year: 2024,
-      cover: 'assets/images/PMF_cover.jpg',
-      video: 'assets/videos/PMF_video.mp4'
-    },
-    {
-      key: 'vw',
-      year: 2023,
-      cover: 'assets/images/ITDF_cover.jpg',
-      video: 'assets/videos/ITDF_video.mp4'
-    },
-    {
-      key: 'bach',
-      year: 2022,
-      cover: 'assets/images/bachelorarbeit_cover.jpg',
-      video: 'assets/videos/bachelorarbeit_video.mp4'
-    }
-  ];
-
-  const container = document.getElementById('projects-container');
-  container.innerHTML = '';
-
-  // 按年份分组排序
-  const grouped = {};
-  projects.forEach(p => {
-    if (!grouped[p.year]) grouped[p.year] = [];
-    grouped[p.year].push(p);
-  });
-
-  Object.keys(grouped).sort((a, b) => b - a).forEach(year => {
-    const yearDiv = document.createElement('div');
-    yearDiv.classList.add('project-year');
-
-    const label = document.createElement('div');
-    label.className = 'year-label';
-    label.textContent = year;
-    yearDiv.appendChild(label);
-
-    const row = document.createElement('div');
-    row.className = 'projects-row';
-
-    grouped[year].forEach(proj => {
-      const data = i18next.t(`projects.${proj.key}`, { returnObjects: true });
-
-      const card = document.createElement('div');
-      card.className = 'card';
-
-      const media = proj.video
-        ? document.createElement('video')
-        : document.createElement('img');
-
-      media.src = proj.video || proj.cover;
-      if (proj.video) {
-        media.controls = false;
-        media.muted = true;
-        media.loop = true;
-        media.autoplay = true;
-      } else {
-        media.alt = data.title;
-      }
-
-      card.appendChild(media);
-
-      const h3 = document.createElement('h3');
-      h3.textContent = data.title;
-      card.appendChild(h3);
-
-      const p = document.createElement('p');
-      p.textContent = data.desc;
-      card.appendChild(p);
-
-      card.addEventListener('click', () => {
-        modalTitle.textContent = data.title;
-        modalText.textContent = data.long;
-        if (proj.video) {
-          modalVideo.src = proj.video;
-          modalVideo.style.display = 'block';
-        } else {
-          modalVideo.style.display = 'none';
-        }
-        modal.style.display = 'flex';
-      });
-
-      row.appendChild(card);
-    });
-
-    yearDiv.appendChild(row);
-    container.appendChild(yearDiv);
-  });
-
-  // 暗黑模式切换
-  const themeBtn = document.querySelector('.theme-toggle');
-  themeBtn.addEventListener('click', () => {
-    const root = document.documentElement;
-    const current = root.getAttribute('data-theme');
-    const next = current === 'light' ? 'dark' : 'light';
-    root.setAttribute('data-theme', next);
-    themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
+  document.querySelectorAll('.card').forEach(card => {
+    const key = card.dataset.key;
+    card.querySelector('h3').textContent = t(`projects.${key}.title`);
+    card.querySelector('p').textContent = t(`projects.${key}.desc`);
   });
 }
+
+langButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentLang = btn.dataset.lang;
+    import(`./i18n/${currentLang}.json`).then((mod) => {
+      Object.assign(i18n, mod);
+      updateTexts();
+    });
+  });
+});
+
+themeToggle.addEventListener('click', () => {
+  const isDark = root.getAttribute('data-theme') === 'dark';
+  root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+});
+
+const modal = document.querySelector('.modal');
+const modalContent = modal.querySelector('.modal-content');
+const modalClose = modal.querySelector('.modal-close');
+
+modalClose.addEventListener('click', () => {
+  modal.style.display = 'none';
+  modalContent.querySelector('video')?.pause();
+});
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    const key = card.dataset.key;
+    const year = card.dataset.year;
+
+    const videoPath = card.dataset.video;
+    const isVideoAvailable = videoPath !== '';
+
+    const videoElement = isVideoAvailable
+      ? `<video controls src="${videoPath}"></video>`
+      : '<div style="height: 300px; background: #ccc; border-radius: 10px; display: flex; align-items: center; justify-content: center;">No video available</div>';
+
+    modalContent.innerHTML = `
+      <button class="modal-close">&times;</button>
+      <h2>${t(`projects.${key}.title`)}</h2>
+      <p>${t(`projects.${key}.long`)}</p>
+      ${videoElement}
+    `;
+    modal.style.display = 'flex';
+    modal.querySelector('.modal-close').addEventListener('click', () => modal.style.display = 'none');
+  });
+});
+
+updateTexts();
