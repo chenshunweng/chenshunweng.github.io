@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chenshun Weng • Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
+  <!-- 确保 defer，这样脚本在 HTML 解析完后再执行 -->
+  <script src="app.js" defer></script>
 </head>
 <body>
   <!-- 页头 -->
@@ -23,9 +25,11 @@
     </div>
   </header>
 
+  <!-- 视差区块 -->
+  <div class="parallax"></div>
+
   <!-- 内容区 -->
   <div class="container">
-    <!-- 关于我 -->
     <section class="about">
       <h2 id="about-title"></h2>
       <p id="about-text"></p>
@@ -34,11 +38,7 @@
       </div>
     </section>
 
-    <!-- 项目展示 -->
     <section id="projects"></section>
   </div>
-
-  <!-- 脚本放在末尾 -->
-  <script src="app.js"></script>
 </body>
 </html>
