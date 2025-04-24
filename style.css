@@ -17,7 +17,7 @@
   --button-text: #1f2937;
 }
 
-* { box-sizing: border-box; margin:0; padding:0; }
+* { box-sizing:border-box; margin:0; padding:0; }
 body {
   background: var(--bg);
   color: var(--text);
@@ -33,17 +33,18 @@ body {
   padding: 60px 20px 40px;
   position: relative;
 }
-.header-left h1 { font-size: 3rem; margin-bottom: .2rem; }
-.header-left p  { font-size: 1.25rem; }
+.header-left h1 { font-size:3rem; margin-bottom:.2rem; }
+.header-left p  { font-size:1.25rem; }
 .controls {
-  position: absolute; top:20px; right:20px;
+  position:absolute; top:20px; right:20px;
   display:flex; gap:10px;
 }
-.theme-toggle {
+.controls select,
+.controls button {
   background: var(--button-bg);
   color: var(--button-text);
-  border: none; border-radius: 6px;
-  padding: 6px 10px; cursor: pointer;
+  border:none; border-radius:6px;
+  padding:6px 10px; cursor:pointer;
 }
 
 /* Container */
@@ -55,8 +56,8 @@ body {
   padding:8px 16px; border-radius:6px; text-decoration:none;
 }
 
-/* 年份 & 行 */
-.year-group .year-label {
+/* 年份分组 */
+.year-label {
   text-align:center; font-size:1.5rem; font-weight:bold;
   margin:40px 0 20px;
 }
@@ -64,20 +65,21 @@ body {
   display:flex; flex-wrap:wrap; justify-content:center; gap:40px;
 }
 
-/* flip-card 尺寸 */
+/* flip-card 容器尺寸 */
 .flip-card {
   perspective:1000px;
   display:inline-block;
-  width:360px;
-  height:260px;
+  width:360px; height:260px;
+  margin-bottom:20px;
 }
 
 /* 卡片基础 */
 .card {
-  background: var(--card-bg);
-  box-shadow: 0 6px 16px var(--card-shadow);
-  border-radius: 20px; overflow:hidden;
-  cursor:pointer; display:flex; flex-direction:column;
+  width:100%; height:100%;
+  background:var(--card-bg);
+  box-shadow:0 6px 16px var(--card-shadow);
+  border-radius:20px; overflow:hidden;
+  display:flex; flex-direction:column; cursor:pointer;
 }
 .card img {
   width:100%; height:140px; object-fit:cover;
@@ -86,42 +88,41 @@ body {
   margin:10px 0 5px; font-size:1.1rem; text-align:center;
 }
 .card p {
-  flex-grow:1; padding:0 10px; font-size:.95rem; text-align:center;
+  flex-grow:1; padding:0 10px;
+  font-size:.95rem; text-align:center;
 }
 
-/* 3D 翻转内部 */
+/* 3D 翻转内部结构 */
 .flip-inner {
-  position: relative; width:100%; height:100%;
-  transform-style: preserve-3d; transition: transform .6s;
+  position:relative; width:100%; height:100%;
+  transform-style:preserve-3d; transition:transform .6s;
 }
-/* 正面背面 */
-.flip-front, .flip-back {
-  position: absolute; width:100%; height:100%;
+.flip-front,
+.flip-back {
+  position:absolute; width:100%; height:100%;
   backface-visibility:hidden; border-radius:20px; overflow:auto;
 }
-/* 背面旋转180° */
+/* 背面旋转 */
 .flip-back {
-  background: var(--card-bg); color: var(--text);
-  transform: rotateY(180deg);
+  background:var(--card-bg); color:var(--text);
+  transform:rotateY(180deg);
   padding:20px; display:flex; flex-direction:column; align-items:center;
 }
-.flip-back h3 {
-  margin-bottom:10px;
-}
-.flip-back p {
+.flip-back h3 { margin-bottom:10px; }
+.flip-back p  {
   flex-grow:1; font-size:.9rem; line-height:1.4;
 }
 .flip-back video {
   width:100%; border-radius:10px; margin-top:10px;
 }
 
-/* ⭐ 仅点击时翻转：删除悬停规则，保留 .flipped */
+/* 仅点击时使用 .flipped 控制翻转 */
 .flip-inner.flipped {
-  transform: rotateY(180deg);
+  transform:rotateY(180deg);
 }
 
 /* 响应式 */
-@media(max-width:768px){
+@media(max-width:768px) {
   .flip-card { width:95%; height:auto; }
   .header-left h1 { font-size:2rem; }
   .header-left p  { font-size:1rem; }
