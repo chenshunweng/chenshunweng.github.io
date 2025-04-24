@@ -1,44 +1,44 @@
 {
   "header": {
     "name": "翁陈顺",
-    "tagline": "系统工程师 | 机器人 | 仿真"
+    "tagline": "系统工程师｜机器人｜仿真"
   },
   "about": {
     "title": "关于我",
-    "text": "专注于自动化、机器人和模型驱动系统工程（MBSE）的可靠工程师。在博西、宝马和大众等公司积累了系统化思维与落地实践经验。",
+    "text": "可靠的工程师，专注于自动化、机器人以及模型驱动的系统工程（MBSE）。在 BSH、BMW 和大众的经验使我具备系统思维与实践能力的结合。",
     "cv": "📄 下载简历 (PDF)"
   },
   "projects": {
     "title": "项目",
     "bsh": {
       "title": "BSH 测试系统",
-      "desc": "洗衣机测试自动化，覆盖率超过80%",
-      "long": "在BSH实习期间：开发了全自动机器人测试系统，用于洗衣机的自动检测与程序选择..."
+      "desc": "机器视觉测试自动化，>80% 覆盖率",
+      "long": "在 BSH 家电实习期间开发了用于洗衣机的全自动机器人测试系统。该系统通过视觉系统判断抓取点，并自动完成放置与移除流程，减少了人工干预并显著提高了测试效率。系统具备高鲁棒性，在长时间运行中维持了 72% 的抓取成功率。"
     },
     "vw": {
-      "title": "大众 虚拟工厂",
-      "desc": "Plant Simulation & 布局优化(+20%)",
-      "long": "使用Tecnomatix Plant Simulation对大众电机生产线进行模拟与优化..."
+      "title": "大众虚拟工厂",
+      "desc": "Plant Simulation 工厂仿真与优化（+20% 效率）",
+      "long": "在大众汽车项目中，使用 Tecnomatix Plant Simulation 对发动机生产线进行建模与优化。通过瓶颈分析与布局迭代，实现了节拍时间降低 30%，产能提升 20%。该成果被整合到数字工厂框架中。"
     },
     "bmw": {
-      "title": "宝马 安全开门系统",
-      "desc": "MBSE安全系统，预防开门碰撞",
-      "long": "基于MBSE与Cameo SysML，为宝马i3开发Safe Door Opening System..."
+      "title": "BMW SDOS 安全开门系统",
+      "desc": "MBSE 安全系统，用于防止开门事故",
+      "long": "为 BMW i3 开发了一套基于 MBSE 的安全开门系统。使用 SysML 构建系统架构，结合传感器融合与控制器逻辑设计，提升行车安全性。系统响应时间小于 0.3 秒，有效降低行人碰撞风险。"
     },
     "pmf": {
       "title": "PMF UR10e 模块",
-      "desc": "无摄像头Bin-Picking，干扰减少60%",
-      "long": "CamLessPick项目：设计Drehdurchführung概念，最大程度降低Bin-Picking中的干扰..."
+      "desc": "无摄像头 Bin-Picking，干扰降低 60%",
+      "long": "CamLessPick 项目中，我设计了用于 UR10e 机器人的柔性旋转接口模块，实现了在无视觉系统下的自动抓取。优化后的结构具备抗干扰特性，降低了力矩传感器上的扭转负荷。"
     },
     "itdf": {
-      "title": "ITDF 虚拟工厂",
-      "desc": "数字化工厂 & 提效",
-      "long": "对多条自动化站进行数字化转换，使用Plant Simulation/Process Simulate进行仿真验证..."
+      "title": "ITDF – 虚拟工厂项目",
+      "desc": "数字工厂与效率提升",
+      "long": "参与大众 ITDF 虚拟工厂转型项目，使用 Plant Simulation 和 Process Simulate 对产线进行虚拟调试与优化仿真。通过价值流映射和 ROI 评估工具，提出了多个可行性提升方案，助力工厂数字化转型。"
     },
     "bach": {
       "title": "本科毕业论文",
-      "desc": "CNC上下料机器人程序概念",
-      "long": "为Anton Häring KG设计全自动机床上下料机器人程序概念框架..."
+      "desc": "用于 CNC 机床的机器人自动上下料方案",
+      "long": "在 Anton Häring KG 完成的毕业论文项目，开发了基于 Yaskawa GP7 机器人平台的上下料程序。设计了通用型托盘结构及程序框架，具备模块化、可扩展与防碰撞能力。"
     }
   }
 }
