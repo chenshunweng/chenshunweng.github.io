@@ -43,7 +43,7 @@ modal.addEventListener('click', e => {
   if (e.target === modal) closeModal();
 });
 
-// 渲染全部
+// 渲染所有内容
 async function renderAll() {
   try {
     const res  = await fetch(`i18n/${currentLang}.json`);
@@ -65,18 +65,17 @@ async function renderAll() {
   }
 }
 
-// 按 year 分组并渲染带 flip-card
+// 渲染带 3D 翻转的项目卡片
 function renderProjects(projectsObj) {
   projectsEl.innerHTML = '';
-  // 将对象条目转数组，过滤 title 字段
   const items = Object.entries(projectsObj)
     .filter(([k]) => k !== 'title')
-    .map(([k,p]) => ({ id:k, ...p }));
+    .map(([k, p]) => ({ id: k, ...p }));
 
   const byYear = {};
   items.forEach(p => (byYear[p.year] ||= []).push(p));
 
-  Object.keys(byYear).sort((a,b) => b-a).forEach(year => {
+  Object.keys(byYear).sort((a,b) => b - a).forEach(year => {
     const group = document.createElement('div');
     group.className = 'year-group';
 
@@ -89,7 +88,8 @@ function renderProjects(projectsObj) {
     row.className = 'projects-row';
 
     byYear[year].forEach(p => {
-      const flip = document.createElement('div');
+      const techs = Array.isArray(p.tech) ? p.tech : [];
+      const flip  = document.createElement('div');
       flip.className = 'flip-card';
       flip.innerHTML = `
         <div class="flip-inner">
@@ -100,12 +100,12 @@ function renderProjects(projectsObj) {
           </div>
           <div class="flip-back">
             <h3>技术栈</h3>
-            <p>${p.tech.join(', ')}</p>
+            <p>${techs.join(', ')}</p>
             ${p.github ? `<a href="${p.github}" target="_blank">查看 GitHub →</a>` : ''}
           </div>
         </div>
       `;
-      // 点击时也可翻转
+      // 点击翻转
       flip.addEventListener('click', () => {
         flip.querySelector('.flip-inner').classList.toggle('flipped');
       });
