@@ -1,39 +1,54 @@
 {
   "header": {
     "name": "Chenshun Weng",
-    "tagline": "Systems Engineer | Robotik | Simulation"
+    "tagline": "Systems Engineer | Robotik | Simulation",
+    "cvText": "📄 Lebenslauf herunterladen (PDF)"
   },
   "about": {
     "title": "Über mich",
-    "text": "Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz.",
-    "cv": "📄 Lebenslauf herunterladen (PDF)"
+    "text": "Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz."
   },
   "projects": {
     "title": "Projekte",
     "bsh": {
+      "year": 2025,
       "title": "BSH Testsystem",
-      "desc": "Waschmaschinen‑Testautomation >80 % Abdeckung",
-      "long": "Entwicklung eines robotergestützten Systems zur automatisierten Prüfung von Waschmaschinen. Integration von Vision-Systemen zur Erkennung von Endzuständen, modularer Teststeuerung und automatischer Pfadplanung. Über 80 % der Testfälle werden ohne manuelle Eingriffe durchgeführt."
+      "desc": "Waschmaschinen-Testautomation >80 % Abdeckung",
+      "long": "Entwicklung eines robotergestützten Systems zur automatisierten Prüfung von Waschmaschinen. Integration von Vision-Systemen zur Erkennung von Endzuständen, modularer Teststeuerung und automatischer Pfadplanung. Über 80 % der Testfälle werden ohne manuelle Eingriffe durchgeführt.",
+      "cover": "assets/images/bsh_project.png",
+      "video": "assets/videos/bsh_video.mp4"
     },
     "vw": {
+      "year": 2023,
       "title": "VW / ITDF Virtuelle Fabrik",
-      "desc": "Plant Simulation & Layout‑Optimierung (+20 %)",
-      "long": "Optimierung der Fertigungslayouts bei Volkswagen mithilfe von Tecnomatix Plant Simulation. Entwicklung digitaler Zwillinge für mehrere Produktionsstationen, Simulation und Effizienzsteigerung der Auslastung um mehr als 20 %."
+      "desc": "Plant Simulation & Layout-Optimierung (+20 %)",
+      "long": "Optimierung der Fertigungslayouts bei Volkswagen mithilfe von Tecnomatix Plant Simulation. Entwicklung digitaler Zwillinge für mehrere Produktionsstationen, Simulation und Effizienzsteigerung der Auslastung um mehr als 20 %.",
+      "cover": "assets/images/ITDF_cover.jpg",
+      "video": "assets/videos/ITDF_video.mp4"
     },
     "bmw": {
+      "year": 2024,
       "title": "BMW SDOS",
-      "desc": "MBSE‑Sicherheitssystem gegen Türunfälle",
-      "long": "Modellierung eines Safe Door Opening Systems für den BMW i3. Anwendung von Cameo SysML, MBSE und Simulationsmodellen zur Risikoprävention von Türunfällen bei Radfahrern."
+      "desc": "MBSE-Sicherheitssystem gegen Türunfälle",
+      "long": "Modellierung eines Safe Door Opening Systems für den BMW i3. Anwendung von Cameo SysML, MBSE und Simulationsmodellen zur Risikoprävention von Türunfällen bei Radfahrern.",
+      "cover": "assets/images/VEI_cover.jpg",
+      "video": "assets/videos/VEI_video.mp4"
     },
     "pmf": {
+      "year": 2024,
       "title": "PMF UR10e Modul",
-      "desc": "Kameraloses Bin‑Picking, –60 % Störeinflüsse",
-      "long": "Entwicklung eines drehbaren UR10e-Endeffektors zur flexiblen Positionierung. Kombination aus Vakuumgreifer und passiver Gelenkstruktur zur Reduktion von Querbelastungen bei Behälter-Entnahmeprozessen."
+      "desc": "Kameraloses Bin-Picking, –60 % Störeinflüsse",
+      "long": "Entwicklung eines drehbaren UR10e-Endeffektors zur flexiblen Positionierung. Kombination aus Vakuumgreifer und passiver Gelenkstruktur zur Reduktion von Querbelastungen bei Behälter-Entnahmeprozessen.",
+      "cover": "assets/images/PMF_cover.jpg",
+      "video": "assets/videos/PMF_video.mp4"
     },
     "bach": {
+      "year": 2022,
       "title": "Bachelorarbeit",
-      "desc": "Robotik‑Programmkonzept für CNC-Beladung",
-      "long": "Erstellung eines modularen Programmsystems zur automatisierten Beladung und Entladung von Werkzeugmaschinen. Einsatz bei Anton Häring KG mit Fokus auf Mehrstationenkompatibilität und Kollisionsvermeidung."
+      "desc": "Robotik-Programmkonzept für CNC-Beladung",
+      "long": "Erstellung eines modularen Programmsystems zur automatisierten Beladung und Entladung von Werkzeugmaschinen. Einsatz bei Anton Häring KG mit Fokus auf Mehrstationenkompatibilität und Kollisionsvermeidung.",
+      "cover": "assets/images/bachelorarbeit_cover.jpg",
+      "video": "assets/videos/bachelorarbeit_video.mp4"
     }
   }
 }
