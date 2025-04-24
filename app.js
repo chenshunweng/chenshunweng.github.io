@@ -1,6 +1,5 @@
 // app.js
-import i18n from './i18n/de.json'; // 默认加载德语，可根据语言切换机制加载对应 json
-
+import i18n from './i18n/de.json'; 
 const langButtons = document.querySelectorAll('.lang-switch button');
 const themeToggle = document.querySelector('.theme-toggle');
 const root = document.documentElement;
