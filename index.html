@@ -8,8 +8,8 @@
 </head>
 <body>
   <header>
-    <h1 data-i18n="header.name">Chenshun Weng</h1>
-    <p data-i18n="header.tagline">Systems Engineer | Robotik | Simulation</p>
+    <h1>Chenshun Weng</h1>
+    <p>Systems Engineer | Robotik | Simulation</p>
     <div class="controls">
       <div class="lang-switch">
         <button data-lang="de">DE</button>
@@ -20,25 +20,25 @@
     </div>
   </header>
 
-  <main class="container">
-    <section>
-      <h2 class="section-title" data-i18n="about.title">Über mich</h2>
-      <p data-i18n="about.text">Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik...</p>
+  <div class="container">
+    <section class="about">
+      <h2 data-i18n="about.title">Über mich</h2>
+      <p data-i18n="about.text">Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung...</p>
       <div class="cv-download">
         <a href="Lebenslauf_Chenshun_Weng.pdf" target="_blank" data-i18n="about.cv">📄 Lebenslauf herunterladen (PDF)</a>
       </div>
     </section>
 
-    <section>
-      <h2 class="section-title" data-i18n="projects.title">Projekte</h2>
+    <section class="projects">
+      <h2 data-i18n="projects.title">Projekte</h2>
 
       <div class="project-year">
         <div class="year-label">2025</div>
         <div class="projects-row">
-          <div class="card" data-key="bsh">
-            <img src="assets/images/bsh_project.png" alt="BSH Cover" />
+          <div class="card" data-project="bsh">
+            <img src="assets/images/bsh_project.png" alt="BSH" />
             <h3 data-i18n="projects.bsh.title">BSH Testsystem</h3>
-            <p data-i18n="projects.bsh.desc">Waschmaschinen-Testautomation >80%</p>
+            <p data-i18n="projects.bsh.desc">Waschmaschinen‑Testautomation >80 %</p>
           </div>
         </div>
       </div>
@@ -46,15 +46,15 @@
       <div class="project-year">
         <div class="year-label">2024</div>
         <div class="projects-row">
-          <div class="card" data-key="bmw">
-            <video src="assets/videos/VEI_video.mp4" muted autoplay loop></video>
+          <div class="card" data-project="bmw">
+            <img src="assets/images/VEI_cover.png" alt="BMW SDOS" />
             <h3 data-i18n="projects.bmw.title">BMW SDOS</h3>
-            <p data-i18n="projects.bmw.desc">MBSE Sicherheitssystem</p>
+            <p data-i18n="projects.bmw.desc">MBSE‑Sicherheitssystem</p>
           </div>
-          <div class="card" data-key="pmf">
-            <video src="assets/videos/PMF_video.mp4" muted autoplay loop></video>
+          <div class="card" data-project="pmf">
+            <img src="assets/images/PMF_cover.jpg" alt="PMF Modul" />
             <h3 data-i18n="projects.pmf.title">PMF Modul</h3>
-            <p data-i18n="projects.pmf.desc">Rotationsmodul für UR10e</p>
+            <p data-i18n="projects.pmf.desc">UR10e Modul</p>
           </div>
         </div>
       </div>
@@ -62,10 +62,10 @@
       <div class="project-year">
         <div class="year-label">2023</div>
         <div class="projects-row">
-          <div class="card" data-key="itdf">
-            <video src="assets/videos/ITDF_video.mp4" muted autoplay loop></video>
-            <h3 data-i18n="projects.itdf.title">ITDF Projekt</h3>
-            <p data-i18n="projects.itdf.desc">Digitale Fabrik</p>
+          <div class="card" data-project="itdf">
+            <img src="assets/images/ITDF_cover.jpg" alt="ITDF" />
+            <h3 data-i18n="projects.itdf.title">VW Virtuelle Fabrik</h3>
+            <p data-i18n="projects.itdf.desc">Digital Factory</p>
           </div>
         </div>
       </div>
@@ -73,21 +73,21 @@
       <div class="project-year">
         <div class="year-label">2022</div>
         <div class="projects-row">
-          <div class="card" data-key="bach">
-            <video src="assets/videos/bachelorarbeit_video.mp4" muted autoplay loop></video>
+          <div class="card" data-project="bach">
+            <img src="assets/images/bachelorarbeit_cover.jpg" alt="Bachelorarbeit" />
             <h3 data-i18n="projects.bach.title">Bachelorarbeit</h3>
-            <p data-i18n="projects.bach.desc">Automatisierte Bestückung</p>
+            <p data-i18n="projects.bach.desc">Robotic Loading</p>
           </div>
         </div>
       </div>
     </section>
-  </main>
+  </div>
 
-  <div id="modal" class="modal">
+  <div class="modal" id="modal">
     <div class="modal-content">
-      <button class="modal-close">✕</button>
+      <button class="modal-close">&times;</button>
       <h2 id="modal-title"></h2>
-      <p id="modal-desc"></p>
+      <p id="modal-text"></p>
       <video id="modal-video" controls style="display: none;"></video>
     </div>
   </div>
