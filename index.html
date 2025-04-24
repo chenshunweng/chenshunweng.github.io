@@ -19,27 +19,26 @@
       <button class="theme-toggle">🌙</button>
     </div>
   </header>
+
   <main class="container">
     <section>
       <h2 class="section-title" data-i18n="about.title">Über mich</h2>
-      <p data-i18n="about.text">
-        Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE)...
-      </p>
+      <p data-i18n="about.text">Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik...</p>
       <div class="cv-download">
         <a href="Lebenslauf_Chenshun_Weng.pdf" target="_blank" data-i18n="about.cv">📄 Lebenslauf herunterladen (PDF)</a>
       </div>
     </section>
 
-    <section class="projects">
+    <section>
       <h2 class="section-title" data-i18n="projects.title">Projekte</h2>
 
       <div class="project-year">
         <div class="year-label">2025</div>
         <div class="projects-row">
           <div class="card" data-key="bsh">
-            <img src="assets/images/bsh_project.png" alt="BSH Cover">
+            <img src="assets/images/bsh_project.png" alt="BSH Cover" />
             <h3 data-i18n="projects.bsh.title">BSH Testsystem</h3>
-            <p data-i18n="projects.bsh.desc">Waschmaschinen‑Testautomation >80 %</p>
+            <p data-i18n="projects.bsh.desc">Waschmaschinen-Testautomation >80%</p>
           </div>
         </div>
       </div>
@@ -48,14 +47,14 @@
         <div class="year-label">2024</div>
         <div class="projects-row">
           <div class="card" data-key="bmw">
-            <video src="assets/videos/VEI_video.mp4" poster="assets/images/VEI_cover.png" muted></video>
+            <video src="assets/videos/VEI_video.mp4" muted autoplay loop></video>
             <h3 data-i18n="projects.bmw.title">BMW SDOS</h3>
-            <p data-i18n="projects.bmw.desc">MBSE‑Sicherheitssystem gegen Türunfälle</p>
+            <p data-i18n="projects.bmw.desc">MBSE Sicherheitssystem</p>
           </div>
           <div class="card" data-key="pmf">
-            <video src="assets/videos/PMF_video.mp4" poster="assets/images/PMF_cover.jpg" muted></video>
-            <h3 data-i18n="projects.pmf.title">PMF UR10e Modul</h3>
-            <p data-i18n="projects.pmf.desc">–60 % Störeinflüsse</p>
+            <video src="assets/videos/PMF_video.mp4" muted autoplay loop></video>
+            <h3 data-i18n="projects.pmf.title">PMF Modul</h3>
+            <p data-i18n="projects.pmf.desc">Rotationsmodul für UR10e</p>
           </div>
         </div>
       </div>
@@ -64,9 +63,9 @@
         <div class="year-label">2023</div>
         <div class="projects-row">
           <div class="card" data-key="itdf">
-            <video src="assets/videos/ITDF_video.mp4" poster="assets/images/ITDF_cover.png" muted></video>
-            <h3 data-i18n="projects.itdf.title">ITDF – Virtuelle Fabrik</h3>
-            <p data-i18n="projects.itdf.desc">Digital Factory & Effizienzsteigerung</p>
+            <video src="assets/videos/ITDF_video.mp4" muted autoplay loop></video>
+            <h3 data-i18n="projects.itdf.title">ITDF Projekt</h3>
+            <p data-i18n="projects.itdf.desc">Digitale Fabrik</p>
           </div>
         </div>
       </div>
@@ -75,29 +74,24 @@
         <div class="year-label">2022</div>
         <div class="projects-row">
           <div class="card" data-key="bach">
-            <video src="assets/videos/bachelorarbeit_video.mp4" poster="assets/images/bachelorarbeit_cover.jpg" muted></video>
+            <video src="assets/videos/bachelorarbeit_video.mp4" muted autoplay loop></video>
             <h3 data-i18n="projects.bach.title">Bachelorarbeit</h3>
-            <p data-i18n="projects.bach.desc">CNC-Robotik-Programmierung</p>
+            <p data-i18n="projects.bach.desc">Automatisierte Bestückung</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Chenshun Weng</p>
-  </footer>
-
   <div id="modal" class="modal">
     <div class="modal-content">
-      <button class="modal-close">×</button>
-      <h3 id="modal-title"></h3>
+      <button class="modal-close">✕</button>
+      <h2 id="modal-title"></h2>
       <p id="modal-desc"></p>
-      <video id="modal-video" controls></video>
+      <video id="modal-video" controls style="display: none;"></video>
     </div>
   </div>
 
-  <script src="https://unpkg.com/i18next@21.6.0/dist/umd/i18next.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
