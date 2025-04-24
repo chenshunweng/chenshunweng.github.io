@@ -4,41 +4,47 @@
     "tagline": "Systems Engineer | Robotik | Simulation"
   },
   "about": {
-    "title": "Über mich",
-    "text": "Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz.",
-    "cv": "📄 Lebenslauf herunterladen (PDF)"
+    "title": "\u00dcber mich",
+    "text": "Zuverl\u00e4ssiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und modellbasierte Systementwicklung (MBSE). Durch Erfahrungen bei BSH, BMW und Volkswagen verbinde ich systemisches Denken mit praktischer Umsetzungskompetenz.",
+    "cv": "\ud83d\udcc4 Lebenslauf herunterladen (PDF)"
   },
   "projects": {
     "title": "Projekte",
     "bsh": {
       "title": "BSH Testsystem",
-      "desc": "Waschmaschinen‑Testautomation >80 % Abdeckung",
-      "long": "Im Praktikum bei BSH Hausgeräte: Entwicklung eines Robotik-Systems zur vollautomatischen Prüfung von Waschmaschinen..."
+      "desc": "Waschmaschinen\u2011Testautomation >80\u00a0% Abdeckung",
+      "long": "Im Praktikum bei BSH Hausger\u00e4te: Entwicklung eines Robotik-Systems zur vollautomatischen Pr\u00fcfung von Waschmaschinen mit Omron TM14 Roboter und Robotiq 2F-85 Greifer. Landmark-basierte Kalibrierung (\u00b1 2 mm), 300 h Dauerbetrieb, 72 % Erfolgsquote.",
+      "video": "assets/videos/BSH_video.mp4"
     },
     "vw": {
       "title": "VW Virtuelle Fabrik",
-      "desc": "Plant Simulation & Layout‑Optimierung (+20 %)",
-      "long": "Simulation und Optimierung der Motorenproduktionslinie bei Volkswagen mit Tecnomatix Plant Simulation..."
+      "desc": "Plant Simulation & Layout\u2011Optimierung (+20\u00a0%)",
+      "long": "Simulation und Optimierung der Motorenproduktionslinie bei Volkswagen mit Tecnomatix Plant Simulation. Fokus auf Materialfluss, Engpassbeseitigung und OEE-Verbesserung.",
+      "video": "assets/videos/ITDF_video.mp4"
     },
     "bmw": {
       "title": "BMW SDOS",
-      "desc": "MBSE‑Sicherheitssystem gegen Türunfälle",
-      "long": "Entwicklung eines Safe Door Opening Systems für BMW i3 mithilfe von MBSE und Cameo SysML..."
+      "desc": "MBSE\u2011Sicherheitssystem gegen T\u00fcrunf\u00e4lle",
+      "long": "Entwicklung eines Safe Door Opening Systems f\u00fcr BMW i3 mithilfe von MBSE und Cameo SysML. Sensorfusion in 70 ms, Prototyp zur automatischen T\u00fcrblockade, 60 % Risikoreduktion.",
+      "video": "assets/videos/VEI_video.mp4"
     },
     "pmf": {
       "title": "PMF UR10e Modul",
-      "desc": "Kameraloses Bin‑Picking, –60 % Störeinflüsse",
-      "long": "CamLessPick: Entwicklung eines Drehdurchführungskonzepts zur Reduktion von Störkräften bei Bin-Picking..."
+      "desc": "Kameraloses Bin\u2011Picking, \u201360\u00a0% St\u00f6reinfl\u00fcsse",
+      "long": "CamLessPick: Entwicklung eines drehbaren Vakuum-Moduls f\u00fcr UR10e zur Reduktion von St\u00f6rmomenten ohne Kamerasystem. Leichtbaukonzept, FEM-Analyse, +25 % Lebensdauer.",
+      "video": "assets/videos/PMF_video.mp4"
     },
     "itdf": {
       "title": "ITDF – Virtuelle Fabrik",
       "desc": "Digital Factory & Effizienzsteigerung",
-      "long": "Transformation verschiedener Automatisierungsstationen mit Simulationsmodellen in Plant Simulation und Process Simulate..."
+      "long": "Transformation verschiedener Automatisierungsstationen mit Simulationsmodellen in Plant Simulation und Process Simulate. Layoutszenarien, KPI-basierte Planung, ROI-Vergleich.",
+      "video": "assets/videos/ITDF_video.mp4"
     },
     "bach": {
       "title": "Bachelorarbeit",
-      "desc": "Robotik‑Programmkonzept für CNC-Beladung",
-      "long": "Konzept zur vollautomatischen Bestückung von Werkzeugmaschinen bei Anton Häring KG, inkl. modularer Software-Framework..."
+      "desc": "Robotik\u2011Programmkonzept f\u00fcr CNC-Beladung",
+      "long": "Konzept zur vollautomatischen Best\u00fcckung von Werkzeugmaschinen bei Anton H\u00e4ring KG, inkl. modularer Software-Framework, Palettenalgorithmus und Anti-Crash-System.",
+      "video": "assets/videos/bachelorarbeit_video.mp4"
     }
   }
 }
