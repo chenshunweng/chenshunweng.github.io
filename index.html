@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chenshun Weng Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <h1 id="header-name">Chenshun Weng</h1>
+      <p id="header-tagline">Systems Engineer | Robotik | Simulation</p>
+    </div>
+    <div class="controls">
+      <select id="lang-switcher">
+        <option value="de">DE</option>
+        <option value="en">EN</option>
+        <option value="zh">中文</option>
+      </select>
+      <button id="theme-toggle">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="about">
+      <h2 id="about-title">Über mich</h2>
+      <p id="about-text">
+        Zuverlässiger Ingenieur mit Schwerpunkt Automatisierung, Robotik und ...
+      </p>
+      <a id="cv-link" href="Lebenslauf_Chenshun_Weng.pdf" class="btn-resume" download>
+        📄 Lebenslauf herunterladen (PDF)
+      </a>
+    </section>
+
+    <section id="projects">
+      <!-- JS 动态插入项目卡片 -->
+    </section>
+  </main>
+
+  <!-- 模态弹窗 -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close">&times;</button>
+      <div class="modal-body">
+        <div class="video-container">
+          <video id="modal-video" controls></video>
+        </div>
+        <div class="details-container">
+          <h3 id="modal-title"></h3>
+          <p id="modal-role"></p>
+          <p id="modal-impact"></p>
+          <h4 id="modal-tools-label"></h4>
+          <ul id="modal-tools"></ul>
+          <p id="modal-long"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
