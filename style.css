@@ -113,6 +113,7 @@ footer {
   background: rgba(0,0,0,0.6);
   z-index: 1000;
 }
+.modal.open { display: flex; }
 .modal-content {
   background: var(--card-bg);
   padding: 30px;
@@ -120,6 +121,7 @@ footer {
   max-width: 720px;
   width: 90%;
   text-align: left;
+  position: relative;
 }
 .modal-close {
   position: absolute;
