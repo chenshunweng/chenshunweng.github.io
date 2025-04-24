@@ -1,20 +1,14 @@
 :root[data-theme='light'] {
-  --bg: #f4f4f4;
-  --text: #111;
-  --primary: #1f2937;
-  --card-bg: #fff;
+  --bg: #f4f4f4; --text: #111;
+  --primary: #1f2937; --card-bg: #fff;
   --card-shadow: rgba(0,0,0,0.1);
-  --button-bg: #1f2937;
-  --button-text: #fff;
+  --button-bg: #1f2937; --button-text: #fff;
 }
 :root[data-theme='dark'] {
-  --bg: #121212;
-  --text: #f4f4f4;
-  --primary: #ffffff;
-  --card-bg: #1e1e1e;
+  --bg: #121212; --text: #f4f4f4;
+  --primary: #ffffff; --card-bg: #1e1e1e;
   --card-shadow: rgba(255,255,255,0.1);
-  --button-bg: #fff;
-  --button-text: #1f2937;
+  --button-bg: #fff; --button-text: #1f2937;
 }
 
 * { box-sizing:border-box; margin:0; padding:0; }
@@ -56,7 +50,7 @@ body {
   padding:8px 16px; border-radius:6px; text-decoration:none;
 }
 
-/* 年份分组 */
+/* Year & row */
 .year-label {
   text-align:center; font-size:1.5rem; font-weight:bold;
   margin:40px 0 20px;
@@ -65,7 +59,7 @@ body {
   display:flex; flex-wrap:wrap; justify-content:center; gap:40px;
 }
 
-/* flip-card 容器尺寸 */
+/* flip-card container */
 .flip-card {
   perspective:1000px;
   display:inline-block;
@@ -73,7 +67,7 @@ body {
   margin-bottom:20px;
 }
 
-/* 卡片基础 */
+/* card front */
 .card {
   width:100%; height:100%;
   background:var(--card-bg);
@@ -88,11 +82,10 @@ body {
   margin:10px 0 5px; font-size:1.1rem; text-align:center;
 }
 .card p {
-  flex-grow:1; padding:0 10px;
-  font-size:.95rem; text-align:center;
+  flex-grow:1; padding:0 10px; font-size:.95rem; text-align:center;
 }
 
-/* 3D 翻转内部结构 */
+/* flip inner */
 .flip-inner {
   position:relative; width:100%; height:100%;
   transform-style:preserve-3d; transition:transform .6s;
@@ -102,26 +95,24 @@ body {
   position:absolute; width:100%; height:100%;
   backface-visibility:hidden; border-radius:20px; overflow:auto;
 }
-/* 背面旋转 */
+/* back face */
 .flip-back {
   background:var(--card-bg); color:var(--text);
-  transform:rotateY(180deg);
-  padding:20px; display:flex; flex-direction:column; align-items:center;
+  transform:rotateY(180deg); padding:20px;
+  display:flex; flex-direction:column; align-items:center;
 }
 .flip-back h3 { margin-bottom:10px; }
-.flip-back p  {
-  flex-grow:1; font-size:.9rem; line-height:1.4;
-}
+.flip-back p  { flex-grow:1; font-size:.9rem; line-height:1.4; }
 .flip-back video {
   width:100%; border-radius:10px; margin-top:10px;
 }
 
-/* 仅点击时使用 .flipped 控制翻转 */
+/* only click toggles .flipped */
 .flip-inner.flipped {
   transform:rotateY(180deg);
 }
 
-/* 响应式 */
+/* Responsive */
 @media(max-width:768px) {
   .flip-card { width:95%; height:auto; }
   .header-left h1 { font-size:2rem; }
