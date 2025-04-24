@@ -1,193 +1,39 @@
-/* 主题色 */
 :root[data-theme='light'] {
-  --bg: #f4f4f4;
-  --text: #111;
-  --primary: #1f2937;
-  --card-bg: #fff;
-  --card-shadow: rgba(0,0,0,0.1);
-  --btn-bg: #1f2937;
-  --btn-text: #fff;
+  --bg:#f4f4f4; --text:#111; --primary:#1f2937;
+  --card-bg:#fff; --card-shadow:rgba(0,0,0,0.1);
+  --btn-bg:#1f2937; --btn-text:#fff;
 }
 :root[data-theme='dark'] {
-  --bg: #121212;
-  --text: #f4f4f4;
-  --primary: #ffffff;
-  --card-bg: #1e1e1e;
-  --card-shadow: rgba(255,255,255,0.1);
-  --btn-bg: #fff;
-  --btn-text: #1f2937;
+  --bg:#121212; --text:#f4f4f4; --primary:#fff;
+  --card-bg:#1e1e1e; --card-shadow:rgba(255,255,255,0.1);
+  --btn-bg:#fff; --btn-text:#1f2937;
 }
-
-/* 全局 */
-* { box-sizing: border-box; margin:0; padding:0; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, sans-serif;
-  transition: background 0.3s, color 0.3s;
-}
-
-/* Header */
-.header {
-  background: var(--primary);
-  color: var(--bg);
-  text-align: center;
-  padding: 50px 20px 30px;
-  position: relative;
-}
-.header-left h1 { font-size: 3rem; line-height: 1; }
-.header-left p  { margin-top: 8px; font-size: 1.2rem; }
-.controls {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-}
-.controls select,
-.controls button {
-  background: var(--btn-bg);
-  color: var(--btn-text);
-  border: none;
-  border-radius: 6px;
-  padding: 6px 10px;
-  cursor: pointer;
-}
-
-/* 视差背景 */
-.parallax {
-  background: url('assets/images/parallax-bg.jpg') center/cover fixed;
-  height: 250px;
-}
-
-/* 主体容器 */
-.container {
-  max-width: 1280px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-/* 关于我 */
-.about h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-.about p {
-  max-width: 800px;
-  line-height: 1.6;
-}
-.btn-resume {
-  display: inline-block;
-  margin-top: 12px;
-  background: var(--btn-bg);
-  color: var(--btn-text);
-  padding: 8px 16px;
-  border-radius: 6px;
-  text-decoration: none;
-}
-
-/* 年份标签 */
-.year-label {
-  text-align: center;
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin: 50px 0 20px;
-}
-
-/* 卡片行 */
-.projects-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-/* 翻转卡片容器 */
-.flip-card {
-  perspective: 1000px;
-  width: 480px;
-  height: 300px;
-}
-.flip-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-}
-.flip-inner.flipped {
-  transform: rotateY(180deg);
-}
-
-/* 卡片正面 / 背面 */
-.flip-front, .flip-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 16px;
-  box-shadow: 0 6px 16px var(--card-shadow);
-  overflow: hidden;
-}
-.flip-front {
-  background: var(--card-bg);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-}
-.flip-front img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-.flip-front h3 {
-  margin: 12px 0 4px;
-  text-align: center;
-  font-size: 1.1rem;
-}
-.flip-front p {
-  padding: 0 12px;
-  font-size: 0.95rem;
-  text-align: center;
-  flex-grow: 1;
-}
-
-/* 背面详情 */
-.flip-back {
-  background: var(--card-bg);
-  color: var(--text);
-  transform: rotateY(180deg);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-.flip-back h3 {
-  text-align: center;
-  margin-bottom: 12px;
-}
-.flip-back p {
-  margin: 6px 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-.tools-list {
-  list-style: disc inside;
-  margin: 6px 0 12px;
-  padding-left: 0;
-}
-.tools-list li {
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-.flip-back video {
-  width: 100%;
-  border-radius: 8px;
-  margin-top: 12px;
-}
-
-/* 响应式 */
-@media (max-width: 768px) {
-  .flip-card { width: 90%; height: auto; }
-  .header-left h1 { font-size: 2rem; }
-  .header-left p  { font-size: 1rem; }
-}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;transition:.3s;}
+.header{background:var(--primary);color:var(--bg);padding:50px 20px;text-align:center;position:relative;}
+.header-left h1{font-size:2.8rem;}
+.header-left p{margin-top:8px;font-size:1.2rem;}
+.controls{position:absolute;top:20px;right:20px;display:flex;gap:8px;}
+.controls select,.controls button{background:var(--btn-bg);color:var(--btn-text);border:none;padding:6px 10px;border-radius:4px;cursor:pointer;}
+.parallax{background:#ccc url('assets/images/parallax-bg.jpg') center/cover fixed;height:200px;}
+.container{max-width:1000px;margin:auto;padding:30px 20px;}
+.about h2{font-size:1.8rem;margin-bottom:10px;}
+.about p{max-width:800px;line-height:1.6;}
+.btn-resume{display:inline-block;margin-top:12px;background:var(--btn-bg);color:var(--btn-text);padding:8px 16px;border-radius:6px;text-decoration:none;}
+.year-label{font-size:1.6rem;font-weight:bold;text-align:center;margin:50px 0 20px;}
+.projects-row{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
+.flip-card{perspective:1000px;width:480px;height:300px;}
+.flip-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s;}
+.flip-inner.flipped{transform:rotateY(180deg);}
+.flip-front,.flip-back{position:absolute;width:100%;height:100%;border-radius:16px;overflow:hidden;backface-visibility:hidden;box-shadow:0 6px 16px var(--card-shadow);}
+.flip-front{background:var(--card-bg);cursor:pointer;display:flex;flex-direction:column;}
+.flip-front img{width:100%;height:160px;object-fit:cover;}
+.flip-front h3{margin:12px 0 4px;text-align:center;font-size:1.1rem;}
+.flip-front p{padding:0 12px;flex-grow:1;text-align:center;font-size:.95rem;}
+.flip-back{background:var(--card-bg);transform:rotateY(180deg);padding:20px;display:flex;flex-direction:column;}
+.flip-back h3{text-align:center;margin-bottom:12px;}
+.flip-back p{margin:6px 0;font-size:.9rem;line-height:1.4;}
+.tools-list{list-style:disc inside;margin:6px 0 12px;padding-left:0;}
+.tools-list li{font-size:.9rem;line-height:1.4;}
+.flip-back video{width:100%;border-radius:8px;margin-top:12px;}
+@media(max-width:768px){.flip-card{width:90%;height:auto;}.header-left h1{font-size:2rem;}.header-left p{font-size:1rem;}}
