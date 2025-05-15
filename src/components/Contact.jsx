@@ -12,7 +12,7 @@ const contactDetails = {
 };
 
 // IMPORTANT: Replace with your own Formspree endpoint!
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORMSPREE_ID"; 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/meogvvze"; 
 
 const Contact = () => {
   const { t } = useTranslation();
