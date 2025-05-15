@@ -15,16 +15,14 @@ module.exports = {
           muted: "#6b7280",      // Tailwind gray-500 (Muted text, like placeholders)
         },
         dark: {
-          background: "#0f172a", // Tailwind slate-900 (Very dark blue/black, as requested)
-          text: "#e2e8f0",       // Tailwind slate-200 (Light gray/off-white text)
-          primary: "#60a5fa",    // Tailwind blue-400 (Lighter blue for dark mode)
-          accent: "#3b82f6",     // Tailwind blue-500 (Slightly darker blue for hover/accent in dark mode)
+          background: "#0f172a", // Tailwind slate-900 (Very dark blue/black)
+          text: "#f1f5f9",       // Tailwind slate-100 (Lighter text for better readability)
+          primary: "#93c5fd",    // Tailwind blue-300 (Lighter blue for primary elements)
+          accent: "#38bdf8",     // Tailwind sky-400 (Brighter accent color)
           card: "#1e293b",       // Tailwind slate-800 (Dark gray/blue for cards)
           border: "#334155",     // Tailwind slate-700 (Medium gray/blue border)
-          muted: "#94a3b8",      // Tailwind slate-400 (Muted text in dark mode)
+          muted: "#cbd5e1"       // Tailwind slate-300 (Lighter muted text)
         },
-        // General accent (can be overridden by theme-specific accents if needed)
-        // For now, using theme-specific accents (light.accent, dark.accent)
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -62,8 +60,8 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'fade-in': 'fade-in 0.5s ease-out forwards',
         'slide-in-up': 'slide-in-up 0.5s ease-out forwards',
-        'fade-in-down': 'fade-in-down 0.6s ease-out forwards', // Added
-        'bounce-subtle': 'bounce-subtle 1.5s infinite', // Added
+        'fade-in-down': 'fade-in-down 0.6s ease-out forwards',
+        'bounce-subtle': 'bounce-subtle 1.5s infinite',
       }
     }
   },
